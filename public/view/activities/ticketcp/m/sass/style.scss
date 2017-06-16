@@ -1,0 +1,205 @@
+@import "component/base.scss";
+@import "component/mixin.scss";
+@import "component/component.scss";
+
+html.hidden{
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+.container{
+    position: relative;
+    width: 100%;
+    background: url('../img/bg.jpg') no-repeat;
+    background-size: 100%;
+    background-color: #ffd557;
+    .lead{
+        height: 62/$px2rem;
+        padding: 38/$px2rem 24/$px2rem;
+        img{
+            float: left;
+            width: 62/$px2rem;
+        }
+        .text{
+            display: inline-block;
+            width: 640/$px2rem;
+            height: 62/$px2rem;
+            line-height: 62/$px2rem;
+            background: url('../img/leadText.png') no-repeat;
+            background-size: cover;
+            color: #fff;
+            text-align: center;
+            font-weight: bold;
+            font-size: 1.2em;
+        }
+    }
+    .packet{
+        position: relative;
+        width: 446/$px2rem;
+        height: 882/$px2rem;
+        margin: 270/$px2rem auto 0;
+        background: url('../img/packet.png') no-repeat;
+        background-size: 100%;
+        .receive{
+            position: absolute;
+            left: 150/$px2rem;
+            bottom: 270/$px2rem;
+            width: 150/$px2rem;
+            height: 150/$px2rem;
+        }
+    }
+    .cpLogo{
+        margin-top: 2px;
+        height: 50/$px2rem;
+        img{
+            display: block;
+            margin: 0 auto;
+            width: 180/$px2rem;
+        }
+        .text{
+            width: 480/$px2rem;
+            margin: 4px auto 0;
+            line-height: 1.8;
+            border-radius: 4px;
+            background-color: rgba(0,0,0,0.2);
+            text-align: center;
+            color: #fff;
+            
+        }
+    }
+    .rule{
+        margin-top: 100/$px2rem;
+        padding: 20/$px2rem 45/$px2rem;
+        color: #7a6623;
+        p{
+            position: relative;
+            padding-left: 1.5em;
+            line-height: 1.8;
+            font-weight: bold;
+            em{
+                position: absolute;
+                left: 0;
+                font-weight: bold;
+            }
+        }
+    }
+}
+.download{
+    display: block;
+    height: 120/$px2rem;
+    padding: 40/$px2rem 50/$px2rem;
+    background-color: #ffedbd;
+    img{
+        float: left;
+        width:120/$px2rem;
+    }
+    .text{
+        float: left;
+        width: 232/$px2rem;
+        height: 120/$px2rem;
+        margin-left: 40/$px2rem;
+        background: url('../img/linkText.jpg') no-repeat;
+        background-size: cover;
+    }
+    .download-btn{
+        float: right;
+        width: 220/$px2rem;
+        height: 57/$px2rem;
+        margin-top: 30/$px2rem;
+        margin-right: -10px;
+        background: url('../img/linkBtn.png') no-repeat;
+        background-size: cover;
+    }
+}
+
+.mask{
+    display: none;
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.6);
+    .confirm{
+        position: relative;
+        width: 504/$px2rem;
+        height: 707/$px2rem;
+        background: url('../img/confirm.png') no-repeat;
+        background-size: cover;
+        margin: 200/$px2rem auto 0;
+        .close-btn{
+            position: absolute;
+            top: 0;
+            right: 40/$px2rem;
+            width: 80/$px2rem;
+            height: 80/$px2rem;
+        }
+        .inner{
+            width: 100%;
+            padding-top: 220/$px2rem;
+            h4{
+                text-align: center;
+                font-weight: bold;
+                @include font-dpr(18);
+            }
+            .code{
+                @mixin node {
+                    content: "";
+                    display: inline-block;
+                    position: absolute;                    
+                    width: 70/$px2rem;
+                    height: 70/$px2rem;
+                    border-radius: 50%;
+                    background-color: #c5c5c5;
+                }
+                @mixin user-sel{
+                    -webkit-user-select: text;
+                    -moz-user-select: text;
+                    -o-user-select: text;
+                    user-select: text;
+                }
+                position: relative;
+                width: 350/$px2rem;
+                height: 70/$px2rem;
+                line-height: 70/$px2rem;
+                margin: 40/$px2rem auto;
+                background-color: #c5c5c5;
+//              text-align: center;
+                @include user-sel;
+                span{
+                    position: absolute;
+                    @include user-sel;
+                    font-weight: bold;
+                    font-size: 14px;
+                }
+                &::before{
+                    @include node;
+                    left: -35/$px2rem;
+                }
+                &::after{
+                    @include node;
+                    right: -35/$px2rem;
+                }
+            }
+            .text{
+                line-height: 1.5em;
+                text-align: center;
+                font-weight: bold;
+                font-size: 14px;
+            }
+            .app-link{
+                display: block;
+                width: 263/$px2rem;
+                height: 78/$px2rem;
+                margin: 80/$px2rem auto 0;
+                background: url('../img/appLink.jpg') no-repeat;
+                background-size: cover;
+            }
+        }
+    }   
+}
+
+.c-loading,.c-modal{
+    display: none;
+}

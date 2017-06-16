@@ -1,0 +1,214 @@
+@charset "UTF-8";
+/* 防止用户自定义背景颜色对网页的影响，添加让用户可以自定义字体 */
+html, body {
+  -webkit-overflow-scrolling: touch;
+  -webkit-text-size-adjust: 100%;
+  user-select: none;
+  -webkit-user-select: none;
+  /* 禁止选中文本（如无文本选中需求，此为必选项） */
+  -webkit-touch-callout: none;
+  -webkit-font-smoothing: antialiased;
+  overflow-y: auto;
+  min-width: 320px;
+  max-width: 640px;
+  margin: 0 auto; }
+
+/* 如果你的项目仅支持 IE9+ | Chrome | Firefox 等，推荐在 <html> 中添加 .borderbox 这个 class */
+html.borderbox *, html.borderbox *:before, html.borderbox *:after {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box; }
+
+/* 要注意表单元素并不继承父级 font 的问题 */
+body, button, input, select, textarea {
+  font-family: PingFang SC, "Helvetica Neue", Helvetica, STHeiTi, sans-serif !important; }
+
+/* 内外边距通常让各个浏览器样式的表现位置不同 */
+body, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, pre, code, form, fieldset, legend, input, textarea, p, blockquote, th, td, hr, button, article, aside, details, figcaption, figure, footer, header, menu, nav, section, span {
+  margin: 0;
+  padding: 0;
+  outline: 0;
+  -webkit-tap-highlight-color: transparent;
+  font-size: 12px; }
+
+/* 重设 HTML5 标签, IE 需要在 js 中 createElement(TAG) */
+article, aside, details, figcaption, figure, footer, header, menu, nav, section {
+  display: block; }
+
+/* HTML5 媒体文件跟 img 保持一致 */
+audio, canvas, video {
+  display: inline-block; }
+
+/* 要注意表单元素并不继承父级 font 的问题 */
+body, button, input, select, textarea {
+  font-family: PingFang SC, "Helvetica Neue", Helvetica, STHeiTi, sans-serif;
+  color: #222;
+  font-weight: 400;
+  line-height: 1; }
+
+button::-moz-focus-inner,
+input::-moz-focus-inner {
+  padding: 0;
+  border: 0; }
+
+/* 去掉各Table cell 的边距并让其边重合 */
+table {
+  border-collapse: collapse;
+  border-spacing: 0; }
+
+/* 去除默认边框 */
+fieldset, img {
+  border: 0; }
+
+img {
+  max-width: 100%;
+  border: none;
+  -webkit-touch-callout: none; }
+
+/* 一致的 del 样式 */
+del {
+  text-decoration: line-through; }
+
+/* 去掉列表前的标识, li 会继承，大部分网站通常用列表来很多内容，所以应该当去 */
+ul, ol {
+  list-style: none; }
+
+/* 统一上标和下标 */
+sub, sup {
+  font-size: 75%;
+  line-height: 0;
+  position: relative; }
+
+:root sub, :root sup {
+  vertical-align: baseline;
+  /* for ie9 and other modern browsers */ }
+
+sup {
+  top: -0.5em; }
+
+sub {
+  bottom: -0.25em; }
+
+/* 默认不显示下划线，保持页面简洁 */
+ins, a {
+  text-decoration: none; }
+
+.clearfix:before, .clearfix:after {
+  content: "";
+  display: table; }
+
+.clearfix:after {
+  clear: both; }
+
+.clearfix {
+  zoom: 1; }
+
+.hide {
+  display: none; }
+
+.f-l {
+  float: left; }
+
+.f-r {
+  float: right; }
+
+/* 强制文本换行 */
+.textwrap, .textwrap td, .textwrap th {
+  word-wrap: break-word;
+  word-break: break-all; }
+
+.textnowrap {
+  white-space: nowrap; }
+
+.ellipsis {
+  overflow: hidden;
+  text-overflow: ellipsis; }
+
+.textwrap-table {
+  table-layout: fixed; }
+
+/* px to rem */
+/* font size  */
+html, body {
+  height: 100%; }
+
+.Top {
+  position: relative;
+  width: 100%; }
+  .Top .title {
+    padding: 2rem 0 1.6rem;
+    text-align: center; }
+    .Top .title h2 {
+      color: #333;
+      font-size: 0.73333rem;
+      font-weight: normal;
+      letter-spacing: 3px; }
+  .Top .inviteLink a {
+    display: block;
+    margin: 0 auto;
+    width: 5.33333rem;
+    height: 1.46667rem;
+    line-height: 1.46667rem;
+    text-align: center;
+    background-color: #d82626;
+    border-radius: 4px;
+    color: #fff;
+    letter-spacing: 1px;
+    font-size: 16px; 
+    text-decoration: none;
+    }
+    [data-dpr="2"] .Top .inviteLink a {
+      font-size: 32px; }
+    [data-dpr="3"] .Top .inviteLink a {
+      font-size: 48px; }
+  .Top .bottomImg {
+  	margin-top: 1.55rem;
+    width: 100%;
+    height: 6.66667rem;
+    background: url(../img/inviteBgV1.jpg) no-repeat;
+    background-size: cover; }
+
+.Bottom {
+  margin-top: 0.4rem;
+  padding: 0.66667rem 0.4rem;
+  font-size: 0.33333rem; }
+  .Bottom h5 {
+    color: #333;
+    font-size: 14px;
+    font-weight: normal; }
+    [data-dpr="2"] .Bottom h5 {
+      font-size: 28px; }
+    [data-dpr="3"] .Bottom h5 {
+      font-size: 42px; }
+  .Bottom .inviteList {
+    margin: 0.26667rem 0;
+    list-style-type: none; }
+    .Bottom .inviteList li {
+      height: 1.70667rem;
+      line-height: 1.70667rem;
+      border-bottom: 1px solid #ccc; }
+      .Bottom .inviteList li .userIcon {
+        display: inline-block;
+        width: 1.06667rem;
+        height: 1.06667rem;
+        vertical-align: middle;
+        border-radius: 50%;
+        overflow: hidden; }
+        .Bottom .inviteList li .userIcon img {
+          width: 1.06667rem; }
+      .Bottom .inviteList li .userName {
+        margin-left: 0.53333rem; }
+      .Bottom .inviteList li .info {
+        float: right; }
+        .Bottom .inviteList li .info em {
+          margin-right: 4px;
+          font-style: normal;
+          color: #f03635; }
+  .Bottom .rule {
+    margin-top: 0.4rem;
+    text-align: center; }
+    .Bottom .rule a {
+      color: #ccc;
+      text-decoration: underline; }
+
+/*# sourceMappingURL=invite.css.map */

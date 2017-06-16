@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1">
+    <meta name="format-detection" content="telephone=no, email=no"/>
+    <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
+    <title>一位在垃圾堆上长大的少年，和一个贵族少女展开了奇妙之旅</title>
+    <script src="../zepto.min.js" type="text/javascript" charset="utf-8"></script>
+	<script type="text/javascript">
+		;(function(win,lib){var doc=win.document;var docEl=doc.documentElement;var metaEl=doc.querySelector('meta[name="viewport"]');var flexibleEl=doc.querySelector('meta[name="flexible"]');var dpr=0;var scale=0;var tid;var flexible=lib.flexible||(lib.flexible={});if(metaEl){console.warn("将根据已有的meta标签来设置缩放比例");var match=metaEl.getAttribute("content").match(/initial\-scale=([\d\.]+)/);if(match){scale=parseFloat(match[1]);dpr=parseInt(1/scale)}}else{if(flexibleEl){var content=flexibleEl.getAttribute("content");if(content){var initialDpr=content.match(/initial\-dpr=([\d\.]+)/);var maximumDpr=content.match(/maximum\-dpr=([\d\.]+)/);if(initialDpr){dpr=parseFloat(initialDpr[1]);scale=parseFloat((1/dpr).toFixed(2))}if(maximumDpr){dpr=parseFloat(maximumDpr[1]);scale=parseFloat((1/dpr).toFixed(2))}}}}if(!dpr&&!scale){var isAndroid=win.navigator.appVersion.match(/android/gi);var isIPhone=win.navigator.appVersion.match(/iphone/gi);var devicePixelRatio=win.devicePixelRatio;if(isIPhone){if(devicePixelRatio>=3&&(!dpr||dpr>=3)){dpr=3}else{if(devicePixelRatio>=2&&(!dpr||dpr>=2)){dpr=2}else{dpr=1}}}else{dpr=1}scale=1/dpr}docEl.setAttribute("data-dpr",dpr);if(!metaEl){metaEl=doc.createElement("meta");metaEl.setAttribute("name","viewport");metaEl.setAttribute("content","initial-scale="+scale+", maximum-scale="+scale+", minimum-scale="+scale+", user-scalable=no");if(docEl.firstElementChild){docEl.firstElementChild.appendChild(metaEl)}else{var wrap=doc.createElement("div");wrap.appendChild(metaEl);doc.write(wrap.innerHTML)}}function refreshRem(){var width=docEl.getBoundingClientRect().width;if(width/dpr>540){width=540*dpr}var rem=width/10;docEl.style.fontSize=rem+"px";flexible.rem=win.rem=rem}win.addEventListener("resize",function(){clearTimeout(tid);tid=setTimeout(refreshRem,300)},false);win.addEventListener("pageshow",function(e){if(e.persisted){clearTimeout(tid);tid=setTimeout(refreshRem,300)}},false);if(doc.readyState==="complete"){doc.body.style.fontSize=12*dpr+"px"}else{doc.addEventListener("DOMContentLoaded",function(e){doc.body.style.fontSize=12*dpr+"px"},false)}refreshRem();flexible.dpr=win.dpr=dpr;flexible.refreshRem=refreshRem;flexible.rem2px=function(d){var val=parseFloat(d)*this.rem;if(typeof d==="string"&&d.match(/rem$/)){val+="px"}return val};flexible.px2rem=function(d){var val=parseFloat(d)/this.rem;if(typeof d==="string"&&d.match(/px$/)){val+="rem"}return val}})(window,window["lib"]||(window["lib"]={}));
+	</script>
+    <style>
+    	@charset "UTF-8";
+/* 防止用户自定义背景颜色对网页的影响，添加让用户可以自定义字体 */
+html, body { -webkit-overflow-scrolling: touch; -webkit-text-size-adjust: 100%; user-select: none; -webkit-user-select: none; /* 禁止选中文本（如无文本选中需求，此为必选项） */ -webkit-touch-callout: none; -webkit-font-smoothing: antialiased; overflow-y: auto; min-width: 320px; max-width: 640px; margin: 0 auto; }
+
+/* 如果你的项目仅支持 IE9+ | Chrome | Firefox 等，推荐在 <html> 中添加 .borderbox 这个 class */
+html.borderbox *, html.borderbox *:before, html.borderbox *:after { -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box; }
+
+/* 要注意表单元素并不继承父级 font 的问题 */
+body, button, input, select, textarea { font-family: PingFang SC, "Helvetica Neue", Helvetica, STHeiTi, sans-serif !important; }
+
+/* 内外边距通常让各个浏览器样式的表现位置不同 */
+body, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, pre, code, form, fieldset, legend, input, textarea, p, blockquote, th, td, hr, button, article, aside, details, figcaption, figure, footer, header, menu, nav, section, span { margin: 0; padding: 0; outline: 0; -webkit-tap-highlight-color: transparent; font-size: 12px; }
+
+/* 重设 HTML5 标签, IE 需要在 js 中 createElement(TAG) */
+article, aside, details, figcaption, figure, footer, header, menu, nav, section { display: block; }
+
+/* HTML5 媒体文件跟 img 保持一致 */
+audio, canvas, video { display: inline-block; }
+
+/* 要注意表单元素并不继承父级 font 的问题 */
+body, button, input, select, textarea { font-family: PingFang SC, "Helvetica Neue", Helvetica, STHeiTi, sans-serif; color: #222; font-weight: 400; line-height: 1; }
+
+button::-moz-focus-inner, input::-moz-focus-inner { padding: 0; border: 0; }
+
+/* 去掉各Table cell 的边距并让其边重合 */
+table { border-collapse: collapse; border-spacing: 0; }
+
+/* 去除默认边框 */
+fieldset, img { border: 0; }
+
+img { max-width: 100%; border: none; -webkit-touch-callout: none; }
+
+/* 一致的 del 样式 */
+del { text-decoration: line-through; }
+
+/* 去掉列表前的标识, li 会继承，大部分网站通常用列表来很多内容，所以应该当去 */
+ul, ol { list-style: none; }
+
+/* 统一上标和下标 */
+sub, sup { font-size: 75%; line-height: 0; position: relative; }
+
+:root sub, :root sup { vertical-align: baseline; /* for ie9 and other modern browsers */ }
+
+sup { top: -0.5em; }
+
+sub { bottom: -0.25em; }
+
+/* 默认不显示下划线，保持页面简洁 */
+ins, a { text-decoration: none; }
+
+.clearfix:before, .clearfix:after { content: ""; display: table; }
+
+.clearfix:after { clear: both; }
+
+.clearfix { zoom: 1; }
+
+.hide { display: none; }
+
+.f-l { float: left; }
+
+.f-r { float: right; }
+
+/* 强制文本换行 */
+.textwrap, .textwrap td, .textwrap th { word-wrap: break-word; word-break: break-all; }
+
+.textnowrap { white-space: nowrap; }
+
+.ellipsis { overflow: hidden; text-overflow: ellipsis; }
+
+.textwrap-table { table-layout: fixed; }
+
+/* px to rem */
+/* font size  */
+.container { width: 100%; padding: 0.4rem; margin-bottom: 1.53333rem; font-size: 0.49333rem; }
+.container .main h2 { padding: 0.53333rem 0; font-size: 20px; }
+[data-dpr="2"] .container .main h2 { font-size: 40px; }
+[data-dpr="3"] .container .main h2 { font-size: 60px; }
+.container .main .from { padding-bottom: 0.26667rem; color: #999; font-size: 0.26667rem; border-bottom: 1px solid #e9e9e9; }
+.container .main .from .date { margin-left: 0.33333rem; }
+.container .main .banner { margin: 0.66667rem 0; }
+.container .main .banner img { width: 100%; }
+.container .main .context { color: #353535; }
+.container .main .context p { font-size: 16px; line-height: 1.5em; }
+[data-dpr="2"] .container .main .context p { font-size: 32px; }
+[data-dpr="3"] .container .main .context p { font-size: 48px; }
+.container .main .context p.paragraph { margin-top: 0.66667rem; }
+.container .main .surplus { margin-top: 0.53333rem; text-align: center; }
+.container .main .surplus a { color: #b93521; font-size: 0.4rem; text-decoration: none; }
+.container .rec { margin-top: 0.66667rem; }
+.container .rec .title { overflow: hidden; margin-bottom: -1px; }
+.container .rec .title h3 { float: left; height: 1.06667rem; line-height: 1.06667rem; border-bottom: 1px solid #b93521; color: #999; font-size: 0.46667rem; font-weight: normal; }
+.container .rec .recList { list-style-type: none; }
+.container .rec .recList li a { display: block; height: 2.66667rem; padding: 0.26667rem 0; border-top: 1px solid #e9e9e9; }
+.container .rec .recList li a .left { float: left; position: relative; width: 4.8rem; height: 100%; }
+.container .rec .recList li a .left h4 { display: -webkit-box; line-height: 1.2em; color: #353535; font-size: 0.46667rem; font-weight: normal; overflow: hidden; -webkit-box-orient: vertical; -webkit-line-clamp: 2; }
+.container .rec .recList li a .left span { position: absolute; bottom: 0; text-decoration: underline; color: #b93521; font-size: 0.26667rem; }
+.container .rec .recList li a .right { float: right; width: 3.06667rem; }
+.container .rec .recList li a .right img { width: 100%; }
+
+.footerWrap { position: fixed; left: 0; bottom: 0; width: 100%; padding: 0.26667rem; background-color: #f7f7f7; border-top: 1px solid #b2b2b2; overflow: hidden; }
+.footerWrap img { float: left; width: 1rem; margin-right: 0.26667rem; }
+.footerWrap .desc { float: left; padding-top: 2px; line-height: 1.2em; vertical-align: middle; }
+.footerWrap .desc h6 { color: #B93521; font-size: 14px; font-weight: normal; }
+[data-dpr="2"] .footerWrap .desc h6 { font-size: 28px; }
+[data-dpr="3"] .footerWrap .desc h6 { font-size: 42px; }
+.footerWrap .desc p { color: #727272; font-size: 12px; }
+[data-dpr="2"] .footerWrap .desc p { font-size: 24px; }
+[data-dpr="3"] .footerWrap .desc p { font-size: 36px; }
+.footerWrap a { float: right; width: 1.86667rem; height: 0.73333rem; line-height: 0.73333rem; margin: 0.13333rem; border-radius: 4px; background-color: #b93521; color: #fff; text-align: center; text-decoration: none; font-size: 0.33333rem; }
+
+/*# sourceMappingURL=style.css.map */
+
+    </style>
+</head>
+<html class="borderbox">
+	<body>
+		<section class="container">
+			<div class="main">
+				<h2>一位在垃圾堆上长大的少年，和一个贵族少女展开了奇妙之旅</h2>
+				<p class="from"><span>来源：追书神器</span><span class="date">2017-05-05 18:00</span></p>
+				<div class="banner">
+					<img src="../img/cp3.jpg"/>
+				</div>
+				<div class="context">
+					<p>蔚蓝的天空上，悬浮着一座美丽的城市——银城。</p>
+					<p>据说那里四季如春，每天都是暖洋洋的；据说那里街道干干净净的，没有成堆发臭的垃圾；据说那里建着许多美丽的小房子，坐落于花园和湖泊之间；据说那里人与人之间都是友善的，不需要担心背后的刀子；据说那里每天都能吃饱饭……</p>
+					<p>这些传闻，一直流传于银城下的贫民窟。这是人们在闲暇的时候所津津乐道的话题。正如男人梦想着白雪公主，女人梦想着黑马王子一样，人们总是梦想着一个美丽的新世界。</p>
+					<p>不过，梦想归梦想，现实归现实。银城下的贫民窟住着数以百万计的平民。他们依靠银城丢下的垃圾生活，在那些废弃的、甚至有毒的垃圾里寻找到值钱的东西，然后回炉重铸，再将原材料送上银城换取一定的生活费。对于银城而言，他们就像处理垃圾的工厂。</p>
+					<p>此时，午后的阳光照银城上，向地面投射了一片巨大的阴影。</p>
+					<p>在那阴影之中，是堆积成山的垃圾，数量多得难以形容，就像峰峦叠叠的群山，一望无际。</p>
+					<p>一个少年站在垃圾堆上，望着银城底部，心中默念着，“139、138、137、136、135……”</p>
+					<p class="paragraph">随着时间的推移，越来越多的人汇聚在垃圾堆上。当他数到零的时候，天上的城市响起了连绵的钟声，各种垃圾就像倾泻的瀑布，在数百米的高空坠入垃圾的海洋。</p>
+					<p>没有人敢靠近垃圾瀑布，里面夹杂着各种重物，如冰箱、彩电、机器人残骸、座椅、甚至汽车……</p>
+					<p>一旦被砸中了，必定成为一堆肉泥。</p>
+					<p>除了那个少年！只见他眯起眼睛，冲进坠落的垃圾中，左闪右避，在极度危险之中寻找着值钱的东西。</p>
+					<p>“靠！又是铁渣那小子，真不要命。”</p>
+					<p>“他和他们家老头一样，都是不要命的人。”</p>
+					<p>“好东西都被他抢光了！”</p>
+					<p>那些等着捡垃圾的人守在垃圾投放区外围，远远的对少年指手画脚，议论纷纷。</p>
+					<p>过了一会，垃圾投放结束，人们一拥而上，争抢那些刚掉落的垃圾。在此之前，那个被称为铁渣的少年为了避免和哄抢的人群发生冲突，早就离开了垃圾堆。</p>
+					<p>“嘿！铁渣，又捡到什么好东西了？”少年刚从垃圾堆上跳下来，一个矮胖的中年商人就迎了上来。</p>
+					<p>铁渣微微一笑，张开手给他看。只见那手心里躺着一根晶莹剔透的玻璃管。</p>
+					<p>“好东西啊……”商人望着铁渣手中的东西，小眼睛里透出精光，反复的磋磨着双手，不由自主的感叹到。</p>
+					<p>看着商人贪婪的表情，铁渣把手一收，越过商人向镇上走去。商人连忙追上来，舔着脸说，“铁哥，开个价呗。”</p>
+					<p>“我不缺吃的，不缺喝的，不缺用的，你打算用什么来换啊？”铁渣一边走一边问，完全没有停下来商量的意思。</p>
+					<p>“铁哥，今年你多大了？”商人眼睛滴溜一转，反问他。</p>
+					<p>“和你有啥关系？”铁渣越走越快，不耐烦的回答。</p>
+					<p>“我记得今年快十八了吧？”商人笑了起来，眼睛鼻子嘴巴挤在一起，显得十分猥琐。他追着铁渣低声说，“有没有见识过女人啊？”</p>
+					<p>“没兴趣！”铁渣皱起眉头，三步并作两步的快速向前走。</p>
+					<p>“铁哥……铁哥……等等我……”铁渣走路速度极快，比一般人跑步还要快，商人追在后面，有些上气不接下气。</p>
+					<p>“你烦不烦啊？我这东西可以救命的，你没相等价值的东西，就别想了。”铁渣停下脚步，不耐烦的说到。</p>
+					<p>“她和你平时见过的女孩子不一样，完全不一样，来来来，看一眼就好了，只看一眼就好了。”商人不厌其烦的纠缠着。</p>
+					<p>两人平时有交易，也算半个朋友。铁渣推辞不过，只好答应去看一眼。</p>
+					<p class="paragraph">十多分钟后，两人沿着坑坑洼洼的碎石路走进铁山镇。街上一如既往的脏乱，沙尘和纸屑到处飞。街边摆满了各色地摊，售卖一些稀奇古怪的半废品。每一处小巷的拐角或是建筑物的角落都被流浪者占据了，摆着乱七八糟的生活用品、黑乎乎的棉被、破旧粘稠的衣物……</p>
+					<p>大街上每隔一段距离，都能看见一名身穿深蓝色帆布衣裤的人。他们是这个镇上的清洁工，不过他们不清洁垃圾，只负责搬运街上随时可能会出现的尸体。</p>
+					<p>商人在这里混得还不错，一路上不少摆地摊的人和他打招呼。他在这里开了家杂货店。所谓的杂货店，就是什么都卖，什么都收，只要有价值就行了。</p>
+					<p>这时，一位头发花白，只有一只眼睛的老人从街角冲了出来，堆满脸笑容的挡在商人身前说，“老板，我有好货，有好货。”</p>
+					<p>商人皱起眉头，向后退了一步。老人那只瞎掉的眼睛里流着脓水，花白的头发沾满了粘稠的血痂，看着十分恶心。</p>
+					<p>“去去去！你能有什么好东西，一边去，我忙着大生意呢。”</p>
+					<p>“脊椎，新鲜的脊椎，今天刚死的一个年轻人！好东西咧。”老人锲而不舍的说到。</p>
+					<p>“行行行，一会来店里找我。”商人摆摆手，示意他离开。</p>
+					<p>“老板，我几天没吃……”老人还是不愿意走，挡在那里不动。</p>
+					<p>商人不耐烦的打断他，“你这老瞎子，不要命了是不是，你看清楚我身边的人是谁！敢坏了铁哥的生意，你有几条命！”</p>
+					<p>老人用脏得发臭的衣袖擦擦眼睛，看清了商人身边的人。只见他全身颤抖起来，慌忙后退，把道路让了出来。</p>
+					<p>向前走了十多米，两人来到商人的杂货店前。这是间木头和铁皮拼凑出来的房子，墙上到处的涂鸦着一句话：</p>
+					<p>‘偷窃者死——铁山镇自治会。’</p>
+					<p>“铁哥，这边请。”商人打开门，邀请铁渣进去。</p>
+					<p class="paragraph">店里黑漆漆的，散发着一股油污的臭味。四处摆放着各种旧零件、破烂电器……</p>
+					<p>商人打开灯，昏暗的灯光照亮了房间，角落里出现一位少女。她蜷缩着身体，被链子拴在墙角，像商品一样出售着。</p>
+					<p>看见少女的时候，铁渣暗自惊叹。他从未见过这么白净的女人，白得就像书里面说的，像一位坠落凡尘的天使。</p>
+					<p>商人介绍到，这是几天前一队沙漠旅者卖给他的。据说他们在沙漠里发现她，就带了回来。昨天晚上，他找过妓院的老子给她验过身，还是完璧之身，能值不少钱。</p>
+					<p>铁渣走到少女跟前细细的观察。她身上穿着脏兮兮的白色连衣裙，沾满了油污和灰尘，连衣裙多处撕裂，露出里面白皙的皮肤。这种肤色，绝对不是生活在地面上的人所能拥有的。</p>
+					<p>“你叫什么？”铁渣压低声音，尽可能的显得友善。</p>
+					<p>少女抬起头，杂乱的银色卷发里藏着一对星辉闪烁的眼睛。她紧紧的抿着嘴唇，一言不发的注视着铁渣。</p>
+					<p>“如果能尽快送到砂城，一定能卖个好价钱。”商人在一旁说到。</p>
+					<p>“我不是商品！”少女大声喊到，随后剧烈的咳嗽起来。</p>
+					<p>铁渣取出身上的水壶，给她递了过去。少女抢过水壶，一口气‘咕咚咕咚’的喝完。</p>
+					<p>“我不是你的敌人。”铁渣平静的说，“如果你愿意跟我走，我会带你到砂城去，找个好心的有钱人收购你，应该会比这里的境遇好很多。”</p>
+					<p>“人贩子！混蛋！人渣！恶棍……”喝完水的少女精神起来，用各种恶毒的语言咒骂眼前的少年。</p>
+					<p>商人脸上一阵红一阵白的，之前这少女就让他十分头疼，甚至还咬过他一口。现在她还敢辱骂他最尊贵的客人，简直是给脸不要脸。盛怒之下，他扬起手一巴掌扇过去！</p>
+					<p>少女本能的闭上眼睛，侧过脸去，却没有等到那一巴掌。</p>
+					<p>“打坏了怎么卖钱？”耳边传来少年慵懒的声音，少女她缓缓的睁开眼睛，眼前商人的额头冒着汗珠，整张脸都扭曲了，表情显得十分痛苦。</p>
+					<p>“铁哥，我可是为你出气啊。”商人哭丧着脸说到，刚才铁渣随意的挥了挥手，挡住了他的巴掌。他只感觉到手腕撞在一块铁板上，痛的几乎要掉眼泪。</p>
+					<p>“巨桑，不好意思啊。”铁渣咧开嘴笑起来，虽然在道歉，但有几分真心就不得而知了。</p>
+					<p>商人转头看见，少女居然在窃笑，他立刻板起脸说，“这位姑娘，我可是为你好啊，这位铁哥，可是一位好人啊，他要肯收购你，是你的运气，知道吗？”</p>
+					<p>“切~人贩子还是好人？”少女不屑的撇过头。</p>
+					<p>“你在沙漠里晕倒了，要不是那一队旅人救了你，估计你已经成为一堆白骨了。”商人语重心长的说，“他们把你卖给我，换取救你的酬劳，这很公平；他们如果把你卖到妓院的老那，我相信他们会得到更多的报酬；同样道理，如果我把你卖给刀牙、鬼头那些人，我相信价格会更高；你要知道，在这种地方……”</p>
+					<p>“啰嗦！”铁渣毫无由来的低吼一声，打断了商人的话。他站直身体，从背后抽出一把直砍刀。这是一把钢条打造的单刃刀，刀背很厚，刀锋上很多翻卷，显得坑坑洼洼的。商人不知道他要干什么，连忙让开。铁渣双手一合，对着少女一刀斩下！</p>
+					<p>“啊！”眼见蛮横的少年举刀砍来，少女失声的惊叫！</p>
+					<p>伴随着‘叮’的一声，刀锋上星火四射，铁链应声而断。</p>
+					<p>“你走吧。”铁渣对少女说，“只要你走出这间店，我保证你活不过三个小时。”</p>
+					<p>说着，铁渣掏出那根晶莹剔透的玻璃管，随手丢给商人。商人手忙脚乱的接住，心里暗骂，‘疯子！砸坏了怎么办？你就不能递给我吗？全家都是疯子！’</p>
+					<p>少女先是呆滞了一会，不可思议的望着少年。接着，她慢慢的绕过少年和商人，转身夺门而出！</p>
+					<p>“她居然……真的跑了。”杂货店里的两人面面相觑。</p>
+					<p>少女跑出杂货店，迅速的左右张望。街上满是行人和地摊，她朝着人多的地方跑去，想要尽快逃离那间囚禁了她两天的黑房子。</p>
+					<p>跑出一段路，她忽然发现，她成为了大街上所有人的焦点。那些行人、小贩、流浪汉、穿着蓝色帆布衣服的人、还有各种各样的人都在注视着她。原本，在她所居住的十七号城里，她的回头率还算挺高的。所以，她并不是第一次成为众人的焦点。可是，那里的人注视着她的目光都是带着倾慕和友善的，而这里的人看她的目光就像猎人看待猎物，眼睛里闪烁着渴的光芒。</p>
+					<p>看着一张张畸形丑陋的脸，她感到十分害怕，惊慌失措的四处张望，不知道该往哪里逃。</p>
+					<p>“女人！是女人啊！”“好漂亮的女人！”“你从哪里来的，好白啊。”“她不是镇上的……”“谁是她的主人啊？”街上的人盯着少女，指指点点的议论纷纷。</p>
+					<p>这时，她忽然想起了少年的话：“只要走出这间店，你活不过三个小时。”</p>
+					<p>在她失神的片刻，周围的议论声越来越大，街上的人群开始向她挪来……</p>
+					<p>她转身就跑，想要回到那间把她当做商品出售的杂货店。比起这些令人害怕的陌生人，那位粗鲁少年简直就像暗夜里的明灯。可是，直到这时，她才发现后退的道路已经被人群堵住了！</p>
+					<p>“女人啊……”“哈哈……哈……”“哇……”“咕噜……”</p>
+					<p>那些人张大着嘴巴，流着恶心的涎水，伸长手臂向她慢慢逼近。而少女无论逃往哪个方向，都会有人挡住她的去路。</p>
+					<p>渐渐地，人群把少女包围在中间，圈子一点点的缩小……</p>
+					<p>“走开！你们走开啊！”看着越来越近的脏手，少女绝望的尖叫起来。就在这时，后方忽然响起一声大吼，“滚开！听见没有！滚开！”紧接着，人群里传出痛苦的哀嚎声。</p>
+					<p>“是熊哥！”“黑熊！”“快跑！”随着声音的响起，围观的人群一哄而散，争先恐后的向街道两旁退去。</p>
+					<p>危机刚刚解除，少女还来不及松口气，转眼就看见五个面露凶恶的男人向她走来。她像只受惊的小鹿，慌忙跑进一条没人的小巷。</p>
+					<p>她根本不知道这条巷子通往哪里。这里到处脏兮兮的，石块与水泥构成的地面坑坑洼洼。原本就窄小的道路还乱糟糟的摆放着各种废品，有些地方只能勉强的挤过去。而头顶是交错的电线和铁丝，还挂着破旧褪色的衣物，遮挡了很多阳光。这条巷子蜿蜒曲折，两面的房屋都是锈迹斑斑的铁皮和木块拼凑而成，那墙壁上黑暗的缝隙，总让人担心是否会突然伸出一只恐怖的脏手。</p>
+					<p>她心中满是绝望，不知道该逃往何处，也不知道什么人能救她，更不知道前方有什么样可怖的命运在等待着她。从未离开过家门的少女，就像温室中的花朵，在这片罪恶的海洋里上天无路、下地无门。</p>
+					<p>这时，背后忽然响起尖锐的笑声，她惊慌失措的向后望去！卡那深邃的小巷里却空无一物……</p>
+					<p>与此同时，前方拐角处突然闪过一道身影。少女刚回过头，就已闪避不及的迎面撞了上去。</p>
+					<p>“啊！好痛！”她摔倒在地上，脑袋有些晕忽忽的。</p>
+					<p>“小妹妹，去哪呢？”</p>
+					<p>头顶传来粗犷的声音，语调里带着一丝戏谑。少女惊惧的抬起头，只见一个粗壮的男人挡在她身前。这男人有两米多高，正三角形的大脸上胡子拉渣，肌肉扎实的手臂上青筋乍现，半裸露的胸膛上纹着张开大嘴露出尖牙的熊头，那结实的双腿就像树桩一样。</p>
+					<p>“对不起，对不起……”少女连声道歉。</p>
+					<p>“哈哈……哈……”男人咧开大嘴，露出了满口参差不齐的黄牙，紧跟着笑了起来。</p>
+					<p>少女爬起来向后跑，可她还没跑出两步，就被前方巷子里突然出现的四条人影挡住了去路。</p>
+					<p>“小妹妹，别跑啊，哥哥带你去玩。”四个黑乎乎的、头发蓬乱的男人慢慢向她逼近。</p>
+					<p>“别……别过来。”少女被前后拥堵，只能拼命的往墙边靠，似乎想把身体挤进墙壁里。</p>
+					<p>几个男人见状笑得更欢了。他们没有急着扑上去，准备慢慢的享受猎物最后的挣扎。</p>
+					<p>就在少女濒临崩溃的时候，屋顶上传来一个年轻的声音。</p>
+					<p>“黑熊，这是我的货物。”</p>
+					<p>平静的叙述，就像天籁之音般，瞬间安抚了少女惊恐的心灵，让她迅速冷静下来。</p>
+					<p>“铁……铁渣！”五人中一个较为矮小的男人结巴的叫到。</p>
+					<p>那个被称为黑熊的高大男子皱起眉头望向上方，只见铁渣抱着胸站在屋顶，一脸的淡然模样。他粗声粗气的喊道：“铁渣，你未免太霸道了吧，你说是你的，就是你的了？”</p>
+					<p>铁渣没有回答，只是看着巷子下面。</p>
+					<p>“按照铁山镇的规矩，先到先得！”另外一个男子附和到。</p>
+					<p>铁渣微微一笑，抱着胸在屋顶上踱步而行。过了一会，他自言自语的说，“嗯，你们说的有点道理。”</p>
+					<p>黑熊面露笑容，发出“嘿嘿嘿”的笑声，“铁渣，我们吃完就留……”他话音未落，铁渣忽然从屋顶上跳下来，双手握刀直直劈向他脑袋！面对突如其来的袭击，黑熊只来得及双手交叉的挡在头上。</p>
+					<p>借助坠落的力量，铁渣一刀斩下！</p>
+					<p>只听见‘锵’的一声，黑熊撕心裂肺的哀嚎起来。他两只手腕被齐齐砍断，鲜血喷涌而出。</p>
+					<p>铁渣一落地就向后小跳一步，在黑熊还没反应过来之前，双手持刀猛刺回来！‘噗嗤’的一声，尖刀穿胸而出。</p>
+					<p>黑熊本能的抡起手臂砸向身后的铁渣。只见铁渣一脚蹬在黑熊背部，借力抽出直砍刀，顺势避开了黑熊的砸击。</p>
+					<p>眼见一击不中，黑熊疯狂的嚎叫着，不顾一切的撞了过去！</p>
+					<p>面对如山一般的黑熊，铁渣竟然毫不躲闪，而是直接撞了回去！</p>
+					<p>“嘭”的一声闷响，两人猛在一起！身材相对矮小的铁渣竟然硬生生的撞开了高大的黑熊！随即一刀刺进咽喉，用力一扭，绞断了黑熊的脖子。无头的尸体喷出几米高的血线，慢慢的瘫软在地。</p>
+					<p>铁渣被喷得满身是血，猛然一脚踏在黑熊的脑袋上，直接碾碎了他的头骨。在这个世界上，只有大脑死了，才是真正的死亡。</p>
+					<p>“你……你别过来，你敢过来我们就杀了她！”趁着铁渣杀黑熊的时候，四个男人抓住了少女，用出匕首抵着她脖子。</p>
+					<p>铁渣咧嘴一笑，眯眼望着四人，问道，“我是谁？”</p>
+					<p>“你……你是铁渣。”其中一个人颤声回答。他们亲眼看见铁渣杀人的雷霆手段，吓得胆都要破了。</p>
+					<p>“哦……”铁渣略有所思的说，“你们知道我是谁，却还要抢我的货物，看来还是不认识啊。”</p>
+					<p>“你……你……你放我们走，货物就还给你。”</p>
+					<p>“可以。”</p>
+					<p>他们正想答应，却听见铁渣淡然的声音再次响起，“你们其中两人能活，看着办吧。”</p>
+					<p>四人面面相觑，都有些不知所措。这时，那个用匕首抵住少女脖子的人忽然推开少女，一匕首扎进身边伙伴的胸膛！紧接着，另一名男人拔出匕首，大吼一声的刺向身边的人。他们扭打在一起，近距离的用匕首互相捅！</p>
+					<p>一时之间，血花四溅！哀嚎声、怒吼声连绵不绝的回荡在小巷里……</p>
+					<p>少女跌坐在地上，捂着眼睛不敢看。她第一次发现，原来人和人之间可以这么残忍。</p>
+					<p>四个男人，最后只有一个能勉强站起来，在铁渣的示意下，他捂着伤口跌跌撞撞的离开了。</p>
+					<p>待到男人消失在视线里，铁渣扭扭脖子，自顾自的走了。少女连忙追上去，紧紧的抓着他的衣角。可能是少女贴得太紧了，铁渣感到浑身都不自在，用力的扯开衣角，淡淡的说，“你只要跟在我身后，没人会对你有兴趣。”</p>
+					<p>少女只好跟在他身后，保持着半米的距离。</p>
+					<p>过了一会，两人走出小巷，行走在大街上。这时，少女发现街上的人连看她一眼的兴趣都没了。想起刚才，眼前的少年用极为凶狠的方式，干脆利落的杀掉了两米高的壮汉。想到这里，她有些不寒而栗，但又有些好奇。看着少年孤单的背影，她忽然产生了一丝错觉，觉得这名少年将会在她的生命中扮演非常重要的角色。在那冥冥之中，似乎有一条无形丝线正在拉近他们，指引着她向他靠拢。这是一种非常奇妙的感觉，无法用语言去形容，就像一丝残留舌间的甜味，或是一丝若有若无的香气，淡淡的，却又沁人心肺。</p>
+					<p>最后，她终于忍不住问他，“为什么他们都这么怕你？”</p>
+					<p>铁渣冷冷的望着前方，并没有回答少女的问题。</p>
+					<p>结果，这样态度反而激起了少女更加旺盛的好奇心。这一瞬间，她似乎忘记了少年的可怕，不厌其烦的提出各种问题，“你多大了？”“你是什么人？”“你爸爸妈妈呢？”</p>
+					<p>“再说一句话，我现在就把你卖掉。”铁渣被她烦透了，沉声威胁到。</p>
+					<p>“这里卖不了好价钱。”少女没心没肺的提醒他。</p>
+					<p>铁渣显得有些无奈，只好向她解释，“镇上随时都有危险，不要说话让我分心，有什么问题，回去再说。”</p>
+					<p>不知为何，少年无奈的表情在少女眼中变得亲切起来。她大胆的上前抱住他的手臂，笑嘻嘻的说，“好啊。”</p>
+					<p>闻着少女身上淡淡的香味，手臂上又传来令人心悸的弹性。他感到浑身有些僵硬，奇妙的感觉涌上心头。他只好反复的告诉自己，她只是个货物，到了砂城就能卖个好价钱。她肯定是某座银城上面的人，只要找对客户就能换到一堆闪闪发光的金币……</p>
+					<p>铁山镇的严冬就要来临了，他急需一笔过冬的钱。另外，他的好朋友水仙医曾经说过，只要他能弄到‘小型核子熔炉’，就能升级他最重要的伙伴——喷气式机车“红色彗星”。</p>
+				</div>
+				<div class="surplus">
+					<a onclick="bury()" href="http://s.zhuishushenqi.com/zssq-cp3.apk">点击下载查看全文 >></a>
+				</div>
+			</div>
+			<div class="rec">
+				<div class="title">
+					<h3>精彩推荐</h3>
+				</div>
+				<ul class="recList">
+					<li>
+						<a onclick="bury()" href="http://s.zhuishushenqi.com/zssq-cp3.apk">
+							<div class="left">
+								<h4>嫌她长得丑要退婚，她定要让这只看外貌的蠢货后悔！</h4>
+								<span>阅读全文 >></span>
+							</div>
+							<div class="right">
+								<img src="../img/cp4_1.jpg"/>
+							</div>
+						</a>
+					</li>
+					<li>
+						<a onclick="bury()" href="http://s.zhuishushenqi.com/zssq-cp3.apk">
+							<div class="left">
+								<h4>活了两千年，他成为很多人的噩梦还有救星</h4>
+								<span>阅读全文 >></span>
+							</div>
+							<div class="right">
+								<img src="../img/cp5_1.jpg"/>
+							</div>
+						</a>
+					</li>
+					<li>
+						<a onclick="bury()" href="http://s.zhuishushenqi.com/zssq-cp3.apk">
+							<div class="left">
+								<h4>这个女人卑鄙贪财好色，怕她祸害别人，只有把她娶了</h4>
+								<span>阅读全文 >></span>
+							</div>
+							<div class="right">
+								<img src="../img/cp1_1.jpg"/>
+							</div>
+						</a>
+					</li>
+				</ul>
+			</div>
+		</section>
+		<div class="footerWrap">
+			<img src="../img/logo.png"/>
+			<div class="desc">
+				<h6>看小说只用追书神器</h6>
+				<p>海量精品资源，任你看</p>
+			</div>
+			<a href="http://s.zhuishushenqi.com/zssq-cp3.apk">免费下载</a>
+		</div>
+		<div style="display: none;" id="cpBury" class="bury">
+			<img src=""/>
+		</div>
+		<script type="text/javascript">
+			(function(w,$){
+				var url = "https://o.wkanx.com/athena" + w.location.search ;
+				$("#cpBury img").attr("src",(url + "&t=7"));
+				w.bury = function(){
+					$("#cpBury").append("<img src='" + url + "&t=4" + "'/>")
+				}
+			})(window,window.Zepto)
+		</script>
+	</body>
+</html>

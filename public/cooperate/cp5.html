@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1">
+    <meta name="format-detection" content="telephone=no, email=no"/>
+    <title>活了两千年，他成为很多人的噩梦还有救星</title>
+    <script src="zepto.min.js" type="text/javascript" charset="utf-8"></script>
+	<script type="text/javascript">
+		;(function(win,lib){var doc=win.document;var docEl=doc.documentElement;var metaEl=doc.querySelector('meta[name="viewport"]');var flexibleEl=doc.querySelector('meta[name="flexible"]');var dpr=0;var scale=0;var tid;var flexible=lib.flexible||(lib.flexible={});if(metaEl){console.warn("将根据已有的meta标签来设置缩放比例");var match=metaEl.getAttribute("content").match(/initial\-scale=([\d\.]+)/);if(match){scale=parseFloat(match[1]);dpr=parseInt(1/scale)}}else{if(flexibleEl){var content=flexibleEl.getAttribute("content");if(content){var initialDpr=content.match(/initial\-dpr=([\d\.]+)/);var maximumDpr=content.match(/maximum\-dpr=([\d\.]+)/);if(initialDpr){dpr=parseFloat(initialDpr[1]);scale=parseFloat((1/dpr).toFixed(2))}if(maximumDpr){dpr=parseFloat(maximumDpr[1]);scale=parseFloat((1/dpr).toFixed(2))}}}}if(!dpr&&!scale){var isAndroid=win.navigator.appVersion.match(/android/gi);var isIPhone=win.navigator.appVersion.match(/iphone/gi);var devicePixelRatio=win.devicePixelRatio;if(isIPhone){if(devicePixelRatio>=3&&(!dpr||dpr>=3)){dpr=3}else{if(devicePixelRatio>=2&&(!dpr||dpr>=2)){dpr=2}else{dpr=1}}}else{dpr=1}scale=1/dpr}docEl.setAttribute("data-dpr",dpr);if(!metaEl){metaEl=doc.createElement("meta");metaEl.setAttribute("name","viewport");metaEl.setAttribute("content","initial-scale="+scale+", maximum-scale="+scale+", minimum-scale="+scale+", user-scalable=no");if(docEl.firstElementChild){docEl.firstElementChild.appendChild(metaEl)}else{var wrap=doc.createElement("div");wrap.appendChild(metaEl);doc.write(wrap.innerHTML)}}function refreshRem(){var width=docEl.getBoundingClientRect().width;if(width/dpr>540){width=540*dpr}var rem=width/10;docEl.style.fontSize=rem+"px";flexible.rem=win.rem=rem}win.addEventListener("resize",function(){clearTimeout(tid);tid=setTimeout(refreshRem,300)},false);win.addEventListener("pageshow",function(e){if(e.persisted){clearTimeout(tid);tid=setTimeout(refreshRem,300)}},false);if(doc.readyState==="complete"){doc.body.style.fontSize=12*dpr+"px"}else{doc.addEventListener("DOMContentLoaded",function(e){doc.body.style.fontSize=12*dpr+"px"},false)}refreshRem();flexible.dpr=win.dpr=dpr;flexible.refreshRem=refreshRem;flexible.rem2px=function(d){var val=parseFloat(d)*this.rem;if(typeof d==="string"&&d.match(/rem$/)){val+="px"}return val};flexible.px2rem=function(d){var val=parseFloat(d)/this.rem;if(typeof d==="string"&&d.match(/px$/)){val+="rem"}return val}})(window,window["lib"]||(window["lib"]={}));
+	</script>
+    <style>
+    	@charset "UTF-8";
+/* 防止用户自定义背景颜色对网页的影响，添加让用户可以自定义字体 */
+html, body { -webkit-overflow-scrolling: touch; -webkit-text-size-adjust: 100%; user-select: none; -webkit-user-select: none; /* 禁止选中文本（如无文本选中需求，此为必选项） */ -webkit-touch-callout: none; -webkit-font-smoothing: antialiased; overflow-y: auto; min-width: 320px; max-width: 640px; margin: 0 auto; }
+
+/* 如果你的项目仅支持 IE9+ | Chrome | Firefox 等，推荐在 <html> 中添加 .borderbox 这个 class */
+html.borderbox *, html.borderbox *:before, html.borderbox *:after { -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box; }
+
+/* 要注意表单元素并不继承父级 font 的问题 */
+body, button, input, select, textarea { font-family: PingFang SC, "Helvetica Neue", Helvetica, STHeiTi, sans-serif !important; }
+
+/* 内外边距通常让各个浏览器样式的表现位置不同 */
+body, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, pre, code, form, fieldset, legend, input, textarea, p, blockquote, th, td, hr, button, article, aside, details, figcaption, figure, footer, header, menu, nav, section, span { margin: 0; padding: 0; outline: 0; -webkit-tap-highlight-color: transparent; font-size: 12px; }
+
+/* 重设 HTML5 标签, IE 需要在 js 中 createElement(TAG) */
+article, aside, details, figcaption, figure, footer, header, menu, nav, section { display: block; }
+
+/* HTML5 媒体文件跟 img 保持一致 */
+audio, canvas, video { display: inline-block; }
+
+/* 要注意表单元素并不继承父级 font 的问题 */
+body, button, input, select, textarea { font-family: PingFang SC, "Helvetica Neue", Helvetica, STHeiTi, sans-serif; color: #222; font-weight: 400; line-height: 1; }
+
+button::-moz-focus-inner, input::-moz-focus-inner { padding: 0; border: 0; }
+
+/* 去掉各Table cell 的边距并让其边重合 */
+table { border-collapse: collapse; border-spacing: 0; }
+
+/* 去除默认边框 */
+fieldset, img { border: 0; }
+
+img { max-width: 100%; border: none; -webkit-touch-callout: none; }
+
+/* 一致的 del 样式 */
+del { text-decoration: line-through; }
+
+/* 去掉列表前的标识, li 会继承，大部分网站通常用列表来很多内容，所以应该当去 */
+ul, ol { list-style: none; }
+
+/* 统一上标和下标 */
+sub, sup { font-size: 75%; line-height: 0; position: relative; }
+
+:root sub, :root sup { vertical-align: baseline; /* for ie9 and other modern browsers */ }
+
+sup { top: -0.5em; }
+
+sub { bottom: -0.25em; }
+
+/* 默认不显示下划线，保持页面简洁 */
+ins, a { text-decoration: none; }
+
+.clearfix:before, .clearfix:after { content: ""; display: table; }
+
+.clearfix:after { clear: both; }
+
+.clearfix { zoom: 1; }
+
+.hide { display: none; }
+
+.f-l { float: left; }
+
+.f-r { float: right; }
+
+/* 强制文本换行 */
+.textwrap, .textwrap td, .textwrap th { word-wrap: break-word; word-break: break-all; }
+
+.textnowrap { white-space: nowrap; }
+
+.ellipsis { overflow: hidden; text-overflow: ellipsis; }
+
+.textwrap-table { table-layout: fixed; }
+
+/* px to rem */
+/* font size  */
+.container { width: 100%; padding: 0.4rem; margin-bottom: 1.53333rem; font-size: 0.49333rem; }
+.container .main h2 { padding: 0.53333rem 0; font-size: 20px; }
+[data-dpr="2"] .container .main h2 { font-size: 40px; }
+[data-dpr="3"] .container .main h2 { font-size: 60px; }
+.container .main .from { padding-bottom: 0.26667rem; color: #999; font-size: 0.26667rem; border-bottom: 1px solid #e9e9e9; }
+.container .main .from .date { margin-left: 0.33333rem; }
+.container .main .banner { margin: 0.66667rem 0; }
+.container .main .banner img { width: 100%; }
+.container .main .context { color: #353535; }
+.container .main .context p { font-size: 16px; line-height: 1.5em; }
+[data-dpr="2"] .container .main .context p { font-size: 32px; }
+[data-dpr="3"] .container .main .context p { font-size: 48px; }
+.container .main .context p.paragraph { margin-top: 0.66667rem; }
+.container .main .surplus { margin-top: 0.53333rem; text-align: center; }
+.container .main .surplus a { color: #b93521; font-size: 0.4rem; text-decoration: none; }
+.container .rec { margin-top: 0.66667rem; }
+.container .rec .title { overflow: hidden; margin-bottom: -1px; }
+.container .rec .title h3 { float: left; height: 1.06667rem; line-height: 1.06667rem; border-bottom: 1px solid #b93521; color: #999; font-size: 0.46667rem; font-weight: normal; }
+.container .rec .recList { list-style-type: none; }
+.container .rec .recList li a { display: block; height: 2.66667rem; padding: 0.26667rem 0; border-top: 1px solid #e9e9e9; }
+.container .rec .recList li a .left { float: left; position: relative; width: 4.8rem; height: 100%; }
+.container .rec .recList li a .left h4 { display: -webkit-box; line-height: 1.2em; color: #353535; font-size: 0.46667rem; font-weight: normal; overflow: hidden; -webkit-box-orient: vertical; -webkit-line-clamp: 2; }
+.container .rec .recList li a .left span { position: absolute; bottom: 0; text-decoration: underline; color: #b93521; font-size: 0.26667rem; }
+.container .rec .recList li a .right { float: right; width: 3.06667rem; }
+.container .rec .recList li a .right img { width: 100%; }
+
+.footerWrap { position: fixed; left: 0; bottom: 0; width: 100%; padding: 0.26667rem; background-color: #f7f7f7; border-top: 1px solid #b2b2b2; overflow: hidden; }
+.footerWrap img { float: left; width: 1rem; margin-right: 0.26667rem; }
+.footerWrap .desc { float: left; padding-top: 2px; line-height: 1.2em; line-height: 1.2em; vertical-align: middle; }
+.footerWrap .desc h6 { color: #B93521; font-size: 14px; font-weight: normal; }
+[data-dpr="2"] .footerWrap .desc h6 { font-size: 28px; }
+[data-dpr="3"] .footerWrap .desc h6 { font-size: 42px; }
+.footerWrap .desc p { color: #727272; font-size: 12px; }
+[data-dpr="2"] .footerWrap .desc p { font-size: 24px; }
+[data-dpr="3"] .footerWrap .desc p { font-size: 36px; }
+.footerWrap a { float: right; width: 1.86667rem; height: 0.73333rem; line-height: 0.73333rem; margin: 0.13333rem; border-radius: 4px; background-color: #b93521; color: #fff; text-align: center; text-decoration: none; font-size: 0.33333rem; }
+
+/*# sourceMappingURL=style.css.map */
+
+    </style>
+</head>
+<html class="borderbox">
+	<body>
+		<section class="container">
+			<div class="main">
+				<h2>活了两千年，他成为很多人的噩梦还有救星</h2>
+				<p class="from"><span>来源：追书神器</span><span class="date">2017-04-07 13:00</span></p>
+				<div class="banner">
+					<img src="img/cp5.jpg"/>
+				</div>
+				<div class="context">
+					<p>一九八一年，江西武功山腹地。一个隐藏在血红色树林中的山洞前，一个一身白衣，看着只有二十来岁却是满头白发的男人，斜着眼睛瞟了一眼对面笑嘻嘻的胖子。用带着棱角的语气慢悠悠地说道：“能找到这里来也算你废了些功夫，不过真的很好奇你哪来的自信，我一定会跟着你去那个民调局。就凭你说你叫高亮吗？你又不是我儿子，干嘛让我替你操心。”</p>
+					<p>“一个称呼而已，只要您能跟我回去，随便叫我什么都成。哪怕是跟您的姓叫吴亮呢，只要您乐意，咱们认个干亲都没有问题”说话的时候，那个叫做高亮的胖子笑了一下，随后从口袋里面掏出来一个鼓鼓囊囊的牛皮纸袋，恭恭敬敬的递给了白发男人，看着面前的男人接过去之后，才继续说道：“这个物件您认得吧？为了找它，我那个小小的民调局这二年就没干别的……”</p>
+					<p>白发男人接触到纸袋的时候，就已经知道了里面是什么东西。沉吟了片刻之后，他从里面掏出来一个拳头大小几乎于透明的玉石人面像。</p>
+					<p>小小的玉石像雕刻的惟妙惟肖，正是这个年轻人的模样。白发人看着玉石人面像的眼神竟然有些失神，仿佛沉寂了多年的心事瞬间又涌现了出来一样。</p>
+					<p class="paragraph">白发年轻人的反应在高亮的意料之中，他也不说话，只是笑眯眯的盯着面前的男人。直到这个白发人回过神来之后，高亮笑着抓了抓头发，盯着这个人的眼睛继续说道：“吴勉先生，我听说关于这尊冰玉像，好像还有一个关于您的什么传说。比如说谁能把它交到您的手上，您就会满足他一个愿望什么的，也不知道时是不是真的……”</p>
+					<p>“不用说废话了，这个我认。”没等高亮说完，白发男人吴勉已经打断了他的话，用眼白瞟了一眼面前的胖子之后，接着说道：“如果你的愿望是想让我去那个什么民调局的话，那么这愿望你算是达成了。不过我提醒你一下，这个誓言只对你一个人管用。如果那一天你不在了，誓言会自动的解除，到时候哪怕你的民调局坍塌在我的面前，我也不会多耽误一秒钟。”</p>
+					<p>“只要您不亲自动手，我就争取多活两年。吴勉先生，您看……”见到吴勉松口之后，高亮也跟着暗暗的长出了口气。这句话刚刚说了一半的时候，那个叫做吴勉的年轻男子已经打断了他的话：“别说的那么客气，不过我是打算在这里出世的。既然你要我再入世，那么就要之前做个彻底的了断。”</p>
+					<p>说到这里的时候，吴勉顿了一下，他转回身去最后看了一眼已经记不清楚住了多久的山洞。随后很随意的冲着山洞方向挥舞了一下手臂，就在吴勉手臂落下的时候，他面前的山洞突然“轰！”的一声倒塌。</p>
+					<p>吓了一跳的高亮回过神来的时候，吴勉回过身来，看着面前这个目瞪口呆的胖子慢悠悠的说道：“从现在起，吴勉已经跟着这个山洞一起烟消云散了。既然你瞎了眼，敢带我再次入世，便犹如我新生一样。你连我这一世的名字一起取了吧。”</p>
+					<p>饶是高亮精明，也这么乖张的提议吓了一跳。当下他一边眨着眼睛，一边笑嘻嘻的试探着说道：“最近没怎么吃肉，耳朵有点上火。愣是听成让我给您起名字了，您说这多可乐……”</p>
+					<p>“你的耳朵没聋”吴勉用他那特有的，仿佛藐视世间一切万物的语调继续说道：“当然了，没有名字直接叫我‘喂’也不是不可以。”</p>
+					<p class="paragraph">确认了吴勉是让自己给他重起名字之后，高亮苦笑了一声，没过脑子就冒出来一个字：“喂……”</p>
+					<p>“你这是在叫我吗？”白头发的吴勉冷冷看了高亮一眼，说出这句话的时候，他四周血红色的树木瞬间挂了一层白霜。高亮打了个哆嗦之后，马上改口陪着笑脸说道：“喂……什么……您不用再说了，我明白了。不过连名代姓的都给您换了我可不敢，要不这样，您的贵姓宝号还留着，后面改成仁义……不太好听，那么德贵……也不是那个意思，要不叫做佩孚，这个好像有人叫过了……”</p>
+					<p>虽然说高亮的心眼不少，不过事先没有想到还要给这个白头发起名字，也没什么准备不说，而且由于时代限制，他也没怎么念过书，更谈不上想到有什么特别寓意的名字。</p>
+					<p>当下高亮只能将他那老家流行的人名说了一圈，不过这个白头发的姓和这些名字配起来都别扭，越说吴勉的脸色越难看。说到最后，高亮自己都觉得说不下去了。这时候，听到吴勉冷冰冰的说道：“能听你胡说八道到现在，我都有点佩服自己的好脾气了。不过你要是还想继续试探我底线的话，那就要小心点了，说不定下句话你就要和这一世说再见了。”</p>
+					<p>这几句话说的慢悠悠地，不过听在吴勉的耳朵里，却让这个小三百斤的胖子只冒冷汗。最后他一咬牙，看着面前的白发男人说道：“吴人敌，这个您看还合适吧？就算是外号听起来也顺溜……”</p>
+					<p>不过高亮想到的吴人敌这三个字，听在吴勉的耳朵里却是另外的一层意思：“吴仁荻……好吧，这也算是个名字了。这次算是你自己救了自己……”</p>
+					<p>说话的时候天色已经暗了下来，更了名的吴仁荻抬头看了看西方天空中的一片好像凤凰形状的火烧云，嘴里喃喃的说道：“日子过的真快，我都快忘了出世之前是什么样子了……”</p>
+					<p>秦朝始皇帝十年（公元前210年），始皇帝为求长生不老之药，授命大方师徐福率三千童男童女东渡蓬莱仙山。为求事成，徐福斋戒祈福百日。在祈福最后一日，始皇帝派遣丞相李斯代天子赶往渤海之滨徐福的驻地，赐下天子剑、玉诀和铜镜为求仙吉物。</p>
+					<p>李斯到达渤海之滨之时已经是傍晚时分，当日祈福的仪式已经结束，虽然早知道丞相代天子到来的消息，大方师徐福却没有亲自出来相迎。只是派了大弟子广仁代为迎接。这位广仁也很是奇怪，看相貌只有三十岁不到，但却偏偏是满头的白发，加上他一身宽大的服饰，更显着有些老气横秋。由广仁带路，李斯众人缓缓进了徐福的讲道场。</p>
+					<p>此时讲道场的晚课已经做完，大方师徐福居中席地而坐，手里拿着一卷竹简，借着昏暗的油灯光亮，低头看着竹简上面写着的内容，他的身后规规矩矩地站着三人，这三个人二男一女却看不出年纪，单看相貌都是在二十到四十岁左右，但是和广仁一样都是一头的白发。徐福身前两侧各有二三十名亲近弟子垂手侍立在两侧，道场中人虽然不少但是却静悄悄的，没有丝毫的声响。</p>
+					<p class="paragraph">在徐福的面前，恭恭敬敬坐着一个头戴高冠的白袍方士。李斯认得此人，这人是宫中服侍始皇帝食用丹药的方士总管，安着惯例，他这是来向大方师禀告始皇帝服食丹药进程和服药之后的身体反应。</p>
+					<p>果不其然，就见徐福合上了竹简，抬头看着方士总管说道：“陛下服食丹药之后，是否有溺血的症状？”方士总管愣了一下，随后陪着笑脸说道：“是，大方师离开咸阳的当天，始皇帝陛下就有了溺血之症，只不过赵高大人说这是丹药的药症，只是排出了虚火，不用为此惊动大方师......”</p>
+					<p>总管的话音未落，徐福的脸色就已经沉了下来。“啪”的一声，他将竹简摔在地上：“赵高......他是什么东西？一个阉人什么时候他也做了方士了？药症……他是鹿是马都分不清，知道什么是药症？”说到这里，徐福顿了一下，眼睛盯着方士总管，再说话的时候语气阴沉了几个调门：“你们以为换了我的丹方，改了陛下的药石症候录，我就什么都不知道了吗？”</p>
+					<p>徐福这几句话一出口，整个讲道场的空气顿时凝固了下来。方士总管脸色吓得雪白，匍匐在地，一边向不停地徐福磕头，一边说道：“大方师慈悲，这都是赵高大人的主意，小的官卑职小实在是不敢违背。大方师您慈悲，大方师......”</p>
+					<p>这时的李斯在门口已经看了半天，他没有让广仁进去通报，只是一脸冷笑的看着眼前这一幕。等到方士总管吓摊之后，他才冷笑了一声之后，背着手走进讲道场内，看着徐福直接说道：“大方师就是这么待客的吗？李某虽不才也是代表始皇帝陛下，用不着借着赵高给李某下马威吧？”</p>
+					<p>突然多了一个人说话，讲道场中几乎所有人都看向李斯这里。徐福微微地一笑，他的身子冲着李斯的方向微微一弓，算是行了个半礼，随后这才说道：“慢待丞相大人了，本来以礼是要出去迎接大人的，只是斋戒百日不敢私离祈福之地，还望大人见谅”说着，徐福手一摆，指着面前的蒲团说道：“大人请坐”原本在那个位置匍匐的方士总管很是识相的向后爬了几步，让出了位置。</p>
+					<p>看着李斯不太情愿的坐了下来，徐福微微一笑，从身边取过来一把陶壶，说道：“这里不比咸阳，实在没有什么东西招待大人。也就是这种掺了蜜水的甜酒还算入得了喉，大人请……”说着徐福已经将陶壶举了起来。大方师亲自斟酒今天之前闻所未闻。就算是和始皇帝同饮，也没有风闻过徐福执壶，李斯虽然贵为丞相也还是急忙将身边的酒杯拿到了陶壶的下方。</p>
+					<p>淡黄色的酒浆慢慢地倒入水杯之中，眼看着酒水越来越满，但是徐福没有一点要停手的意思，李斯抬起眼皮冷冷的看了一眼这位大方师，也不出言制止，只等着酒满出之时看徐福的笑话。</p>
+					<p>令李斯万万意想不到的是，酒斟满十分徐福还有没有停手。随着他手上的倾斜，甜酒源源不断的倾泻到李斯的酒杯之中。杯中之酒已经高出酒杯一倍有余，却没有一滴洒出来，李斯心中大骇，只是他坐上丞相之位多年，早已经对任何事情都处变不惊，心中虽然惊诧，脸上却没有丝毫的显露。</p>
+					<p>这时的徐福像是没有看到酒满一样，继续源源不断的将酒倒下去。转眼之间，酒水已高出酒杯数倍，就像是一座九层宝塔一样，颤颤巍巍地看着随时就要倾斜下来，但是李斯在惊愕之下，手也开始慢慢的发抖，却不见一滴酒水溅落出来。</p>
+					<p>直到将半壶甜酒完全倒入李斯的酒杯之中，徐福才停手，看着李斯微笑着说道：“这种甜酒要一口气喝下去才痛快，大人请用。”</p>
+					<p>惊愕之后就是暴怒，李斯也顾不得丞相的威仪，突然从蒲团上站了起来，盯着徐福说道“李斯虽然不才，但也是苟子门生，圣人门徒。大方师何必用幻术这种微末伎俩来试探李某！”说完，李斯将酒杯高高举起，猛地向着地面摔去。“啪！”的一声脆响，酒杯被摔得粉碎。</p>
+					<p>徐福李斯四目相对，两人都不说话。一时之间，讲道场众人无人敢出言相劝，气氛瞬间紧张了起来。直到半晌之后，徐福才微微一笑，看着这位大秦皇朝的丞相大人说道：“大人，你说这是幻术？”李斯冷笑了一声，说道：“不错！子不语怪力乱神，但是大方师若以幻术欺我。那么李某只能据实禀报陛下，请陛下裁决。”</p>
+					<p>李斯几句话说完之后，想不到徐福哈哈一笑，随后看着丞相大人说道：“大人若以为刚才那是幻术，那么你再看看这是什么？”最后一字出唇的时候，徐福双手一摆，一条碗口粗细火蛇从他的手中凭空窜了出来，火蛇在半空中转了一圈之后，张开獠牙直奔李斯的面门飞驰过去。</p>
+					<p>李斯惊恐之下急忙抬起双手护住头部，眼看这个丞相大人就要命丧火蛇之口的时候。徐福不声不响的换了个手势，火蛇在即将触碰到李斯面皮的瞬间，化作无数个火星四溅，随后消失的无影无踪。不过大丞相额头的毛发还是被轻微的燎过，整个讲道场都弥漫着一股焦臭的气味。</p>
+					<p>看着李斯狼狈的样子，徐福浅笑着说道：“请问丞相大人，现在你还以为是幻术吗？”李斯盯着徐福，缓了一阵之后，他才咬着牙说道：“你就算让日月颠倒，星辰无光。也不过是以幻术欺骗世人而已！只可惜李某不是愚人百姓。大方师这次找错了对象了！”</p>
+					<p>说完，李斯猛地一甩袍袖转身就要离开。但是就在他转身的瞬间，徐福已经出现在李斯的身后。李斯愣了一下，他想不通就是一瞬的功夫，徐福怎么会出现在他的身后，就在丞相大人愣神的时候，徐福的手已经抬了起来，并手如刀，在众人的目光下，对着李斯的心口插了进去。</p>
+					<p>李斯完全没有防备徐福会这样，他眼睁睁的看着徐福的右手插进了自己的胸膛里，诡异的是李斯的胸膛却没有流出一滴鲜血。李斯甚至能感觉到这只手在自己的身体里抓来抓去的，像是在找什么东西。李斯想要后退，挣脱徐福的控制，但是他的四肢僵硬无法行动，好像已经不受自己的控制。</p>
+					<p class="paragraph">片刻之后，徐福的手从李斯胸口撤了出来地时候，手心多了一个鲜血的心脏。这枚心脏在徐福的手里一跳一跳的，这时的李斯也已经感觉到自己的胸口像是少了什么东西，一阵压迫感袭来，他瞪大了眼睛盯着徐福手中的心脏，想要说什么，但是话到嘴边却只能变成“嘎嘎”的音节从嗓子里面蹦出来。</p>
+					<p>徐福的目光从手上捧着地心脏转到了李斯的脸上，格格一笑，对着李斯一字一句的说道：“大丞相，这个也是幻术吗？”最后一个字出唇的时候，徐福突然攥住了心脏。跳动的心脏被攥的静止下来。李斯感觉随着心口猛地一紧，随后整个人都缩成了一团，想伸手向抓过心脏，但是手还没有伸出来，他已经失控的倒在地上，就像抽风一样抖个不停。</p>
+					<p>徐福冷冰冰的看着李斯，再次重复了一遍刚才的话：“大丞相还认为这个也是幻术吗？”。李斯想说话却无论如何也发不了声，最后他使尽了全身的力气才能微微的摇了摇头。</p>
+					<p>徐福这才微微一笑，手上用力捏动心脏。有了外力的刺激，本来已经停止跳动的心脏再次跳了起来。徐福蹲在李斯的身前，将这颗心脏重新的送还到李斯的胸口。这一番折腾之后，李斯身上的大汗淋漓，沁湿了里外三四件衣服，看着就像被大雨浇透了一样。</p>
+					<p>妇女之友吴勉祝伟大的三八妇女节日快乐</p>
+					<p>这时的李斯再没有一点丞相的威仪，他挣扎着匍匐在地，好不容易爬起来之后，对着徐福施了大礼。这还是因为大惊之下短暂失声，才没有开口向大方师谢罪。不过徐福的脸上却显得有些落寞，微微的叹了口气之后，说了一句没头没尾的话：“陛下不可一日无丞相”说完之后，他挥手叫过自己的两个弟子：“丞相大人的身体微恙，你们俩跟随丞相大人的仪仗回咸阳，一路上要小心照料丞相大人，不可以有丝毫怠慢......”</p>
+					<p>打发走李斯之后，一直在地上跪着的方士总管跪爬几步，再次跪到徐福的面前，一脸谦卑的说道：“大方师术法通神，这样的法术当真的见所未见，闻所未闻。有大方师在此，陛下何必再求海外仙方？大方师就是当世的活神仙......”</p>
+					<p>徐福冲着方士总管摇尾乞怜的样子摇了摇头，回头扫了一眼自己的众弟子说道：“你们呢？你们怎么看？”除了他身后的三名弟子之外，两侧的众弟子几乎是异口同声的说道“大方师术法玄妙，乃惊世骇俗之神技......”</p>
+					<p>就在这一片的歌功颂德之中，突然多了一个异样的声音：“还以为是什么了不起的神技，手段再漂亮也不过还是幻术。”这人说的有些刻薄，更显得刺耳。一时之间所有人的目光都聚拢在他的身上。</p>
+					<p>说话的人徐福并不认识，他是跟随方士总管负责搬抬竹简的杂役。刚才他刚看到徐福倒出犹如九层玲珑宝塔一样的甜酒时，还略显惊讶，但是随后的火蛇凭空而出，李斯的心脏被掏出来之后，这名杂役脸上的表情也开始逐渐变得不屑起来。</p>
+					<p>“大胆！”徐福还没等说话，旁边的方士总管已经吓得脸色煞白。杂役是他的人，就算徐福气量大不跟杂役一般见识，也难免不会迁怒他这个方士总管。连丞相李斯都不放在眼里的大方师，除掉他这个小小的人物不费吹灰之力。</p>
+					<p>“闭嘴”徐福微嗔的看了方式总管一眼，随后将目光有转到了那名年轻的杂役身上，仔细的看了几眼，这名杂役的年纪不算大，也就二十多岁的样子，这个年纪在徐福的眼里也只是个小孩子而已。虽然这杂役长得眉清目秀，但正是这眉宇之间却透露出一丝刻薄的神色。</p>
+					<p>还有件事情让徐福微微的感到有些意外，这名杂役的身上竟然佩戴着显示方士身份的玉诀，只不过这块玉诀的成色太差，说是玉诀，倒不如说是石诀更恰当。</p>
+					<p>徐福看着这名杂役说道：“你也是方士？”杂役抬头看了徐福一眼，还没等他回答，那位方士总管大人又非常不合时宜的插嘴道：“他本是个宫奴，因为祖辈上是都方士出身，故而我才抬了他的奴籍，招到我那里做个试药的小小方士”</p>
+					<p>“小小方士......”徐福轻哼了一声，没理会方士总管。继续对着小方士说道：“你凭什么说刚才的是幻术？”</p>
+					<p>方士总管又一次的抢在前面向着小方士申斥道：“在大方师的面前，你也敢......”不过这次没容他继续放肆，徐福伸出手指对着方士总管虚指了一下，总管大人仰面栽倒，他挣扎着还想要爬起来，但是身上就像压住了千斤巨石一样，无论总管大人怎么挣扎，都无法移动分毫。</p>
+					<p>极度的惊恐之下，方士总管想要向徐福求饶，但是话已经到了嗓子眼，转了一圈就是不能从嘴里说出来，当下他只能不停地以头触地，希望能得到大方师的慈悲。</p>
+					<p>可惜徐福就像没有看到他一样，他继续饶有兴致的看着小方士，重复了一遍刚才的话：“说罢，你凭什么说刚才的是幻术？”</p>
+					<p>小方士看了一眼还在地上做着挣扎姿态的总管大人，他的眼神多少有些轻蔑，绝对不该是对待顶头上司应有的态度。将目光从方士总管转到大方师的身上，小方士仰着头看了一眼徐福之后，才有些心不在焉的说道：“也没什么特别的，大方师只是迷了李……大丞相和我们这些人的五感，酒还是一杯酒，也没有火蛇，挖心什么的，大方师做了做动作，大丞相被迷惑住了，负责配合而已。”</p>
+					<p>小方士的话说完之后，讲道场里一片寂静，几乎所有人的目光都聚集在徐福的脸上。有了方士总管的前车之鉴，倒是没有人再敢在大方师的面前放肆，所有人都在等着徐福的反应。</p>
+					<p>徐福似笑非笑的看了小方士一眼，不再继续刚才的话题，只是向他问道：“你叫什么名字？”</p>
+					<p>小方士顿了一下，他不明白徐福这是想干什么，犹豫了一下之后，还是说道：“勉……我叫勉”</p>
+					<p>“勉？”徐福微微的皱起了眉头，不过转瞬之间他就明白了这个单字姓名的意思，方士总管刚才介绍小方士的时候，说出了他宫奴的出身，大秦律例奴隶有名无姓。勉就是他的名字。</p>
+					<p>听到小方士勉的口音捎带吴侬软语，徐福淡淡的笑了一下，再次看着他说道：“你是吴人？”勉只是点点头，没等他说话，大方师身后的广仁已经向前一步，在徐福的耳边恭恭敬敬的说道：“大方师慎言，吴已灭国百年，现今天下一统皆为大秦子民，再不分吴人楚人。”</p>
+					<p>广仁看似是在劝告大方师徐福，但是眼睛却冷冰冰得盯着还在趴在地上的方士总管。徐福明白他的心思，始皇帝统一天下之后颁布律令，凡再有以亡国之民自居者，皆以反叛之罪论处，自称吴人就有被灭族的罪过了。</p>
+					<p>徐福冷哼了一声，他没有理会自己的大弟子，继续对着小方士勉说道：“既然你入了方士之道，就已经脱了奴籍。从来没有过有名无姓的方士，我送你一个姓，从今天起，你就叫吴勉——方士吴勉”说完之后，徐福转身看了一眼地上的方士总管，他伸出手指虚画了一个圈，方士总管身上的千斤压力顿时消失的无影无踪。</p>
+					<p>“你今晚就住在这里”徐福看着没有敢爬起来，还是匍匐在地的方士总管，说道：“明日就是我率船渡海，为始皇帝求取仙药的吉期。你带人留下来观礼，等到船入大海之时你再回始皇帝身边，照顾陛下丹药饮食。”</p>
+					<p>逃出升天的方士总管立即叩首说道：“谨遵大方师法喻，能亲眼见到大方师渡海，为陛下求取长生不老之仙药。是小的九世修来的福气，等到小的回到咸阳之时，一定向陛下……”</p>
+					<p>总管大人的话还没有说完，徐福已经不耐烦的一挥手，对着道场众人说道：“现在要开始为陛下祈福，吴勉你留下清洗祭坛……其他的人都退下。”</p>
+					<p>大方师此言一出，包括吴勉在内，道场众人都面露不解之色，徐福的弟子众多，怎么算看守祭坛的差事也轮不到一个低级小方士的身上。但是大方师发话，又不敢不从。众人只得鱼贯而行走出讲道场大殿，最后出来的是大弟子广仁和其他三个白发男女。</p>
+					<p>这四人为祈福祭祀护法，要分别镇守讲道场的四方位。眼看四人走出道场大门就要分手，回到各自的护法镇守之位时，四人当中年纪最大的一个四十多岁男子突然说道：“大方师看错人了……”</p>
+					<p>这人此言一出，其他三人同时收住身形，目光都落在这人身上。四人都没有再说话，场面一时之间静的连各自的心跳声都能听到。半晌之后，广仁看了这个人一眼，随后冷冷的说道：“广孝，不要乱说，大方师的心思不是我等之人可以妄自揣度的”</p>
+					<p>那名叫做广孝的年长男子无所谓的笑了一声，说道：“广仁师兄，我和你们不一样。大方师早就说过我是暂投方士之道。迟早要另投他教的。你们不敢说的话，就让我来说，也没什么大不了。”</p>
+					<p>广孝一边说着，一边将目光逐一在其他三人的脸上扫过。他看着这三人的表情，顿了一下之后，说道：“眼看明日就是大方师的出海吉期，请问三位师兄师姐，大方师安排你们三位当中，哪位接了大方师的道统？”</p>
+					<p>看着默不作声的三人，广孝嘿嘿一笑，继续说道：“只怕那个小方士，正在道场里面接受大方师的道统。用不了几年，只要大方师出海未归，你们就要尊他为下一任的大方师了。”</p>
+					<p>这话一出口，场面又是一阵寂静，那三名白发男女各怀心事，却不愿将心腹事表达出来。突然，另外一个二十五六岁的白发男子哈哈一笑，拍着巴掌广孝说道：“好手段，难怪大方师说，当初如果你广孝弃了方士之道，专修合纵联合之术，哪里还有苏秦、张仪的出头之日？恐怕现在大秦一统天下的局面也要改一改了。”</p>
+					<p>这时，一直没有说话的白发女人回头看着徐福和吴勉所在的方向，嘴里幽幽的说道：“这种程度的幻术只是微末小技而已，凭它来归属道统，儿戏了吧……”</p>
+					<p>广孝看了这个女人一眼，口中带着几分嬉戏的语气说道：“广悌师姐，你在那个小方士的年纪，也能看穿这种微末小技吗？”</p>
+				</div>
+				<div class="surplus">
+					<a onclick="bury()" href="http://s.zhuishushenqi.com/zssq-cp5.apk">点击下载查看全文 >></a>
+				</div>
+			</div>
+			<div class="rec">
+				<div class="title">
+					<h3>精彩推荐</h3>
+				</div>
+				<ul class="recList">
+					<li>
+						<a onclick="bury()" href="http://s.zhuishushenqi.com/zssq-cp5.apk">
+							<div class="left">
+								<h4>这个女人卑鄙贪财好色，怕她祸害别人，只有把她娶了</h4>
+								<span>阅读全文 >></span>
+							</div>
+							<div class="right">
+								<img src="img/cp1_1.jpg"/>
+							</div>
+						</a>
+					</li>
+					<li>
+						<a onclick="bury()" href="http://s.zhuishushenqi.com/zssq-cp5.apk">
+							<div class="left">
+								<h4>我是从棺材里面抱出来的，在鬼节那天</h4>
+								<span>阅读全文 >></span>
+							</div>
+							<div class="right">
+								<img src="img/cp2_1.jpg"/>
+							</div>
+						</a>
+					</li>
+					<li>
+						<a onclick="bury()" href="http://s.zhuishushenqi.com/zssq-cp5.apk">
+							<div class="left">
+								<h4>一位在垃圾堆上长大的少年，和一个贵族少女展开了奇妙之旅</h4>
+								<span>阅读全文 >></span>
+							</div>
+							<div class="right">
+								<img src="img/cp3_1.jpg"/>
+							</div>
+						</a>
+					</li>
+				</ul>
+			</div>
+		</section>
+		<div class="footerWrap">
+			<img src="img/logo.png"/>
+			<div class="desc">
+				<h6>看小说只用追书神器</h6>
+				<p>海量精品资源，任你看</p>
+			</div>
+			<a href="http://s.zhuishushenqi.com/zssq-cp5.apk">免费下载</a>
+		</div>
+		<script type="text/javascript">
+			(function(w,$){
+				var url = "https://o.wkanx.com/athena";
+				$(document).ready(function(){
+					$.ajax({
+						type:"get",
+						url:url + w.location.search + "&t=7",
+						success:function(data){
+							return;
+						}
+					});
+				});
+				w.bury = function(){
+					$.ajax({
+						type:"get",
+						url:url + w.location.search + "&t=4",
+						success:function(data){
+							return;
+						}
+					});
+				}
+			})(window,window.Zepto)
+			
+		</script>
+	</body>
+</html>

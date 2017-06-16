@@ -1,0 +1,263 @@
+@charset "UTF-8";
+/* 防止用户自定义背景颜色对网页的影响，添加让用户可以自定义字体 */
+html, body {
+  min-height: 100%;
+  margin: 0 auto;
+  background: #fbfaf8;
+  -webkit-font-smoothing: antialiased;
+  font-size: 14px; }
+
+/* 如果你的项目仅支持 IE9+ | Chrome | Firefox 等，推荐在 <html> 中添加 .borderbox 这个 class */
+/* 要注意表单元素并不继承父级 font 的问题 */
+body, button, input, select, textarea {
+  font-family: PingFangSC-Regular,HelveticaNeue-Light,'Helvetica Neue Light','Microsoft YaHei',sans-serif; }
+
+/* 内外边距通常让各个浏览器样式的表现位置不同 */
+body, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, pre, code, form, fieldset, legend, input, textarea, p, blockquote, th, td, hr, button, article, aside, details, figcaption, figure, footer, header, menu, nav, section, span {
+  margin: 0;
+  padding: 0;
+  outline: 0; }
+
+/* 重设 HTML5 标签, IE 需要在 js 中 createElement(TAG) */
+article, aside, details, figcaption, figure, footer, header, menu, nav, section {
+  display: block; }
+
+section {
+  clear: both; }
+
+/* 要注意表单元素并不继承父级 font 的问题 */
+body, button, input, select, textarea {
+  font-family: PingFangSC-Regular,HelveticaNeue-Light,'Helvetica Neue Light','Microsoft YaHei',sans-serif;
+  color: #333;
+  font-weight: 400;
+  line-height: 1; }
+
+button::-moz-focus-inner,
+input::-moz-focus-inner {
+  padding: 0;
+  border: 0; }
+
+/* 去掉各Table cell 的边距并让其边重合 */
+table {
+  border-collapse: collapse;
+  border-spacing: 0; }
+
+img {
+  max-width: 100%;
+  border: 0 none; }
+
+/* 去掉列表前的标识, li 会继承，大部分网站通常用列表来很多内容，所以应该当去 */
+ul, ol {
+  list-style: none; }
+
+a {
+  text-decoration: none;
+  color: #666;
+  cursor: pointer;
+  outline: none !important; }
+
+/* 强制文本换行 */
+.textwrap, .textwrap td, .textwrap th {
+  word-wrap: break-word;
+  word-break: break-all; }
+
+.textnowrap {
+  white-space: nowrap; }
+
+.ellipsis {
+  overflow: hidden;
+  text-overflow: ellipsis; }
+
+.textwrap-table {
+  table-layout: fixed; }
+
+.clearfix:before, .clearfix:after {
+  content: "";
+  display: table; }
+
+.clearfix:after {
+  clear: both; }
+
+.clearfix {
+  zoom: 1; }
+
+.f-l {
+  float: left !important; }
+
+.f-r {
+  float: right !important; }
+
+/* 1200px容器 */
+.container {
+  width: 1200px;
+  margin: 0 auto; }
+
+.clear {
+  clear: both; }
+
+html, body {
+  width: 100%;
+  background-color: #ffdb50; }
+
+body {
+  background: url("../img/pageBg.jpg") no-repeat; }
+
+.wrap {
+  position: relative;
+  width: 1000px;
+  height: 1135px;
+  margin: 0 auto; }
+  .wrap .container {
+    width: 1000px;
+    margin: 0 auto; }
+    .wrap .container .lead {
+      padding-top: 36px; }
+      .wrap .container .lead .logo {
+        float: left;
+        width: 266px;
+        height: 57px;
+        background: url("../img/logo.png") no-repeat;
+        background-size: cover; }
+      .wrap .container .lead .text {
+        display: inline-block;
+        width: 655px;
+        height: 57px;
+        margin-left: 10px;
+        line-height: 55px;
+        background: url("../img/leadText.png") no-repeat;
+        background-size: cover;
+        color: #FFFFFF;
+        font-size: 34px; }
+        .wrap .container .lead .text span {
+          margin-left: 1.5em; }
+    .wrap .container .content {
+      height: 646px;
+      margin-top: 40px;
+      background: url("../img/person.png") no-repeat; }
+      .wrap .container .content .right {
+        float: right;
+        margin-right: 20px; }
+        .wrap .container .content .right .cpLogo {
+          width: 180px;
+          height: 50px;
+          margin: 0 auto 10px; }
+        .wrap .container .content .right .packet {
+          position: relative;
+          width: 400px;
+          height: 545px;
+          background: url("../img/packet.png") no-repeat; }
+          .wrap .container .content .right .packet .packet-btn {
+            display: block;
+            position: absolute;
+            top: 109px;
+            left: 146px;
+            width: 110px;
+            height: 110px; }
+          .wrap .container .content .right .packet .ticket-btn {
+            display: block;
+            position: absolute;
+            bottom: 20px;
+            left: 50%;
+            margin-left: -145px;
+            width: 290px;
+            height: 60px;
+            background: url("../img/btn-rec.png") no-repeat; }
+          .wrap .container .content .right .packet .confirm {
+            position: absolute; }
+            .wrap .container .content .right .packet .confirm .codeConf {
+              display: none;
+              z-index: 2;
+              position: absolute;
+              top: -50px;
+              width: 409px;
+              height: 588px;
+              background: url("../img/codeConf.png") no-repeat; }
+              .wrap .container .content .right .packet .confirm .codeConf .close-btn {
+                position: absolute;
+                display: block;
+                top: 0;
+                right: 52px;
+                width: 60px;
+                height: 60px; }
+              .wrap .container .content .right .packet .confirm .codeConf h4 {
+                margin-top: 150px;
+                font-size: 28px;
+                text-align: center; }
+              .wrap .container .content .right .packet .confirm .codeConf .code {
+                width: 294px;
+                height: 53px;
+                margin: 30px auto 0;
+                line-height: 53px;
+                background: url("../img/codeBg.png"); }
+                .wrap .container .content .right .packet .confirm .codeConf .code input {
+                  width: 240px;
+                  margin-top: 4px;
+                  margin-left: 24px;
+                  border: none;
+                  background: #C5C5C5;
+                  font-size: 22px;
+                  font-weight: bold; }
+              .wrap .container .content .right .packet .confirm .codeConf .text {
+                line-height: 1.5em;
+                margin-top: 20px;
+                text-align: center;
+                font-weight: bold;
+                font-size: 16px; }
+              .wrap .container .content .right .packet .confirm .codeConf .qrcode {
+                width: 170px;
+                height: 170px;
+                margin: 20px auto 0; }
+                .wrap .container .content .right .packet .confirm .codeConf .qrcode img {
+                  width: 100%; }
+            .wrap .container .content .right .packet .confirm .reConf {
+              display: none;
+              z-index: 2;
+              position: absolute;
+              top: 140px;
+              left: 65px;
+              width: 270px;
+              height: 143px;
+              line-height: 180px;
+              background: url("../img/reConf.png") no-repeat;
+              text-align: center;
+              font-weight: bold;
+              font-size: 16px;
+              color: #000; }
+              .wrap .container .content .right .packet .confirm .reConf .close-btn {
+                position: absolute;
+                display: block;
+                top: 0;
+                right: 16px;
+                width: 30px;
+                height: 30px; }
+  .wrap .rule {
+    width: 880px;
+    padding: 20px 60px;
+    font-size: 18px;
+    color: #7a6e44;
+    background-color: rgba(255, 255, 255, 0.5); }
+    .wrap .rule .title {
+      width: 150px;
+      height: 44px;
+      background: url("../img/rule.png") no-repeat; }
+    .wrap .rule .context {
+      padding: 20px 0; }
+      .wrap .rule .context p {
+        position: relative;
+        padding-left: 1.5em;
+        line-height: 1.8;
+        font-weight: bold; }
+        .wrap .rule .context p em {
+          position: absolute;
+          left: 0;
+          font-weight: bold; }
+
+.mask {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.3); }

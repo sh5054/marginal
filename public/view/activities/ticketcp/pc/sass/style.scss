@@ -1,0 +1,195 @@
+@import "common/base.scss";
+html,body{
+    width: 100%;
+    background-color: #ffdb50;
+}
+body{
+    background: url('../img/pageBg.jpg') no-repeat;   
+}
+.wrap{
+    position: relative;
+    width: 1000px;
+    height: 1135px;
+    margin: 0 auto;
+    .container{       
+        width: 1000px;
+        margin: 0 auto;
+        .lead{
+            padding-top: 36px;
+            .logo{
+                float: left;
+                width: 266px;
+                height: 57px;
+                background: url('../img/logo.png') no-repeat;
+                background-size: cover;
+            }
+            .text{
+                display: inline-block;
+                width: 655px;
+                height: 57px;
+                margin-left: 10px;
+                line-height: 55px;
+                background: url('../img/leadText.png') no-repeat;
+                background-size: cover;
+                color: #FFFFFF;
+                font-size: 34px;
+                span{
+                    margin-left: 1.5em;
+                }
+            }
+        }
+        .content{
+            height: 646px;
+            margin-top: 40px;
+            background: url('../img/person.png') no-repeat;
+            .right{
+                float: right;
+                margin-right: 20px;
+                .cpLogo{
+                    width: 180px;
+                    height: 50px;
+                    margin: 0 auto 10px;
+                }
+                .packet{
+                    position: relative;
+                    width: 400px;
+                    height: 545px;
+                    background: url('../img/packet.png') no-repeat;
+                    .packet-btn{
+                        display: block;
+                        position: absolute;
+                        top: 109px;
+                        left: 146px;
+                        width: 110px;
+                        height: 110px;
+                    }
+                    .ticket-btn{
+                        display: block;
+                        position: absolute;
+                        bottom: 20px;
+                        left: 50%;
+                        margin-left: -145px;
+                        width: 290px;
+                        height: 60px;
+                        background: url('../img/btn-rec.png') no-repeat;
+                    }
+                    .confirm{
+                        position: absolute;
+                        .codeConf{
+                            display: none;
+                            z-index: 2;
+                            position: absolute;
+                            top: -50px;
+                            width: 409px;
+                            height: 588px;
+                            background: url('../img/codeConf.png') no-repeat;
+                            .close-btn{
+                                position: absolute;
+                                display: block;
+                                top: 0;
+                                right: 52px;
+                                width: 60px;
+                                height: 60px;
+                            }
+                            h4{
+                                margin-top: 150px;
+                                font-size: 28px;
+                                text-align: center;
+                            }
+                            .code{
+                                width: 294px;
+                                height: 53px;
+                                margin: 30px auto 0;
+                                line-height: 53px;
+                                background: url('../img/codeBg.png');
+                                input{
+                                    width: 240px;
+                                    margin-top: 4px;
+                                    margin-left: 24px;
+                                    border: none;
+                                    background: #C5C5C5;
+                                    font-size: 22px;
+                                    font-weight: bold;
+                                }
+                            }
+                            .text{
+                                line-height: 1.5em;
+                                margin-top: 20px;
+                                text-align: center;
+                                font-weight: bold;
+                                font-size: 16px;
+                            }
+                            .qrcode{
+                                width: 170px;
+                                height: 170px;
+                                margin: 20px auto 0;
+                                img{
+                                    width: 100%;
+                                }
+                            }
+                        }
+                        .reConf{
+                            display: none;
+                            z-index: 2;
+                            position: absolute;
+                            top: 140px;
+                            left: 65px;
+                            width: 270px;
+                            height: 143px;
+                            line-height: 180px;
+                            background: url('../img/reConf.png') no-repeat;
+                            text-align: center;
+                            font-weight: bold;
+                            font-size: 16px;
+                            color: #000;
+                            .close-btn{
+                                position: absolute;
+                                display: block;
+                                top: 0;
+                                right: 16px;
+                                width: 30px;
+                                height: 30px;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+    .rule{
+        width: 880px;
+        padding: 20px 60px;
+        font-size: 18px;
+        color: #7a6e44;
+        background-color: rgba(255,255,255,0.5);
+        .title{
+            width: 150px;
+            height: 44px;
+            background: url('../img/rule.png') no-repeat;
+        }
+        .context{
+            padding: 20px 0;
+            p{
+                position: relative;
+                padding-left: 1.5em;
+                line-height: 1.8;
+                font-weight: bold;
+                em{
+                    position: absolute;
+                    left: 0;
+                    font-weight: bold;
+                }
+            }
+        }
+    }
+}
+.mask{
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.3);
+}

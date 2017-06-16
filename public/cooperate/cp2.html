@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1">
+    <meta name="format-detection" content="telephone=no, email=no"/>
+    <title>我是从棺材里面抱出来的，在鬼节那天</title>
+    <script src="zepto.min.js" type="text/javascript" charset="utf-8"></script>
+	<script type="text/javascript">
+		;(function(win,lib){var doc=win.document;var docEl=doc.documentElement;var metaEl=doc.querySelector('meta[name="viewport"]');var flexibleEl=doc.querySelector('meta[name="flexible"]');var dpr=0;var scale=0;var tid;var flexible=lib.flexible||(lib.flexible={});if(metaEl){console.warn("将根据已有的meta标签来设置缩放比例");var match=metaEl.getAttribute("content").match(/initial\-scale=([\d\.]+)/);if(match){scale=parseFloat(match[1]);dpr=parseInt(1/scale)}}else{if(flexibleEl){var content=flexibleEl.getAttribute("content");if(content){var initialDpr=content.match(/initial\-dpr=([\d\.]+)/);var maximumDpr=content.match(/maximum\-dpr=([\d\.]+)/);if(initialDpr){dpr=parseFloat(initialDpr[1]);scale=parseFloat((1/dpr).toFixed(2))}if(maximumDpr){dpr=parseFloat(maximumDpr[1]);scale=parseFloat((1/dpr).toFixed(2))}}}}if(!dpr&&!scale){var isAndroid=win.navigator.appVersion.match(/android/gi);var isIPhone=win.navigator.appVersion.match(/iphone/gi);var devicePixelRatio=win.devicePixelRatio;if(isIPhone){if(devicePixelRatio>=3&&(!dpr||dpr>=3)){dpr=3}else{if(devicePixelRatio>=2&&(!dpr||dpr>=2)){dpr=2}else{dpr=1}}}else{dpr=1}scale=1/dpr}docEl.setAttribute("data-dpr",dpr);if(!metaEl){metaEl=doc.createElement("meta");metaEl.setAttribute("name","viewport");metaEl.setAttribute("content","initial-scale="+scale+", maximum-scale="+scale+", minimum-scale="+scale+", user-scalable=no");if(docEl.firstElementChild){docEl.firstElementChild.appendChild(metaEl)}else{var wrap=doc.createElement("div");wrap.appendChild(metaEl);doc.write(wrap.innerHTML)}}function refreshRem(){var width=docEl.getBoundingClientRect().width;if(width/dpr>540){width=540*dpr}var rem=width/10;docEl.style.fontSize=rem+"px";flexible.rem=win.rem=rem}win.addEventListener("resize",function(){clearTimeout(tid);tid=setTimeout(refreshRem,300)},false);win.addEventListener("pageshow",function(e){if(e.persisted){clearTimeout(tid);tid=setTimeout(refreshRem,300)}},false);if(doc.readyState==="complete"){doc.body.style.fontSize=12*dpr+"px"}else{doc.addEventListener("DOMContentLoaded",function(e){doc.body.style.fontSize=12*dpr+"px"},false)}refreshRem();flexible.dpr=win.dpr=dpr;flexible.refreshRem=refreshRem;flexible.rem2px=function(d){var val=parseFloat(d)*this.rem;if(typeof d==="string"&&d.match(/rem$/)){val+="px"}return val};flexible.px2rem=function(d){var val=parseFloat(d)/this.rem;if(typeof d==="string"&&d.match(/px$/)){val+="rem"}return val}})(window,window["lib"]||(window["lib"]={}));
+	</script>
+    <style>
+    	@charset "UTF-8";
+/* 防止用户自定义背景颜色对网页的影响，添加让用户可以自定义字体 */
+html, body { -webkit-overflow-scrolling: touch; -webkit-text-size-adjust: 100%; user-select: none; -webkit-user-select: none; /* 禁止选中文本（如无文本选中需求，此为必选项） */ -webkit-touch-callout: none; -webkit-font-smoothing: antialiased; overflow-y: auto; min-width: 320px; max-width: 640px; margin: 0 auto; }
+
+/* 如果你的项目仅支持 IE9+ | Chrome | Firefox 等，推荐在 <html> 中添加 .borderbox 这个 class */
+html.borderbox *, html.borderbox *:before, html.borderbox *:after { -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box; }
+
+/* 要注意表单元素并不继承父级 font 的问题 */
+body, button, input, select, textarea { font-family: PingFang SC, "Helvetica Neue", Helvetica, STHeiTi, sans-serif !important; }
+
+/* 内外边距通常让各个浏览器样式的表现位置不同 */
+body, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, pre, code, form, fieldset, legend, input, textarea, p, blockquote, th, td, hr, button, article, aside, details, figcaption, figure, footer, header, menu, nav, section, span { margin: 0; padding: 0; outline: 0; -webkit-tap-highlight-color: transparent; font-size: 12px; }
+
+/* 重设 HTML5 标签, IE 需要在 js 中 createElement(TAG) */
+article, aside, details, figcaption, figure, footer, header, menu, nav, section { display: block; }
+
+/* HTML5 媒体文件跟 img 保持一致 */
+audio, canvas, video { display: inline-block; }
+
+/* 要注意表单元素并不继承父级 font 的问题 */
+body, button, input, select, textarea { font-family: PingFang SC, "Helvetica Neue", Helvetica, STHeiTi, sans-serif; color: #222; font-weight: 400; line-height: 1; }
+
+button::-moz-focus-inner, input::-moz-focus-inner { padding: 0; border: 0; }
+
+/* 去掉各Table cell 的边距并让其边重合 */
+table { border-collapse: collapse; border-spacing: 0; }
+
+/* 去除默认边框 */
+fieldset, img { border: 0; }
+
+img { max-width: 100%; border: none; -webkit-touch-callout: none; }
+
+/* 一致的 del 样式 */
+del { text-decoration: line-through; }
+
+/* 去掉列表前的标识, li 会继承，大部分网站通常用列表来很多内容，所以应该当去 */
+ul, ol { list-style: none; }
+
+/* 统一上标和下标 */
+sub, sup { font-size: 75%; line-height: 0; position: relative; }
+
+:root sub, :root sup { vertical-align: baseline; /* for ie9 and other modern browsers */ }
+
+sup { top: -0.5em; }
+
+sub { bottom: -0.25em; }
+
+/* 默认不显示下划线，保持页面简洁 */
+ins, a { text-decoration: none; }
+
+.clearfix:before, .clearfix:after { content: ""; display: table; }
+
+.clearfix:after { clear: both; }
+
+.clearfix { zoom: 1; }
+
+.hide { display: none; }
+
+.f-l { float: left; }
+
+.f-r { float: right; }
+
+/* 强制文本换行 */
+.textwrap, .textwrap td, .textwrap th { word-wrap: break-word; word-break: break-all; }
+
+.textnowrap { white-space: nowrap; }
+
+.ellipsis { overflow: hidden; text-overflow: ellipsis; }
+
+.textwrap-table { table-layout: fixed; }
+
+/* px to rem */
+/* font size  */
+.container { width: 100%; padding: 0.4rem; margin-bottom: 1.53333rem; font-size: 0.49333rem; }
+.container .main h2 { padding: 0.53333rem 0; font-size: 20px; }
+[data-dpr="2"] .container .main h2 { font-size: 40px; }
+[data-dpr="3"] .container .main h2 { font-size: 60px; }
+.container .main .from { padding-bottom: 0.26667rem; color: #999; font-size: 0.26667rem; border-bottom: 1px solid #e9e9e9; }
+.container .main .from .date { margin-left: 0.33333rem; }
+.container .main .banner { margin: 0.66667rem 0; }
+.container .main .banner img { width: 100%; }
+.container .main .context { color: #353535; }
+.container .main .context p { font-size: 16px; line-height: 1.5em; }
+[data-dpr="2"] .container .main .context p { font-size: 32px; }
+[data-dpr="3"] .container .main .context p { font-size: 48px; }
+.container .main .context p.paragraph { margin-top: 0.66667rem; }
+.container .main .surplus { margin-top: 0.53333rem; text-align: center; }
+.container .main .surplus a { color: #b93521; font-size: 0.4rem; text-decoration: none; }
+.container .rec { margin-top: 0.66667rem; }
+.container .rec .title { overflow: hidden; margin-bottom: -1px; }
+.container .rec .title h3 { float: left; height: 1.06667rem; line-height: 1.06667rem; border-bottom: 1px solid #b93521; color: #999; font-size: 0.46667rem; font-weight: normal; }
+.container .rec .recList { list-style-type: none; }
+.container .rec .recList li a { display: block; height: 2.66667rem; padding: 0.26667rem 0; border-top: 1px solid #e9e9e9; }
+.container .rec .recList li a .left { float: left; position: relative; width: 4.8rem; height: 100%; }
+.container .rec .recList li a .left h4 { display: -webkit-box; line-height: 1.2em; color: #353535; font-size: 0.46667rem; font-weight: normal; overflow: hidden; -webkit-box-orient: vertical; -webkit-line-clamp: 2; }
+.container .rec .recList li a .left span { position: absolute; bottom: 0; text-decoration: underline; color: #b93521; font-size: 0.26667rem; }
+.container .rec .recList li a .right { float: right; width: 3.06667rem; }
+.container .rec .recList li a .right img { width: 100%; }
+
+.footerWrap { position: fixed; left: 0; bottom: 0; width: 100%; padding: 0.26667rem; background-color: #f7f7f7; border-top: 1px solid #b2b2b2; overflow: hidden; }
+.footerWrap img { float: left; width: 1rem; margin-right: 0.26667rem; }
+.footerWrap .desc { float: left; padding-top: 2px; line-height: 1.2em; vertical-align: middle; }
+.footerWrap .desc h6 { color: #B93521; font-size: 14px; font-weight: normal; }
+[data-dpr="2"] .footerWrap .desc h6 { font-size: 28px; }
+[data-dpr="3"] .footerWrap .desc h6 { font-size: 42px; }
+.footerWrap .desc p { color: #727272; font-size: 12px; }
+[data-dpr="2"] .footerWrap .desc p { font-size: 24px; }
+[data-dpr="3"] .footerWrap .desc p { font-size: 36px; }
+.footerWrap a { float: right; width: 1.86667rem; height: 0.73333rem; line-height: 0.73333rem; margin: 0.13333rem; border-radius: 4px; background-color: #b93521; color: #fff; text-align: center; text-decoration: none; font-size: 0.33333rem; }
+
+/*# sourceMappingURL=style.css.map */
+
+    </style>
+</head>
+<html class="borderbox">
+	<body>
+		<section class="container">
+			<div class="main">
+				<h2>我是从棺材里面抱出来的，在鬼节那天</h2>
+				<p class="from"><span>来源：追书神器</span><span class="date">2017-05-05 18:00</span></p>
+				<div class="banner">
+					<img src="img/cp2.jpg"/>
+				</div>
+				<div class="context">
+					<p>我叫王小七，村里人都叫我鬼娃。</p>
+					<p>王小七这个名字是我爷爷给我取得，爷爷说我的命不好，八字太弱，容易夭折。</p>
+					<p>爷爷说的我都信以为真，直到我七岁那年，我才知道爷爷说的都是骗我的。</p>
+					<p>二叔临终前告诉我，我是从棺材里面抱出来的。</p>
+					<p>我是一九九七年七月十五那天从棺材里面抱出来的，那一天是鬼节。</p>
+					<p>母亲生我的时候难产，大出血去世了，我还未落地便随着母亲埋进了棺材里。</p>
+					<p>我母亲的头七刚好是在七月十五，村里的老人都说这很不吉利，搞不好会出大问题。</p>
+					<p>我们那里的风俗是头七那天晚上亲属必须在死者的坟前点长明灯，一直要点到鸡叫，中间不能熄灭。</p>
+					<p>所谓的长明灯就是在油灯里面装松油来点，长明灯的作用就是让死者的魂魄可以看清楚回家的路，那一晚爷爷和我父亲两个人守在我母亲的坟头，我奶奶和二叔在家里烧纸桥。</p>
+					<p class="paragraph">那一晚的事情我二叔记得很清楚，那天下午太阳还没有下山，村里的人就全部关上了大门躲进了家里。</p>
+					<p>老人说鬼节之日鬼门大开，所有的鬼魂都会来到阳间,太阳下山了如果还在外面很容易被鬼上身。</p>
+					<p>老人还说难产的妇女去世怨气非常的重，九成以上的都会变成厉鬼，头七的时候一定会回来找两个替死鬼。</p>
+					<p>那一晚的天气非常的不好，天上没有一颗星星，漆黑不见五指。一片漆黑中就只有我母亲坟头两点火光在跳跃，看上去犹如鬼火一般，阴森而又恐怖。</p>
+					<p>父亲和爷爷两人蹲在母亲的坟前，两人谁都没有说话。爷爷的眉头紧皱，心中有些不安。</p>
+					<p>亥时的时候突然刮起了一阵阴风,吹的坟头的纸钱呼溜溜的打转，在黑夜里看的就像是一个个鬼魂在舞动一般。</p>
+					<p>“呀，不好，鬼门已开，邪灵将出，胎儿死在腹中小珍怨气缠身，很容易会化成恶鬼”爷爷突然叫道，吓得我父亲一大跳。</p>
+					<p>“长明灯，净鬼魂，往生恩怨化清明。尘归尘，土归土，奈何桥头没有苦，喝了孟婆见佛主”爷爷低声念道，表情非常的严肃。</p>
+					<p>我父亲有些害怕，一脸紧张的望着爷爷。爷爷年轻的时候跟了一个游方道士学了几个月，会一些基本的法术，十里八乡家里有死了人的都会请爷爷去做法事，在当地小有名气。</p>
+					<p>“还愣着做什么，你老婆马上就会化成恶鬼了，赶快把叠好的纸人拿出来烧”，爷爷大声叫道。</p>
+					<p>我父亲手忙脚乱的从箩筐里拿出用黄表纸叠好的纸人，不知道是怎么回事，点火的时候火柴一直都擦不着，我父亲急的满头大汗。</p>
+					<p>一阵阴风吹过，坟前两盏长明灯也熄灭了。</p>
+					<p>“爸”，我父亲吓得脸都白了，颤抖的望着我爷爷。</p>
+					<p>“今已知汝名，汝急速去，太上老君急急如律令”爷爷念了一句咒语，嗤的一声就将火柴擦着了，点燃了两盏长明灯。</p>
+					<p>“快，点纸人”，爷爷大急。</p>
+					<p>我父亲顾不得害怕，急忙把纸人凑到长明灯上，过了好半响，纸人在长明灯的火光中就是点不着。</p>
+					<p>爷爷眉头皱的厉害，眼睛紧盯着坟头。</p>
+					<p>“小珍啊，我知道你很不甘心，但这就是命啊，天命难为，你就不要为难你男人了”爷爷神情悲伤的说道。</p>
+					<p>过了好半响，纸人还是点不着，而且长明灯的灯芯还闪烁的厉害，似乎随时都要熄灭一般。</p>
+					<p>“小珍啊，人有人道，鬼有鬼道，你就不要怪爸爸心狠了”爷爷重重的叹了一口气，咬破食指在纸人上画了一道符。</p>
+					<p>“八方神灵来助，诸鬼避退，太上老君急急如律令，敕”爷爷一声轻喝，纸人呼的一下就烧着了。</p>
+					<p>纸人是用往生浅叠的，高一尺一，象征着今生和来世。每个纸人上面都用朱砂笔画了六道横杠，象征着六道轮回。一共有九十九个纸人，寓意着九九归一，生命又回到了起点。</p>
+					<p>纸人在火盆里飞快的烧着，烧尽了纸灰从火盆里飞了出来，一圈圈的飘在空中打转，老人们说给死人烧纸的时候纸飞起来了那是死人来拿钱了。</p>
+					<p>“呜呜呜”，突然一个女人的哭声响起，非常的悲伤。</p>
+					<p>我父亲顿时汗毛炸起，全身都起了一层鸡皮疙瘩。这个声音他太熟悉了，就是自己死去媳妇的声音。</p>
+					<p>“哎，小珍，你可还有未了的心愿”，爷爷叹了口气，他已经看到了自己儿媳妇正坐在坟头上哭，身上穿的就是下葬时穿的那件大红袍子。</p>
+					<p>“小珍”，我父亲痛哭了起来，像个小孩子一样眼泪直流。</p>
+					<p>“爸，小珍在哪里，我为什么看不到”父亲四处张望，扯着爷爷的手不停的问道。</p>
+					<p>“小珍已经死了，现在是一个鬼魂，你身上的阳火太旺盛肯定是看不到她的”，爷爷伸手在我父亲两个肩头分别拍了一巴掌，灭掉了他的两盏阳灯。</p>
+					<p>“你媳妇就在坟头坐着，你去问问她是不是还有没了的心愿”，爷爷指了指坟头，我父亲踉跄的爬了过去。</p>
+					<p class="paragraph">无论我父亲怎么问，我母亲只是在不停的哭，就是不肯说话。</p>
+					<p>时间已经到了子时，坟地里的阴风呼呼吹，更多的鬼魂从鬼门内冲了出来，森冷的寒意刺的人骨头都痛了。</p>
+					<p>我爷爷额头上的冷汗直冒，他不停的在施法护住我爸和自己不受鬼魂的侵扰，一个弄不好就会被鬼魂勾去生魂，让你成为一个活死人。在鬼节这一天，鬼魂勾走活人的生魂地府阎王是不管的。</p>
+					<p>“快点来到我身边来，我顶不住了”，爷爷脸色发白，他就只跟着那个道士学了几个月的功夫，能力非常有限。</p>
+					<p>“金刚护法，守护己身，太上老君急急如律令”，爷爷咬破了舌尖向空中喷了一口血，一道密咒快速的念了出来。</p>
+					<p>“爸，小珍是怎么了，怎么不说话”，我父亲着急的问道。</p>
+					<p>爷爷没有理我父亲，他的眉头却皱的更厉害了，因为他发现一个非常糟糕的问题。</p>
+					<p>“为什么这些鬼都钻进了小珍的坟内，这完全说不通”，我爷爷大急，眼睁睁的看着源源不断的鬼魂钻进了坟里面。</p>
+					<p class="paragraph">子时三刻的时候，所有的鬼魂都消失不见了，就连小珍也走了，只有一只猫头鹰站在一株死树上拼命的呱呱叫，恐怖的声音传的老远。</p>
+					<p>老人们说猫头鹰是一种不详的鸟，只要是它叫的地方就会死人。后来我跟着师傅学习法术才明白，猫头鹰其实不属于阳间之物，它是黑白无常留在阳间的眼，只要哪里有气死它就会不停的鸣叫通知鬼差。</p>
+					<p>我爷爷没由的一阵心慌，身子一个哆嗦全身无力的坐在了地上。</p>
+					<p>“哇哇哇哇”，突然，一阵哭声传来，那声音就是新生小孩的哭声。</p>
+					<p>“什么声音”，我父亲哆嗦着问我爷爷。</p>
+					<p>爷爷脸色大变，一双眼睛死死的盯着坟，哭声断断续续的，听的很清楚，就是从坟里发出来的。</p>
+					<p>“爸，坟里面怎么会有小孩的哭声？”我父亲吓得一屁股坐在了地上。</p>
+					<p>我爷爷艰难的吞了口唾液，指着坟说道：“赶快把坟挖开，小珍的孩子出世了”。</p>
+					<p>“小珍她不是已经死了吗，怎么可能还生的下孩子。”我父亲结结巴巴的问道。</p>
+					<p>“我叫你快点把坟扒开，哪来这么多废话”爷爷大吼，急忙用手挖坟。</p>
+					<p class="paragraph">因为是新坟，土质很松软，我父亲和爷爷两个人没多大的功夫就把我母亲的坟给扒开了，猩红的棺材露了出来。</p>
+					<p>“怎么会这样？”我父亲大吃一惊，因为棺材上面布满了密密麻麻的黑印，那些黑印就像是被烙铁烙过一般。</p>
+					<p>我们那里下葬的棺材是有讲究的，棺材上面必须刷一层红油漆，死人摆放的位置必须是头高脚底。棺材上刷红油漆是为了镇邪，不让别的恶鬼来打扰死者。头高脚底是为了让死者好翻身。</p>
+					<p>爷爷伸手摸了摸棺材盖上的黑印，手指挨上去有一股冰凉的刺痛，并且上面还散发着一丝鬼气。</p>
+					<p>小孩的哭声越来越清晰，就是在棺材盖下面。爷爷沉默一会，一挥手，开棺。</p>
+					<p>费了一点力气才将棺材钉取了出来，棺盖一打开，一股浓郁的腐尸味道就冲了出来，直接让我父亲狂吐了起来。</p>
+					<p>我爷爷也好不到哪里去，从口袋里摸出了两枚黑色的叶子，一片给了我父亲，一片他自己贴在了鼻子前。</p>
+					<p>说来也奇怪，把这个叶子放在鼻子上一贴，那种腐尸的味道顿时就没有了。</p>
+					<p>“这，这”我父亲向棺材里面望了一眼震惊的说不出话来。</p>
+					<p>按理说人在地下埋了七天就算腐烂也不会太厉害，可是棺材里的小珍却已经不成人样了，就好像是下葬了一年的尸体，然后又被野狗啃过一般，腐肉,肠子和尸水淌的满棺材都是。</p>
+					<p>小珍的肚子那里破了一个大洞，一个小孩坐在那里哇哇大哭，光溜溜的全身都是污血，一双眼睛非常诡异，只有眼黑，没有眼白。</p>
+					<p>那个小孩咧嘴冲着我父亲一笑，我父亲哇的一声吓得踉跄倒退。我爷爷就这样看着这个小孩，突然他就哭了起来。他现在才明白为什么我母亲刚才一直都在哭。</p>
+					<p>魂镇黄泉底，永世不轮回。百鬼来相助，我儿到阳间。</p>
+					<p>“百鬼送天胎，鬼命人来偿”，我爷爷叹了口气，眼睛里有喜悦，有担忧，有害怕。</p>
+					<p>从棺材里抱出来的那个小孩就是我了，爷爷脱下外套将我包了起来，从腰间解下了一个铜铃挂在了我的脖子上。</p>
+					<p>“爸，这是我的孩子吗？”父亲这时候也顾不上害怕，凑过来看着我。</p>
+					<p>“这孩子命苦啊”，爷爷重重的叹了口气，再次咬破食指沾着鲜血在我的额头上画了一道符，一会的功夫我就闭上眼睛睡着了。</p>
+					<p>“不要说话，看到了什么也不要问”爷爷将我递给了我父亲，神情严肃的叮嘱道。</p>
+					<p>只见爷爷跪在地上向四方天地磕了三个头，嘴里不知道在念叨着什么。然后从箩筐里取出八根长香点燃按照九宫八卦的方位插在了我母亲的坟头。</p>
+					<p>“八方神灵在上，我王贤德今日开坛做法，欲解救我之儿媳脱离黄泉，入六道轮回转世投胎，乞求地府阎王网开一面”，爷爷用黄表纸叠成奏折的模样，沾着血在上面写了上百个符文，然后将纸点燃双手举过头顶，神情恭谨的念道。</p>
+					<p>一句话还没念完，爷爷就大口咳血，神情萎靡了不少。</p>
+					<p>“请阎王明察，我儿媳十月怀胎不易，不想让胎儿夭折，这才破了规矩让百鬼相助，并非有意与阎王作对，请阎王开恩，看在我儿媳爱子心切的份上放她一马，让她去转世投胎”爷爷大声呼喊。</p>
+					<p>一阵阴风吹过，直接就将我爷爷手中的黄表纸给吹灭了。</p>
+					<p>“乞求阎王开恩，乞求阎王开恩”，爷爷大急，跪在地上不停的磕头，额头上都流出血来了都没有察觉。</p>
+					<p>“我愿坠十八层地狱换我儿媳轮回转世”爷爷大哭。</p>
+					<p>“你所奏之事阎王已明了，六道轮回秩序不能乱，有错就必罚。阎王念你一片诚心，赵小珍镇压黄泉五百年，五百年后再轮回转世”一个无常鬼立在坟头说道。</p>
+					<p>“谢阎王开恩，谢阎王开恩”爷爷急忙磕头拜谢，只镇压五百年已是阎王法外开恩了。</p>
+					<p>“你师承何人？可懂规矩？”无常鬼冷声问道。</p>
+					<p>“小老儿师承无名道人，我愿意承当奏请之罪”爷爷对着无常鬼磕头，一些规矩他曾经听自己师傅说过。</p>
+					<p>“这等阴事应有阳间的天师向地府递奏，你身为凡人却越俎代庖，本应罚你阳寿十载，念你一片赤诚，处罚阳寿三载，不得有误”无常鬼化为一道黑烟消失不见了。</p>
+					<p>爷爷身子踉跄，头发瞬间变得雪白，皮肤如老树皮一般干皱。</p>
+					<p>我父亲抱着我一脸惊骇的望着我爷爷不敢说话，今晚发生的事完全颠倒了他的认识。后半夜无事，爷爷就那样背靠在坟上，眼神黯淡无光，全身无力。</p>
+					<p>连续施法让爷爷损耗很大，就算无常鬼不剥夺他三年阳寿爷爷也命不久矣，如今更是雪上加霜。</p>
+					<p>第一声鸡鸣响起，爷爷才勉强睁开了双眼，转动眼珠，挣扎的站起身来。</p>
+					<p>“不要害怕，把孩子抱好，我们回家”爷爷摸了摸我的脸蛋，虚弱的开口对我父亲说道。</p>
+				</div>
+				<div class="surplus">
+					<a onclick="bury()" href="http://s.zhuishushenqi.com/zssq-cp2.apk">点击下载查看全文 >></a>
+				</div>
+			</div>
+			<div class="rec">
+				<div class="title">
+					<h3>精彩推荐</h3>
+				</div>
+				<ul class="recList">
+					<li>
+						<a onclick="bury()" href="http://s.zhuishushenqi.com/zssq-cp2.apk">
+							<div class="left">
+								<h4>一位在垃圾堆上长大的少年，和一个贵族少女展开了奇妙之旅</h4>
+								<span>阅读全文 >></span>
+							</div>
+							<div class="right">
+								<img src="img/cp3_1.jpg"/>
+							</div>
+						</a>
+					</li>
+					<li>
+						<a onclick="bury()" href="http://s.zhuishushenqi.com/zssq-cp2.apk">
+							<div class="left">
+								<h4>嫌她长得丑要退婚，她定要让这只看外貌的蠢货后悔！</h4>
+								<span>阅读全文 >></span>
+							</div>
+							<div class="right">
+								<img src="img/cp4_1.jpg"/>
+							</div>
+						</a>
+					</li>
+					<li>
+						<a onclick="bury()" href="http://s.zhuishushenqi.com/zssq-cp2.apk">
+							<div class="left">
+								<h4>活了两千年，他成为很多人的噩梦还有救星</h4>
+								<span>阅读全文 >></span>
+							</div>
+							<div class="right">
+								<img src="img/cp5_1.jpg"/>
+							</div>
+						</a>
+					</li>
+				</ul>
+			</div>
+		</section>
+		<div class="footerWrap">
+			<img src="img/logo.png"/>
+			<div class="desc">
+				<h6>看小说只用追书神器</h6>
+				<p>海量精品资源，任你看</p>
+			</div>
+			<a href="http://s.zhuishushenqi.com/zssq-cp2.apk">免费下载</a>
+		</div>
+		<script type="text/javascript">
+			(function(w,$){
+				var url = "https://o.wkanx.com/athena";
+				$(document).ready(function(){
+					$.ajax({
+						type:"get",
+						url:url + w.location.search + "&t=7",
+						success:function(data){
+							return;
+						}
+					});
+				});
+				w.bury = function(){
+					$.ajax({
+						type:"get",
+						url:url + w.location.search + "&t=4",
+						success:function(data){
+							return;
+						}
+					});
+				}
+			})(window,window.Zepto)
+			
+		</script>
+	</body>
+</html>

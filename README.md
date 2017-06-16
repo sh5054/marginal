@@ -1,4 +1,5 @@
 # Marginal
+some activity page
 install node.js
 npm init
 npm start

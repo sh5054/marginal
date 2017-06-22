@@ -30,9 +30,13 @@ gulp.task('js-build',function(){
 		.pipe(rev.manifest())
     	.pipe(gulp.dest(dirname + '/dist/rev/js/'))
 })
-
+/*图片复制*/
+gulp.task('images', function () {
+    return gulp.src([dirname + '/img/**/'])
+        .pipe(gulp.dest(dirname + '/dist/img/'))
+})
 /*版本控制*/
-gulp.task('rev',['css-build','js-build'],function(){
+gulp.task('rev',['css-build','js-build','images'],function(){
 	return gulp.src([dirname + '/dist/rev/**/*.json', dirname + '/*.html'])
 		.pipe(revColletor({replaceReved: true}))
 		.pipe(gulp.dest(dirname + '/dist/'))

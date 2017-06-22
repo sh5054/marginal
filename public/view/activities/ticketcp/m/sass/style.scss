@@ -11,7 +11,7 @@ html.hidden{
 .container{
     position: relative;
     width: 100%;
-    background: url('../img/bg.jpg') no-repeat;
+    background: url('../img/coverbg.jpg') no-repeat;
     background-size: 100%;
     background-color: #ffd557;
     .lead{
@@ -67,9 +67,36 @@ html.hidden{
             color: #fff;
             
         }
+        .drop{
+            text-align: center;
+            margin-top: 5px;
+            span{
+                position: relative;
+                display: inline-block;
+                padding: 0 20/$px2rem;
+                line-height: 1.8;
+                border-radius: 4px;
+                background-color: rgba(0,0,0,0.2);
+                text-align: center;
+                color: #fff;
+                img{
+                    position: absolute;
+                    left: -50/$px2rem;
+                    display: inline;
+                    width: 45/$px2rem;
+                }
+            }
+        }
+    }
+    .ruleTitle{
+        width: 264/$px2rem;
+        height: 80/$px2rem;
+        margin: 10px auto 0;
+        background: url('../img/rule.png') no-repeat;
+        background-size: cover;
     }
     .rule{
-        margin-top: 100/$px2rem;
+        margin-top: 15/$px2rem;
         padding: 20/$px2rem 45/$px2rem;
         color: #7a6623;
         p{

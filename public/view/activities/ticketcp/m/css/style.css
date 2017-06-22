@@ -191,7 +191,7 @@ html.hidden {
 .container {
   position: relative;
   width: 100%;
-  background: url("../img/bg.jpg") no-repeat;
+  background: url("../img/coverbg.jpg") no-repeat;
   background-size: 100%;
   background-color: #ffd557; }
   .container .lead {
@@ -239,8 +239,31 @@ html.hidden {
       background-color: rgba(0, 0, 0, 0.2);
       text-align: center;
       color: #fff; }
+    .container .cpLogo .drop {
+      text-align: center;
+      margin-top: 5px; }
+      .container .cpLogo .drop span {
+        position: relative;
+        display: inline-block;
+        padding: 0 0.26667rem;
+        line-height: 1.8;
+        border-radius: 4px;
+        background-color: rgba(0, 0, 0, 0.2);
+        text-align: center;
+        color: #fff; }
+        .container .cpLogo .drop span img {
+          position: absolute;
+          left: -0.66667rem;
+          display: inline;
+          width: 0.6rem; }
+  .container .ruleTitle {
+    width: 3.52rem;
+    height: 1.06667rem;
+    margin: 10px auto 0;
+    background: url("../img/rule.png") no-repeat;
+    background-size: cover; }
   .container .rule {
-    margin-top: 1.33333rem;
+    margin-top: 0.2rem;
     padding: 0.26667rem 0.6rem;
     color: #7a6623; }
     .container .rule p {

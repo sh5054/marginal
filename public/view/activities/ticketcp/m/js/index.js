@@ -4,6 +4,7 @@
 	var pageData = {
 		ctrip:{
 			cp:{
+				type:1,
 				img:"img/ctrip.png",
 				context:""
 			},
@@ -14,10 +15,12 @@
 				"活动时间为6月9日-6月16日，请在活动期间完成兑换；",
 				"如有疑问，请联系「追书神器」微信客服；",
 				"本次活动的最终解释权归追书神器所有。"
-			]
+			],
+			acLink:"http://jump.zhuishushenqi.com/huodong9"
 		},
 		ddsp:{
 			cp:{
+				type:2,
 				img:"",
 				context:"咚咚食品用户专享"
 			},
@@ -28,7 +31,24 @@
 				"活动时间：即日起至2017年12月31日24点截止，请在活动期间完成兑换；",
 				"如有疑问，请联系「追书神器」微信客服：zssqxs；",
 				"本次活动的最终解释权归追书神器所有。"
-			]
+			],
+			acLink:"http://jump.zhuishushenqi.com/huodong5"
+		},
+		lztv:{
+			cp:{
+				type:3,
+				img:"img/lztv.png",
+				context:"龙珠TV用户专享"
+			},
+			rule:[
+				"本活动抢到的兑换码红包，每个追书帐号仅能够兑换一次；",
+				"登录追书神器APP—进入个人资料页面—点击兑换中心—输入兑换码—点击右边箭头，即可领取5元追书券，开始享受全站百万书籍畅读吧；",
+				"赠送的追书券有效期为10天；",
+				"活动时间为6月23日-7月23日，请在活动期间完成兑换；",
+				"如有疑问，请联系「追书神器」微信客服：zssqxs；",
+				"本次活动的最终解释权归追书神器所有。"
+			],
+			acLink:"http://jump.zhuishushenqi.com/huodong9"
 		}
 	}
 	var fw = {
@@ -62,16 +82,29 @@
 			this.paintData();
 			this.evtSet();
 		},
+		paintCp:function(cpdata){
+			switch(cpdata.cp.type)
+			{
+			case 1:
+				return 	"<img src='" + cpdata.cp.img + "'/>";
+			case 2:
+				return "<div class='text'>" + cpdata.cp.context +"</div>";
+			case 3:
+				return "<div class='drop'><span><img src='" + cpdata.cp.img + "'/>" + cpdata.cp.context + "</span></div>"
+			}
+			
+		},
 		paintData:function(){
 			var cpTag = fw.GetQueryString("tag");
 			var data = pageData[cpTag];
-			var cpInner = data.cp.img ? ("<img src='" + data.cp.img + "'/>") : ("<div class='text'>" + data.cp.context +"</div>");
+			var cpInner = this.paintCp(data);
 			var ruleInner = function(){
 				var ruleData = data.rule;
 				var html = [];
 				for(var i=0,len=ruleData.length; i<len; i++) html.push("<p><em>" + (i+1) + "、</em>" + ruleData[i] +"</p>");
 				return html.join("");
 			};
+			$(".acLink").attr("href",data.acLink);
 			$("#cpType").html(cpInner);
 			$("#rule").html(ruleInner());
 			if(page.state.lost) fw.showModal("活动地址失效了哦",true); 

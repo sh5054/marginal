@@ -9,7 +9,11 @@
     "express": "^4.15.2"
   },
   "devDependencies": {
-    "gulp-sass": "^3.1.0"
+  	"gulp": "^3.9.1",
+    "gulp-sass": "^3.1.0",
+    "gulp-uglify": "^2.1.0",
+    "gulp-rev": "^7.1.2",
+    "gulp-rev-collector": "^1.1.1"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
@@ -18,5 +22,13 @@
     "build": "gulp build"
   },
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sh5054/marginal.git"
+  },
+  "bugs": {
+    "url": "https://github.com/sh5054/marginal/issues"
+  },
+  "homepage": "https://github.com/sh5054/marginal#readme"
 }

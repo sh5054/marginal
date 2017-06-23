@@ -34,8 +34,8 @@
 	$("#shareBtn").on("click",function(){
 		_czc.push(["_trackEvent", "invite", "share", "v2", 1, "share"]);
 		HybridApi.share({
-			title:"送你200书券，我在追书神器等你！",
-			content:"送你200书券，我在追书神器等你！",
+			title:"邀请你使用追书，送你200书券！",
+			content:"邀请你使用追书，送你200书券！",
 			link: window.location.origin + "/public/invitev2/receive.html" + window.location.search,
 			icon:"http://statics.zhuishushenqi.com/invite/shareIcon.jpg"
 		});

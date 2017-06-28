@@ -112,7 +112,7 @@
 		evtSet:function(){
 			$("#receive").on("click",function(){
 				if(page.state.lost == true) return;
-				_czc.push(["_trackEvent", "书券", "领取", "M", 1, "receive"]);
+				_czc.push(["_trackEvent", "书券", "领取", "weipiao", 1, "receive"]);
 				fw.showLoading(true);
 				$.ajax({
 					type:"get",

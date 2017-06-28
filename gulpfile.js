@@ -4,7 +4,7 @@ var gulp = require('gulp');
 	rev = require('gulp-rev');
 	revColletor = require('gulp-rev-collector');
 
-var dirname = "./public/view/activities/ticketcp/h5/wepiao";
+var dirname = "./public/view/activities/ticketcp/m";
 
 gulp.task('sass',function(){
 	return gulp.src(dirname + '/sass/*.scss')

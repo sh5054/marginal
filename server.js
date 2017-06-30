@@ -47,6 +47,130 @@ app.get('/activity/code', function(req, res){
      res.send(JSON.stringify(data)); 
 }); 
 
+app.get('/books',function(req, res){
+	res.header("Access-Control-Allow-Origin", "*"); 
+	var format = req.query.date;
+	var data = {
+    "ok": true,
+    "doc": {
+        "dicountForLimitedTime": [
+            {
+                "_id": "5397018741368add18aa65b1",
+                "title": "最强武神1" + format,
+                "cover": "/agent/http://static.zongheng.com/upload/cover/2015/02/1423101036439.jpg",
+                "author": "么么",
+                "latelyFollower": 2673
+            },
+            {
+                "_id": "531eb6ee3353e1f556001073",
+                "title": "足下的恋人",
+                "cover": "/cover/59/590de3eab0f979606ac005eed152cd54.jpg",
+                "author": "易修罗",
+                "latelyFollower": 0
+            },
+            {
+                "_id": "5398da93e086ffe54e7c6e9c",
+                "title": "三国之张良后人定天下",
+                "cover": "",
+                "author": "石头人",
+                "latelyFollower": 0
+            },
+            {
+                "_id": "52843aaaacfddf943802af1d",
+                "title": "逍遥法外",
+                "cover": "/agent/http://static.zongheng.com/upload/cover/2012/01/1325402745896.jpg",
+                "author": "胡吹",
+                "latelyFollower": 0
+            },
+            {
+                "_id": "538d28e16f7b546941074174",
+                "title": "天道裁决者",
+                "cover": "/agent/http://image.cmfu.com/books/3163880/3163880.jpg",
+                "author": "言若语",
+                "latelyFollower": 0
+            }
+        ],
+        "freeForLimitedTime": [
+            {
+                "_id": "5397018741368add18aa65b1",
+                "title": "最强武神2",
+                "cover": "/agent/http://static.zongheng.com/upload/cover/2015/02/1423101036439.jpg",
+                "author": "么么",
+                "latelyFollower": 2673
+            },
+            {
+                "_id": "531eb6ee3353e1f556001073",
+                "title": "足下的恋人",
+                "cover": "/cover/59/590de3eab0f979606ac005eed152cd54.jpg",
+                "author": "易修罗",
+                "latelyFollower": 0
+            },
+            {
+                "_id": "5398da93e086ffe54e7c6e9c",
+                "title": "三国之张良后人定天下",
+                "cover": "",
+                "author": "石头人",
+                "latelyFollower": 0
+            },
+            {
+                "_id": "52843aaaacfddf943802af1d",
+                "title": "逍遥法外",
+                "cover": "/agent/http://static.zongheng.com/upload/cover/2012/01/1325402745896.jpg",
+                "author": "胡吹",
+                "latelyFollower": 0
+            },
+            {
+                "_id": "538d28e16f7b546941074174",
+                "title": "天道裁决者",
+                "cover": "/agent/http://image.cmfu.com/books/3163880/3163880.jpg",
+                "author": "言若语",
+                "latelyFollower": 0
+            }
+        ],
+        "wholeBookFreePurchase": [
+            {
+                "_id": "5397018741368add18aa65b1",
+                "title": "最强武神3",
+                "cover": "/agent/http://static.zongheng.com/upload/cover/2015/02/1423101036439.jpg",
+                "author": "么么",
+                "latelyFollower": 2673
+            },
+            {
+                "_id": "531eb6ee3353e1f556001073",
+                "title": "足下的恋人",
+                "cover": "/cover/59/590de3eab0f979606ac005eed152cd54.jpg",
+                "author": "易修罗",
+                "latelyFollower": 0
+            },
+            {
+                "_id": "5398da93e086ffe54e7c6e9c",
+                "title": "三国之张良后人定天下",
+                "cover": "",
+                "author": "石头人",
+                "latelyFollower": 0
+            },
+            {
+                "_id": "52843aaaacfddf943802af1d",
+                "title": "逍遥法外",
+                "cover": "/agent/http://static.zongheng.com/upload/cover/2012/01/1325402745896.jpg",
+                "author": "胡吹",
+                "latelyFollower": 0
+            },
+            {
+                "_id": "538d28e16f7b546941074174",
+                "title": "天道裁决者",
+                "cover": "/agent/http://image.cmfu.com/books/3163880/3163880.jpg",
+                "author": "言若语",
+                "latelyFollower": 0
+            }
+        ]
+    }
+};
+	setTimeout(function(){
+		res.send(JSON.stringify(data));
+	},2000);
+	
+})
 app.post('/invite/join', urlencodedParser, function(req, res){
 //	console.log(req.body);
 	var response = {

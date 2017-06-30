@@ -38,7 +38,7 @@
 			cp:{
 				type:2,
 				img:"img/lztv.png",
-				context:"优酷用户专享"
+				context:"UC浏览器用户专享"
 			},
 			rule:[
 				"本活动抢到的兑换码红包，每个追书帐号仅能够兑换一次；",
@@ -59,7 +59,7 @@
 			},
 			rule:[
 				"本活动抢到的兑换码红包，每个追书帐号仅能够兑换一次；",
-				"登录追书神器APP—进入个人资料页面—点击兑换中心—输入兑换码—点击右边箭头，即可领取5元追书券，开始享受全站百万书籍畅读吧；",
+				"登录追书神器APP—进入个人资料页面—点击兑换中心—输入兑换码—点击右边箭头，即可领取10元追书券，开始享受全站百万书籍畅读吧；",
 				"赠送的追书券有效期为7天；",
 				"活动时间为7月1日-7月31日，请在活动期间完成兑换；",
 				"如有疑问，请联系「追书神器」微信客服：zssqxs；",
@@ -93,7 +93,7 @@
 	};
 	var page = {
 		state:{
-			lost: !window.sessionStorage.getItem("fctco") && ( ["ddsp","tcly"].indexOf(fw.GetQueryString("tag")) > -1)
+			lost: !window.sessionStorage.getItem("fctco") && ( ["ddsp","tcly","lztv"].indexOf(fw.GetQueryString("tag")) > -1)
 		},
 		Init:function(){
 			this.paintData();

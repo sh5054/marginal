@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1">
+    <title>拼手速 抢红包</title>
+    <link rel="stylesheet" type="text/css" href="css/style.css"/>
+    <script src="js/zepto.min..js" type="text/javascript" charset="utf-8"></script>
+	<script src="js/flexible.js"></script>
+	<script>
+        if(location.protocol == 'https:'){
+          document.write('<meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">');
+        }
+   </script>
+</head>
+<html>
+	<body>
+		<div id="perLoad" class="perLoad">
+			<div class="inner">
+				<div class="progress">
+					<div id="bar" class="bar"></div>
+				</div>
+				<div class="total"><span id="progress-num">0</span>%</div>
+			</div>
+		</div>
+		<div class="m-mask">
+			<div class="m-confirm">
+				<h6>提示</h6>
+				<p></p>
+				<button id="m-sure">知道了</button>
+			</div>
+		</div>
+		<div class="cloud">
+			<div class="caidai">
+				<div class="envelope envelope-1"></div>
+				<div class="envelope envelope-2"></div>
+				<div class="envelope envelope-3"></div>
+				<div class="envelope envelope-4"></div>
+				<h2 class="title"></h2>
+			</div>
+		</div>
+		<div id="text" class="state-text">
+			<p>时间到了，再玩一次吧~</p>
+		</div>
+		<div id="packet-list" class="packet-list">
+			<!--<ul class="anim firUl">
+				<li class="packet_1"></li>
+				<li class="packet_2"></li>
+				<li class="packet_3"></li>
+				<li class="packet_3"></li>
+			</ul>
+			<ul class="anim secUl">
+				<li class="packet_1"></li>
+				<li class="packet_2"></li>
+				<li class="packet_3"></li>
+				<li class="packet_3"></li>
+			</ul>-->
+		</div>
+		<div id="catch-packet" class="catch-packet">
+			<div class="rope"></div>
+			<div class="pull">
+				
+			</div>
+		</div>
+		<div id="board" class="board">
+			<div class="style-1">
+				<div id="game_btn" class="game-btn"></div>
+				<div class="surplus">
+					<div class="times"></div>
+				</div>
+				<div id="timeSlip" class="timeLoad ">
+					<div class="slip"></div>
+				</div>
+			</div>
+			<div class="style-2">
+				<div class="surplus">
+					<div class="times"></div>
+				</div>
+				<div id="again-btn" class="again-btn"></div>
+				<div class="share-btn share-evt"></div>
+				<div class="more-btn">
+					<a href="#">
+						<div class="download-app"></div>
+					</a>
+					<div class="share-game share-evt"></div>
+					<div class="back-act"></div>
+				</div>
+			</div>
+			<div class="all-packet">
+				已有 <span id="all-packet"></span> 个红包被抢走
+			</div>
+		</div>
+		<div id="mask" class="mask">
+			<div class="confirm">
+				<div class="con-text">
+					<p id="msg">抢到啦~</p>
+					<p id="ticket-num" style="display: none;"><em style="font-size: 2em; margin-right: 5px; vertical-align: sub;"></em>追书券</p>
+					<p class="bot" style="font-size: 1.2em;">您还有<em id="nums" style="margin: 0 3px;"></em>次机会</p>
+				</div>
+				<div id="con-btn" class="con-btn"></div>
+			</div>
+		</div>
+		<script src="js/perload.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/bridge.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/index.js" type="text/javascript" charset="utf-8"></script>
+	</body>
+</html>

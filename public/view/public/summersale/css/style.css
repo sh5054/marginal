@@ -1,0 +1,699 @@
+@charset "UTF-8";
+/* 防止用户自定义背景颜色对网页的影响，添加让用户可以自定义字体 */
+html, body {
+  -webkit-overflow-scrolling: touch;
+  -webkit-text-size-adjust: 100%;
+  user-select: none;
+  -webkit-user-select: none;
+  -webkit-touch-callout: none;
+  -webkit-font-smoothing: antialiased;
+  overflow-y: auto;
+  min-width: 320px;
+  max-width: 640px;
+  margin: 0 auto; }
+
+/* 如果你的项目仅支持 IE9+ | Chrome | Firefox 等，推荐在 <html> 中添加 .borderbox 这个 class */
+html.borderbox *, html.borderbox *:before, html.borderbox *:after {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box; }
+
+/* 要注意表单元素并不继承父级 font 的问题 */
+body, button, input, select, textarea {
+  font-family: Microsoft Yahei, "Helvetica Neue", Helvetica, STHeiTi, sans-serif !important; }
+
+/* 内外边距通常让各个浏览器样式的表现位置不同 */
+body, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, pre, code, form, fieldset, legend, input, textarea, p, blockquote, th, td, hr, button, article, aside, details, figcaption, figure, footer, header, menu, nav, section, span {
+  margin: 0;
+  padding: 0;
+  outline: 0;
+  -webkit-tap-highlight-color: transparent;
+  font-size: 12px; }
+
+/* 重设 HTML5 标签, IE 需要在 js 中 createElement(TAG) */
+article, aside, details, figcaption, figure, footer, header, menu, nav, section {
+  display: block; }
+
+/* HTML5 媒体文件跟 img 保持一致 */
+audio, canvas, video {
+  display: inline-block; }
+
+/* 要注意表单元素并不继承父级 font 的问题 */
+body, button, input, select, textarea {
+  font-family: PingFang SC, "Helvetica Neue", Helvetica, STHeiTi, sans-serif;
+  color: #222;
+  font-weight: 400;
+  line-height: 1; }
+
+button::-moz-focus-inner,
+input::-moz-focus-inner {
+  padding: 0;
+  border: 0; }
+
+/* 去掉各Table cell 的边距并让其边重合 */
+table {
+  border-collapse: collapse;
+  border-spacing: 0; }
+
+/* 去除默认边框 */
+fieldset, img {
+  border: 0; }
+
+img {
+  max-width: 100%;
+  border: none;
+  -webkit-touch-callout: none; }
+
+/* 一致的 del 样式 */
+del {
+  text-decoration: line-through; }
+
+/* 去掉列表前的标识, li 会继承，大部分网站通常用列表来很多内容，所以应该当去 */
+ul, ol {
+  list-style: none; }
+
+/* 统一上标和下标 */
+sub, sup {
+  font-size: 75%;
+  line-height: 0;
+  position: relative; }
+
+:root sub, :root sup {
+  vertical-align: baseline;
+  /* for ie9 and other modern browsers */ }
+
+sup {
+  top: -0.5em; }
+
+sub {
+  bottom: -0.25em; }
+
+/* 默认不显示下划线，保持页面简洁 */
+ins, a {
+  text-decoration: none; }
+
+.clearfix:before, .clearfix:after {
+  content: "";
+  display: table; }
+
+.clearfix:after {
+  clear: both; }
+
+.clearfix {
+  zoom: 1; }
+
+.hide {
+  display: none; }
+
+.f-l {
+  float: left; }
+
+.f-r {
+  float: right; }
+
+/* 强制文本换行 */
+.textwrap, .textwrap td, .textwrap th {
+  word-wrap: break-word;
+  word-break: break-all; }
+
+.textnowrap {
+  white-space: nowrap; }
+
+.ellipsis {
+  overflow: hidden;
+  text-overflow: ellipsis; }
+
+.textwrap-table {
+  table-layout: fixed; }
+
+/* px to rem */
+/* font size  */
+.c-loading {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%; }
+  .c-loading .loader {
+    position: relative;
+    display: block;
+    width: 0.66667rem;
+    height: 0.66667rem;
+    border-radius: 50%;
+    margin: 70% auto 0;
+    font-size: 10px;
+    text-indent: -9999em;
+    border-top: 3px solid rgba(0, 0, 0, 0.1);
+    border-right: 3px solid rgba(0, 0, 0, 0.1);
+    border-bottom: 3px solid rgba(0, 0, 0, 0.1);
+    border-left: 3px solid #fff;
+    -webkit-transform: translateZ(0);
+    transform: translateZ(0);
+    -webkit-animation: loading 1.1s infinite linear;
+    animation: loading 1.1s infinite linear; }
+
+@-webkit-keyframes loading {
+  0% {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg); }
+  100% {
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg); } }
+
+@keyframes loading {
+  0% {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg); }
+  100% {
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg); } }
+
+.c-modal {
+  display: block;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  margin-left: -2.33333rem;
+  width: 4.66667rem;
+  height: 1.06667rem;
+  line-height: 1.06667rem;
+  border-radius: 5px;
+  background-color: rgba(0, 0, 0, 0.8);
+  color: #fff;
+  text-align: center;
+  font-size: 14px; }
+
+@-webkit-keyframes title-anim {
+  0% {
+    -webkit-transform: translateY(0.08333rem);
+    transform: translateY(0.08333rem); }
+  to {
+    -webkit-transform: translateY(-0.08333rem);
+    transform: translateY(-0.08333rem); } }
+
+@keyframes title-anim {
+  0% {
+    -webkit-transform: translateY(0.08333rem);
+    transform: translateY(0.08333rem); }
+  to {
+    -webkit-transform: translateY(-0.08333rem);
+    transform: translateY(-0.08333rem); } }
+
+@-webkit-keyframes float-env-1 {
+  0% {
+    -webkit-transform: translateZ(0);
+    transform: translateZ(0); }
+  to {
+    -webkit-transform: translate3d(-0.2rem, -0.3rem, 0);
+    transform: translate3d(-0.2rem, -0.3rem, 0); } }
+
+@keyframes float-env-1 {
+  0% {
+    -webkit-transform: translateZ(0);
+    transform: translateZ(0); }
+  to {
+    -webkit-transform: translate3d(-0.2rem, -0.3rem, 0);
+    transform: translate3d(-0.2rem, -0.3rem, 0); } }
+
+@-webkit-keyframes float-env-2 {
+  0% {
+    -webkit-transform: translateZ(0);
+    transform: translateZ(0); }
+  to {
+    -webkit-transform: translate3d(0.1rem, -0.3rem, 0);
+    transform: translate3d(0.1rem, -0.3rem, 0); } }
+
+@keyframes float-env-2 {
+  0% {
+    -webkit-transform: translateZ(0);
+    transform: translateZ(0); }
+  to {
+    -webkit-transform: translate3d(0.1rem, -0.3rem, 0);
+    transform: translate3d(0.1rem, -0.3rem, 0); } }
+
+@-webkit-keyframes float-env-3 {
+  0% {
+    -webkit-transform: translateZ(0);
+    transform: translateZ(0); }
+  to {
+    -webkit-transform: translate3d(-0.3rem, 0.1rem, 0);
+    transform: translate3d(-0.3rem, 0.1rem, 0); } }
+
+@keyframes float-env-3 {
+  0% {
+    -webkit-transform: translateZ(0);
+    transform: translateZ(0); }
+  to {
+    -webkit-transform: translate3d(-0.3rem, 0.1rem, 0);
+    transform: translate3d(-0.3rem, 0.1rem, 0); } }
+
+@-webkit-keyframes float-env-4 {
+  0% {
+    -webkit-transform: translateZ(0);
+    transform: translateZ(0); }
+  to {
+    -webkit-transform: translate3d(-0.1rem, 0.1rem, 0);
+    transform: translate3d(-0.1rem, 0.3rem, 0); } }
+
+@keyframes float-env-4 {
+  0% {
+    -webkit-transform: translateZ(0);
+    transform: translateZ(0); }
+  to {
+    -webkit-transform: translate3d(-0.1rem, 0.3rem, 0);
+    transform: translate3d(-0.1rem, 0.3rem, 0); } }
+
+@-webkit-keyframes looper-s {
+  0% {
+    -webkit-transform: translateX(0);
+    transform: translateX(0); }
+  to {
+    -webkit-transform: translate3d(-11.52rem, 0, 0);
+    transform: translate3d(-11.52rem, 0, 0); } }
+
+@keyframes looper-s {
+  0% {
+    -webkit-transform: translateX(0);
+    transform: translateX(0); }
+  to {
+    -webkit-transform: translate3d(-11.52rem, 0, 0);
+    transform: translate3d(-11.52rem, 0, 0); } }
+
+@-webkit-keyframes looper-m {
+  0% {
+    -webkit-transform: translateX(0);
+    transform: translateX(0); }
+  to {
+    -webkit-transform: translate3d(-10rem, 0, 0);
+    transform: translate3d(-10rem, 0, 0); } }
+
+@keyframes looper-m {
+  0% {
+    -webkit-transform: translateX(0);
+    transform: translateX(0); }
+  to {
+    -webkit-transform: translate3d(-10rem, 0, 0);
+    transform: translate3d(-10rem, 0, 0); } }
+
+@-webkit-keyframes pull {
+  0% {
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0); }
+  100% {
+    -webkit-transform: translate3d(0, 5rem, 0);
+    transform: translate3d(0, 5rem, 0); } }
+
+@keyframes pull {
+  0% {
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0); }
+  100% {
+    -webkit-transform: translate3d(0, 5rem, 0);
+    transform: translate3d(0, 5rem, 0); } }
+
+@-webkit-keyframes rope-pull {
+  0% {
+    -webkit-transform: translate3d(-0.3rem, 0.3rem, 0);
+    transform: translate3d(-0.3rem, 0.3rem, 0); }
+  50% {
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0); }
+  100% {
+    -webkit-transform: translate3d(0.3rem, 0.3rem, 0);
+    transform: translate3d(0.3rem, 0.3rem, 0); } }
+
+@keyframes rope-pull {
+  0% {
+    -webkit-transform: translate3d(-0.3rem, 0.3rem, 0);
+    transform: translate3d(-0.3rem, 0.3rem, 0); }
+  50% {
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0); }
+  100% {
+    -webkit-transform: translate3d(0.3rem, 0.3rem, 0);
+    transform: translate3d(0.3rem, 0.3rem, 0); } }
+
+html, body {
+  width: 100%;
+  height: 100%; }
+
+body {
+  position: relative;
+  overflow: hidden;
+  background: url("http://h5.zhuishushenqi.com/public/summersale/game/img/bg.jpg") no-repeat;
+  background-size: cover; }
+  body .perLoad {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    background-color: #fcf9c9;
+    z-index: 99; }
+    body .perLoad .inner {
+      width: 5.33333rem;
+      margin: 5.33333rem auto 0; }
+      body .perLoad .inner .progress {
+        float: left;
+        width: 100%;
+        height: 0.26667rem;
+        padding: 3px;
+        border: 2px solid #e9cd97;
+        border-radius: 4px; }
+        body .perLoad .inner .progress .bar {
+          width: 0;
+          height: 100%;
+          background: url("http://h5.zhuishushenqi.com/public/summersale/game/img/time_slip.png") no-repeat;
+          background-size: cover; }
+      body .perLoad .inner .total {
+        float: left;
+        margin-left: 2px;
+        line-height: 2em;
+        font-weight: bold;
+        color: #d6b26a; }
+  body .m-mask {
+    display: none;
+    position: absolute;
+    z-index: 10;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.4); }
+    body .m-mask .m-confirm {
+      width: 6.93333rem;
+      height: 3.73333rem;
+      margin: 4.8rem auto 0;
+      padding: 0.53333rem;
+      background-color: #fff;
+      border-radius: 4px; }
+      body .m-mask .m-confirm h6 {
+        text-align: center;
+        font-size: 1.4em; }
+      body .m-mask .m-confirm p {
+        margin: 0.66667rem 0;
+        color: #888888; }
+      body .m-mask .m-confirm button {
+        width: 6.93333rem;
+        height: 1.06667rem;
+        border: none;
+        background-color: #d22122;
+        border-radius: 4px;
+        color: #fff; }
+  body .cloud {
+    position: absolute;
+    width: 100%;
+    height: 9.33333rem;
+    background: url("http://h5.zhuishushenqi.com/public/summersale/game/img/cloud.png") no-repeat;
+    background-position: 50%;
+    background-size: cover; }
+    body .cloud .caidai {
+      position: absolute;
+      width: 100%;
+      height: 50%;
+      background: url("http://h5.zhuishushenqi.com/public/summersale/game/img/caidai.png") no-repeat;
+      background-size: 100% 100%; }
+      body .cloud .caidai .envelope {
+        position: absolute; }
+        body .cloud .caidai .envelope.envelope-1 {
+          top: 0.26667rem;
+          left: 0.66667rem;
+          width: 1.4rem;
+          height: 1.08rem;
+          background: url("http://h5.zhuishushenqi.com/public/summersale/game/img/envelop_1.png") no-repeat;
+          background-size: 70%;
+          -webkit-animation: float-env-1 3s linear infinite alternate;
+          animation: float-env-1 3s linear infinite alternate; }
+        body .cloud .caidai .envelope.envelope-2 {
+          top: 0;
+          left: 45%;
+          width: 1.36rem;
+          height: 1.28rem;
+          background: url("http://h5.zhuishushenqi.com/public/summersale/game/img/envelop_2.png") no-repeat;
+          background-size: 70%;
+          -webkit-animation: float-env-2 2s linear infinite alternate;
+          animation: float-env-2 2s linear infinite alternate; }
+        body .cloud .caidai .envelope.envelope-3 {
+          top: 50%;
+          left: 20px;
+          width: 0.84rem;
+          height: 0.8rem;
+          background: url("http://h5.zhuishushenqi.com/public/summersale/game/img/envelop_3.png") no-repeat;
+          background-size: 80%;
+          -webkit-animation: float-env-3 3s linear infinite alternate;
+          animation: float-env-3 3s linear infinite alternate; }
+        body .cloud .caidai .envelope.envelope-4 {
+          bottom: 20%;
+          left: 60%;
+          width: 1.04rem;
+          height: 0.8rem;
+          background: url("http://h5.zhuishushenqi.com/public/summersale/game/img/envelop_4.png") no-repeat;
+          background-size: 80%;
+          -webkit-animation: float-env-4 3s linear infinite alternate;
+          animation: float-env-4 3s linear infinite alternate; }
+      body .cloud .caidai h2 {
+        width: 7.33333rem;
+        height: 2.8rem;
+        margin: 0.53333rem auto 0;
+        background: url("http://h5.zhuishushenqi.com/public/summersale/game/img/title.png") no-repeat;
+        background-size: cover;
+        -webkit-animation: title-anim 4s infinite alternate;
+        animation: title-anim 4s infinite alternate; }
+  body .state-text {
+    display: none;
+    margin-top: 6rem;
+    padding: 1.06667rem;
+    color: #caa14c; }
+    body .state-text p {
+      font-size: 1.4em;
+      line-height: 1.5em;
+      letter-spacing: 1px; }
+      body .state-text p em {
+        color: #ff7300;
+        font-weight: bold;
+        font-size: 1.2em; }
+  body .packet-list {
+    position: relative;
+    margin-top: 5.33333rem; }
+    body .packet-list ul {
+      position: absolute;
+      top: 0;
+      width: 11.52rem;
+      height: 2.88rem;
+      -webkit-animation: looper-s 5s linear infinite;
+      animation: looper-s 5s linear infinite; }
+      body .packet-list ul.paused {
+        -webkit-animation-play-state: paused;
+        animation-play-state: paused; }
+      body .packet-list ul.firUl {
+        left: 0; }
+      body .packet-list ul.secUl {
+        left: 11.52rem; }
+      body .packet-list ul li {
+        float: left;
+        width: 2.88rem;
+        height: 2.88rem; }
+        body .packet-list ul li.packet_1 {
+          background: url("http://h5.zhuishushenqi.com/public/summersale/game/img/packet_1.png") no-repeat;
+          background-size: cover; }
+        body .packet-list ul li.packet_2 {
+          background: url("http://h5.zhuishushenqi.com/public/summersale/game/img/packet_2.png") no-repeat;
+          background-size: cover; }
+        body .packet-list ul li.packet_3 {
+          background: url("http://h5.zhuishushenqi.com/public/summersale/game/img/packet_3.png") no-repeat;
+          background-size: cover; }
+  body .catch-packet {
+    position: absolute;
+    bottom: 4.8rem;
+    left: 50%;
+    width: 3.2rem;
+    margin-left: -1.6rem; }
+    body .catch-packet .rope {
+      width: 100%;
+      height: 2.4rem;
+      background: url("http://h5.zhuishushenqi.com/public/summersale/game/img/rope.png") no-repeat;
+      background-size: cover;
+      -webkit-animation: rope-pull 3s linear infinite alternate;
+      animation: rope-pull 3s linear infinite alternate; }
+    body .catch-packet .pull {
+      display: none;
+      width: 100%;
+      height: 5.01333rem; }
+    body .catch-packet.catch_packet_1 .rope {
+      display: none; }
+    body .catch-packet.catch_packet_1 .pull {
+      display: block;
+      background: url("http://h5.zhuishushenqi.com/public/summersale/game/img/catched_1.png") no-repeat;
+      background-size: cover;
+      -webkit-animation: pull 3s linear infinite;
+      animation: pull 3s linear infinite; }
+      body .catch-packet.catch_packet_1 .pull.paused {
+        -webkit-animation-play-state: paused;
+        animation-play-state: paused; }
+    body .catch-packet.catch_packet_2 .rope {
+      display: none; }
+    body .catch-packet.catch_packet_2 .pull {
+      display: block;
+      background: url("http://h5.zhuishushenqi.com/public/summersale/game/img/catched_2.png") no-repeat;
+      background-size: cover;
+      -webkit-animation: pull 3s linear infinite;
+      animation: pull 3s linear infinite; }
+      body .catch-packet.catch_packet_2 .pull.paused {
+        -webkit-animation-play-state: paused;
+        animation-play-state: paused; }
+    body .catch-packet.catch_packet_3 .rope {
+      display: none; }
+    body .catch-packet.catch_packet_3 .pull {
+      display: block;
+      background: url("http://h5.zhuishushenqi.com/public/summersale/game/img/catched_3.png") no-repeat;
+      background-size: cover;
+      -webkit-animation: pull 3s linear infinite;
+      animation: pull 3s linear infinite; }
+      body .catch-packet.catch_packet_3 .pull.paused {
+        -webkit-animation-play-state: paused;
+        animation-play-state: paused; }
+  body .board {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 5.14667rem; }
+    body .board .style-2 {
+      display: none; }
+    body .board.noGame .style-1 {
+      display: none; }
+    body .board.noGame .style-2 {
+      display: block; }
+    body .board .surplus {
+      width: 2.02667rem;
+      height: 1.41333rem; }
+      body .board .surplus div {
+        width: 100%;
+        height: 100%; }
+      body .board .surplus .times-0 {
+        background: url("http://h5.zhuishushenqi.com/public/summersale/game/img/surplus_0.png") no-repeat;
+        background-size: cover; }
+      body .board .surplus .times-1 {
+        background: url("http://h5.zhuishushenqi.com/public/summersale/game/img/surplus_1.png") no-repeat;
+        background-size: cover; }
+      body .board .surplus .times-2 {
+        background: url("http://h5.zhuishushenqi.com/public/summersale/game/img/surplus_2.png") no-repeat;
+        background-size: cover; }
+      body .board .surplus .times-3 {
+        background: url("http://h5.zhuishushenqi.com/public/summersale/game/img/surplus_3.png") no-repeat;
+        background-size: cover; }
+    body .board .style-1 {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      background: url("http://h5.zhuishushenqi.com/public/summersale/game/img/board_1.png") no-repeat;
+      background-size: cover; }
+      body .board .style-1 .game-btn {
+        width: 3.57333rem;
+        height: 3.30667rem;
+        margin: 0.6rem auto 0;
+        background: url("http://h5.zhuishushenqi.com/public/summersale/game/img/btn_game.png") no-repeat;
+        background-size: cover; }
+        body .board .style-1 .game-btn:active {
+          background: url("http://h5.zhuishushenqi.com/public/summersale/game/img/btn_game_active.png") no-repeat;
+          background-size: cover; }
+      body .board .style-1 .surplus {
+        position: absolute;
+        top: 2.13333rem;
+        right: 1.06667rem; }
+      body .board .style-1 .timeLoad {
+        display: none;
+        position: absolute;
+        bottom: 0.77333rem;
+        left: 0;
+        width: 100%;
+        height: 0.26667rem;
+        background: #fbe6bb;
+        overflow: hidden; }
+        body .board .style-1 .timeLoad .slip {
+          width: 100%;
+          height: 100%;
+          background: url("http://h5.zhuishushenqi.com/public/summersale/game/img/time_slip.png") no-repeat;
+          background-size: cover; }
+        body .board .style-1 .timeLoad.start {
+          display: block; }
+          body .board .style-1 .timeLoad.start .slip {
+            -webkit-animation: looper-m 8s linear;
+            animation: looper-m 8s linear; }
+    body .board .style-2 {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      background: url("http://h5.zhuishushenqi.com/public/summersale/game/img/board_2.png") no-repeat;
+      background-size: cover; }
+      body .board .style-2 .surplus {
+        margin: 0.53333rem auto 0; }
+      body .board .style-2 .again-btn, body .board .style-2 .share-btn, body .board .style-2 .more-btn {
+        display: none;
+        width: 8.08rem;
+        height: 2.32rem;
+        margin: 0.13333rem auto 0; }
+      body .board .style-2.again .again-btn {
+        display: block; }
+      body .board .style-2.share .share-btn {
+        display: block; }
+      body .board .style-2.more .more-btn {
+        display: block; }
+      body .board .style-2 .again-btn {
+        background: url("http://h5.zhuishushenqi.com/public/summersale/game/img/paly_again.png") no-repeat;
+        background-size: cover; }
+      body .board .style-2 .share-btn {
+        background: url("http://h5.zhuishushenqi.com/public/summersale/game/img/share_now.png") no-repeat;
+        background-size: cover; }
+      body .board .style-2 .more-btn {
+        width: 8.4rem; }
+        body .board .style-2 .more-btn .share-game, body .board .style-2 .more-btn .back-act, body .board .style-2 .more-btn .download-app {
+          display: inline-block;
+          width: 4.10667rem;
+          height: 1.97333rem; }
+        body .board .style-2 .more-btn .share-game {
+          background: url("http://h5.zhuishushenqi.com/public/summersale/game/img/share_game.png") no-repeat;
+          background-size: cover; }
+        body .board .style-2 .more-btn .download-app {
+          display: none;
+          background: url("http://h5.zhuishushenqi.com/public/summersale/game/img/download_app.png") no-repeat;
+          background-size: cover; }
+        body .board .style-2 .more-btn .back-act {
+          background: url("http://h5.zhuishushenqi.com/public/summersale/game/img/back_act.png") no-repeat;
+          background-size: cover; }
+    body .board .all-packet {
+      position: absolute;
+      bottom: 0;
+      width: 100%;
+      height: 0.8rem;
+      line-height: 0.8rem;
+      text-align: center;
+      color: #d8b56e; }
+      body .board .all-packet span {
+        font-weight: bold; }
+  body .mask {
+    display: none;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.4); }
+    body .mask .confirm {
+      position: absolute;
+      width: 100%;
+      height: 14.66667rem;
+      background: url("http://h5.zhuishushenqi.com/public/summersale/game/img/confirm.png") no-repeat;
+      background-size: cover; }
+      body .mask .confirm .con-text {
+        margin-top: 7.2rem;
+        text-align: center;
+        color: #ffef68; }
+        body .mask .confirm .con-text p {
+          line-height: 1.5;
+          font-size: 1.4em; }
+        body .mask .confirm .con-text .bot {
+          color: #ec5e39; }
+      body .mask .confirm .con-btn {
+        position: absolute;
+        top: 10.66667rem;
+        left: 50%;
+        margin-left: -2.4rem;
+        width: 4.8rem;
+        height: 1.46667rem; }

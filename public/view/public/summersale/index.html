@@ -23,13 +23,6 @@
 				<div class="total"><span id="progress-num">0</span>%</div>
 			</div>
 		</div>
-		<div class="m-mask">
-			<div class="m-confirm">
-				<h6>提示</h6>
-				<p></p>
-				<button id="m-sure">知道了</button>
-			</div>
-		</div>
 		<div class="cloud">
 			<div class="caidai">
 				<div class="envelope envelope-1"></div>
@@ -43,17 +36,18 @@
 			<p>时间到了，再玩一次吧~</p>
 		</div>
 		<div id="packet-list" class="packet-list">
+			
 			<!--<ul class="anim firUl">
 				<li class="packet_1"></li>
 				<li class="packet_2"></li>
 				<li class="packet_3"></li>
-				<li class="packet_3"></li>
+				<li class="packet_1"></li>
 			</ul>
 			<ul class="anim secUl">
 				<li class="packet_1"></li>
 				<li class="packet_2"></li>
 				<li class="packet_3"></li>
-				<li class="packet_3"></li>
+				<li class="packet_1"></li>
 			</ul>-->
 		</div>
 		<div id="catch-packet" class="catch-packet">
@@ -65,6 +59,7 @@
 		<div id="board" class="board">
 			<div class="style-1">
 				<div id="game_btn" class="game-btn"></div>
+				<div id="hand" class="hand"></div>
 				<div class="surplus">
 					<div class="times"></div>
 				</div>
@@ -78,12 +73,13 @@
 				</div>
 				<div id="again-btn" class="again-btn"></div>
 				<div class="share-btn share-evt"></div>
+				<div class="sharegame-btn share-evt"></div>
 				<div class="more-btn">
 					<a href="#">
 						<div class="download-app"></div>
 					</a>
 					<div class="share-game share-evt"></div>
-					<div class="back-act"></div>
+					<div id="back-act" class="back-act"></div>
 				</div>
 			</div>
 			<div class="all-packet">
@@ -92,6 +88,9 @@
 		</div>
 		<div id="mask" class="mask">
 			<div class="confirm">
+				<div class="loading">
+					<i></i>
+				</div>
 				<div class="con-text">
 					<p id="msg">抢到啦~</p>
 					<p id="ticket-num" style="display: none;"><em style="font-size: 2em; margin-right: 5px; vertical-align: sub;"></em>追书券</p>

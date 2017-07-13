@@ -47,6 +47,44 @@ app.get('/activity/code', function(req, res){
      res.send(JSON.stringify(data)); 
 }); 
 
+app.get('/book-discount/game/info', function(req, res){ 
+	res.header("Access-Control-Allow-Origin", "*"); 
+	var data = {
+		ok:true,
+		"redPacketCount": "6",
+		"detail": {
+	        "chance": "1",       // 机会次数
+	        "share": "no"       // 是否分享
+	    }
+	}
+     res.send(JSON.stringify(data)); 
+}); 
+app.get('/book-discount/game/addChance', function(req, res){ 
+	res.header("Access-Control-Allow-Origin", "*"); 
+	var data = {
+		ok:true,
+		"detail": {
+	         "chance": "3",       // 机会次数
+	         "share": "yes"       // 是否分享
+	    }
+	}
+     res.send(JSON.stringify(data)); 
+}); 
+
+app.get('/book-discount/game/draw', function(req, res){ 
+	res.header("Access-Control-Allow-Origin", "*"); 
+	var data = {
+		ok:true,
+		"redPacketCount": "6",   // 已抢红包数
+    	"voucher": 20        // 中奖书券数量
+	}
+//	var data = {"ok":false,"code":1,"msg":"没抢到，再接再厉"}
+setTimeout(function(){
+	res.send(JSON.stringify(data)); 
+},2000);
+     
+}); 
+
 app.get('/books',function(req, res){
 	res.header("Access-Control-Allow-Origin", "*"); 
 	var format = req.query.date;
@@ -59,7 +97,11 @@ app.get('/books',function(req, res){
                 "title": "最强武神1" + format,
                 "cover": "/agent/http://static.zongheng.com/upload/cover/2015/02/1423101036439.jpg",
                 "author": "么么",
-                "latelyFollower": 2673
+                "latelyFollower": 2673,
+                "discount": {
+                	"priceDiscount" : 0.9,
+                	"timeRemaining" : 284569137
+                }
             },
             {
                 "_id": "531eb6ee3353e1f556001073",

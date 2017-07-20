@@ -383,29 +383,12 @@ body{
     }
     .packet-list{
         position: relative;
-        margin-top: 400/$px2rem;
+        margin-top: 375/$px2rem;
         width: 1728/$px2rem;
         ul{
             float: left;
-//          position: absolute;
-//          top: 0;
-
             width: 864/$px2rem;
             height: 216/$px2rem;
-//          -webkit-animation: looper-s 5s linear infinite;
-//          animation: looper-s 5s linear infinite;
-//          &.paused{     
-//              -webkit-animation-play-state: paused;
-//              animation-play-state:paused;
-//              -webkit-animation: none!important;
-//          }
-
-//          &.firUl{
-//              left: 0;
-//          }
-//          &.secUl{
-//              left: 864/$px2rem;
-//          }
             li{
                 float: left;
                 width: 216/$px2rem;
@@ -428,11 +411,10 @@ body{
     }
     .catch-packet{
         position: absolute;
-        bottom: 360/$px2rem;
+        bottom: 300/$px2rem;
         left: 50%;
         width: 240/$px2rem;
         margin-left: -120/$px2rem;
-//      animation: pull 3s linear infinite alternate;
         .rope{
             position: absolute;
             bottom: 0;
@@ -445,13 +427,8 @@ body{
         }
         .pull{
             display: none;
-//          visibility: hidden;
             width: 100%;
             height: 376/$px2rem;
-//          -webkit-transition: transform 1s linear;
-//          transition: transform 1s linear;
-//          -webkit-transform: translateY(0px);
-//          transform: translateY(0px);
         }
         &.catch_packet_1{
             .rope {
@@ -459,15 +436,9 @@ body{
             }
             .pull{
                 display: block;
-//              visibility: visible;
                 background: url('http://h5.zhuishushenqi.com/public/summersale/game/img/catched_1.png') no-repeat;
                 background-size: cover;
-//              -webkit-animation: pull 3s linear;
-//              animation: pull 3s linear;
-//              &.paused{
-//                  -webkit-animation-play-state:paused; 
-//                  animation-play-state:paused;
-//              }
+
             }
         }
         &.catch_packet_2{
@@ -476,15 +447,8 @@ body{
             }
             .pull{
                 display: block;
-//              visibility: visible;
                 background: url('http://h5.zhuishushenqi.com/public/summersale/game/img/catched_2.png') no-repeat;
                 background-size: cover;
-//              -webkit-animation: pull 3s linear;
-//              animation: pull 3s linear;
-//              &.paused{
-//                  -webkit-animation-play-state:paused; 
-//                  animation-play-state:paused;
-//              }
             } 
         }
         &.catch_packet_3{
@@ -493,15 +457,8 @@ body{
             }
             .pull{
                 display: block;
-//              visibility: visible;
                 background: url('http://h5.zhuishushenqi.com/public/summersale/game/img/catched_3.png') no-repeat;
                 background-size: cover;
-//              -webkit-animation: pull 3s linear;
-//              animation: pull 3s linear;
-//              &.paused{
-//                  -webkit-animation-play-state:paused; 
-//                  animation-play-state:paused;
-//              }
             }
             
         }
@@ -549,10 +506,10 @@ body{
         }
         .style-1{
             position: absolute;
-            width: 100%;
+            width: 10rem;
             height: 100%;
             background: url('http://h5.zhuishushenqi.com/public/summersale/game/img/board_1.png') no-repeat;
-            background-size: cover;
+            background-size: 100% 100%;
             .game-btn{
                 width: 268/$px2rem;
                 height: 248/$px2rem;
@@ -605,7 +562,7 @@ body{
         }
         .style-2{
             position: absolute;
-            width: 100%;
+            width: 10rem;
             height: 100%;
             background: url('http://h5.zhuishushenqi.com/public/summersale/game/img/board_2.png') no-repeat;
             background-size: cover;
@@ -696,13 +653,13 @@ body{
             position: absolute;
             top: -40/$px2rem;
             width: 100%;
-            height: 1100/$px2rem;
-            background: url('http://h5.zhuishushenqi.com/public/summersale/game/img/confirm.png') no-repeat;
+            height: 880/$px2rem;
+            background: url('http://h5.zhuishushenqi.com/public/summersale/game/img/confirm.png?t=1') no-repeat;
             background-size: cover;
             .loading{
                 display: none;
                 position: absolute;
-                top: 8.2rem;
+                top: 6.2rem;
                 left: 50%;
                 margin-left: -16/$px2rem;
                 i{
@@ -715,11 +672,11 @@ body{
             }
             .con-text{
                 display: none;       
-                margin-top: 540/$px2rem;
+                margin-top: 435/$px2rem;
                 text-align: center;
                 color: #ffef68;
                 p{
-                    line-height: 1.5;
+                    line-height: 1.2;
                     font-size: 1.4em;
                 }
                 .bot{
@@ -728,7 +685,7 @@ body{
             }
             .con-btn{
                 position: absolute;
-                top: 800/$px2rem;
+                top: 640/$px2rem;
                 left: 50%;
                 margin-left: -180/$px2rem;
                 width: 360/$px2rem;

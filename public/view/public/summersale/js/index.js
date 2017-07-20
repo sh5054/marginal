@@ -1,5 +1,5 @@
 (function($){
-	var ENV = "test";
+	var ENV = "pro";
 	var protocol = location.protocol.split(':')[0]+'://';
 	var url = {
 		"api" : protocol + (ENV == "pro" ? "api.zhuishushenqi.com" : "106.75.55.60"),
@@ -55,8 +55,8 @@
 			this.allgetpacket = 0;
 			this.initData = data;
 			this.pagePaint();
-			startGame();
 			this.evtSet();
+			startGame();
 		},
 		refreshGame:function(times){
 			this.pagePaint(times);
@@ -75,6 +75,14 @@
 			if(this.initData.detail.chance == "0"){
 				$("#packet-list,#catch-packet").css("display","none");
 				$("#board").addClass("noGame").find(".style-2");
+				if(isBrow){
+					var allpacket = localStorage.getItem("summerSale_allpacket")
+					$("#board .more-btn .share-game").css("display","none");
+					$("#board .more-btn .download-app").css("display","inline-block");
+					$("#board .style-2").removeClass("again").addClass("more");
+					c.textPaint("<p>您共获得 <em>"+ (allpacket || c.allgetpacket) +"</em> 个红包书券</p><p>使用追书APP还有 <em>3</em> 次机会，</p><p>暑期大酬宾，更多奖励等你拿</p>");
+					return;
+				}
 				if(this.initData.detail.share == "no"){
 					$("#board .style-2").removeClass("again").addClass("share");
 					c.textPaint("<p>分享增加 <em>3</em> 次机会哦~</p>");
@@ -98,11 +106,11 @@
 			$("#nums").html(times);
 			$("#mask .con-text").css("display","block");
 		},
-		loadData:function(){
+		loadData:function(token){
 			var c = this;
 			$.ajax({
 				type:"get",
-				url:url.api + "/book-discount/game/info?token=" + tools.getQueryParams("token") + "&t=" + Math.random(),
+				url:url.api + "/book-discount/game/info?token=" + token + "&t=" + Math.random(),
 				dataType:"json",
 				success:function(res){
 					c.pageInit(res)
@@ -115,12 +123,13 @@
 			$("#mask .loading").css("display","block");
 			$.ajax({
 				type:"get",
-				url:url.api + "/book-discount/game/draw?token=" + tools.getQueryParams("token") + "&t=" + Math.random(),
+				url:url.api + "/book-discount/game/draw?token=" + c.token + "&t=" + Math.random(),
 				dataType:"json",
 				success:function(res){					
 					if(res.ok){
 						c.confirmPaint("抢到了~",times,res);
 						c.allgetpacket += res.voucher;
+						localStorage.setItem("summerSale_allpacket",c.allgetpacket);
 					}else{
 						if(res.code == 1){
 							c.confirmPaint("没抢到，再接再厉哦~",times);
@@ -203,12 +212,12 @@
 				HybridApi.share({
 		            title: '拼手速 抢红包',
 		            content: '拼手速 抢红包',
-		            link: 'http://twechat.zhuishushenqi.com/wechats/activity/596342d99888330de28aa2b3',
+		            link: (ENV == "pro" ?'http://api.zhuishushenqi.com/wechats/activity/596881575a63195d5e7c4051' : 'http://twechat.zhuishushenqi.com/wechats/activity/596342d99888330de28aa2b3'),
 		            icon: 'https://statics.zhuishushenqi.com/invite/shareIcon.jpg'
 		        });
 				$.ajax({
 					type:"get",
-					url:url.api + "/book-discount/game/addChance?token=" + tools.getQueryParams("token") + "&t=" + Math.random(),
+					url:url.api + "/book-discount/game/addChance?token=" + c.token + "&t=" + Math.random(),
 					dataType:"json",
 					success:function(res){
 						if(res.ok){
@@ -249,17 +258,14 @@
 				start = false;
 				pullNum = 0;
 			});
-			$("#m-sure").on("click",function(){
-				$(".m-mask").css("display","none");
-				window.history.back();
-			})
+			
 			$("#back-act").on("click",function(){
-				if(isBrow) window.location.href = protocol + 'm.zhuishushenqi.com/summersale?token=' + tools.getQueryParams("token");
+				if(isBrow) window.location.href = protocol + 'm.zhuishushenqi.com/summersale?token=' + c.token;
 				else{
 					HybridApi.request({
 			            action: 'jump',
 			            param: {
-			            	"link":protocol + location.origin +"/summersale?token=" + tools.getQueryParams("token"),
+			            	"link":protocol + location.origin +"/summersale?token=" + c.token,
 			                "jumpType": "webview",
 			                "pageType": "summersale",
 			                "title": "暑期大促"
@@ -267,7 +273,28 @@
 			       });
 				}
 			})
+		},
+		init:function(){			
+			var c = this;
+			var url = window.location.href.replace("&token=&token=","&token=")
+			var token = tools.getQueryParams("token",url);
+			if(!token){
+				$("#m-sure").on("click",function(){
+					HybridApi.getUserInfo(function(data){
+						c.token = data.token;
+						c.loadData(data.token);
+						$(".m-mask").css("display","none");
+					})
+				})
+				$("#m-mask").css("display","block");
+				return;
+			}else{
+				c.token = token;
+				this.loadData(token);
+			}
+			
 		}
 	};
-	page.loadData();
+	page.init();
+	HybridApi.init();
 })(window.Zepto)

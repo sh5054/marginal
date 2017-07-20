@@ -42,6 +42,7 @@
 		HybridApi.share({
 			title:"送你200书券，我在追书神器等你！",
 			content:"送你200书券，我在追书神器等你！",
+			trackKey:'task_center_invite_friend_sucess',
 			link: window.location.origin + "/public/invitev1/receive.html" + window.location.search,
 			icon:"http://statics.zhuishushenqi.com/invite/shareIcon.jpg"
 		});

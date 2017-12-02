@@ -19,12 +19,6 @@ app.get('/invite/info', function(req, res){
 					avatar:'http://192.168.22.6:8808/invite/icon.jpg',
 					reward:400,
 					status:true
-                },
-                {
-					name:'xxx1',
-					avatar:'http://192.168.22.6:8808/invite/icon.jpg',
-					reward:400,
-					status:true
 				},
 				{
 					name:'xxx2',

@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en" class="borderbox">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1">
+    <title>关于吃瓜群众的神秘组织</title>
+    <link rel="stylesheet" type="text/css" href="css/style.css" />
+    <script src="http://cdn.bootcss.com/zepto/1.0rc1/zepto.min.js" type="text/javascript" charset="utf-8"></script>
+    <script src="http://res.wx.qq.com/open/js/jweixin-1.2.0.js"></script>
+    <script>
+        if (location.protocol == 'https:') {
+            document.write('<meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">');
+        }
+    </script>
+    <script>
+        var _czc = _czc || [];
+        _czc.push(["_setAccount", "1261312741"]);
+    </script>
+    <script type="text/javascript">
+        ! function (a, b) {
+            function c() {
+                var b = f.getBoundingClientRect().width;
+                b / i > 540 && (b = 540 * i); var c = b / 10;
+                f.style.fontSize = c + "px", k.rem = a.rem = c
+            } var d, e = a.document,
+                f = e.documentElement,
+                g = e.querySelector('meta[name="viewport"]'),
+                h = e.querySelector('meta[name="flexible"]'),
+                i = 0,
+                j = 0,
+                k = b.flexible || (b.flexible = {}); if (g) {
+                    console.warn("将根据已有的meta标签来设置缩放比例"); var l = g.getAttribute("content").match(/initial\-scale=([\d\.]+)/);
+                    l && (j = parseFloat(l[1]), i = parseInt(1 / j))
+                } else if (h) {
+                    var m = h.getAttribute("content"); if (m) {
+                        var n = m.match(/initial\-dpr=([\d\.]+)/),
+                        o = m.match(/maximum\-dpr=([\d\.]+)/);
+                        n && (i = parseFloat(n[1]), j = parseFloat((1 / i).toFixed(2))), o && (i = parseFloat(o[1]), j = parseFloat((1 / i).toFixed(2)))
+                    }
+                } if (!i && !j) {
+                    var p = (a.navigator.appVersion.match(/android/gi), a.navigator.appVersion.match(/iphone/gi)),
+                    q = a.devicePixelRatio;
+                    i = p ? q >= 3 && (!i || i >= 3) ? 3 : q >= 2 && (!i || i >= 2) ? 2 : 1 : 1, j = 1 / i
+                } if (f.setAttribute("data-dpr", i), !g)
+                if (g = e.createElement("meta"), g.setAttribute("name", "viewport"), g.setAttribute("content", "initial-scale=" + j + ", maximum-scale=" + j + ", minimum-scale=" + j + ", user-scalable=no"), f.firstElementChild) f.firstElementChild.appendChild(g);
+                else {
+                    var r = e.createElement("div");
+                    r.appendChild(g), e.write(r.innerHTML)
+                }
+            a.addEventListener("resize", function () { clearTimeout(d), d = setTimeout(c, 300) }, !1), a.addEventListener("pageshow", function (a) { a.persisted && (clearTimeout(d), d = setTimeout(c, 300)) }, !1), "complete" === e.readyState ? e.body.style.fontSize = 12 * i + "px" : e.addEventListener("DOMContentLoaded", function () { e.body.style.fontSize = 12 * i + "px" }, !1), c(), k.dpr = a.dpr = i, k.refreshRem = c, k.rem2px = function (a) { var b = parseFloat(a) * this.rem; return "string" == typeof a && a.match(/rem$/) && (b += "px"), b }, k.px2rem = function (a) { var b = parseFloat(a) / this.rem; return "string" == typeof a && a.match(/px$/) && (b += "rem"), b }
+        }(window, window.lib || (window.lib = {}));
+    </script>
+</head>
+<html>
+
+<body>
+    <div id="perLoad" class="perLoad">
+        loading...<span id="loadNum">0</span>%
+    </div>
+    <div class="main">
+        <span class="music">
+            <audio id="audio" src="https://statics.zhuishushenqi.com/activities/20171026/music.mp3" autoplay="autoplay" loop="loop"></audio>
+        </span>
+        <section class="page_item page_1" id="p1">
+            <div class="num" id="userNum">777</div>
+            <div class="middle">
+                <div class="person"></div>
+                <div class="bullets" id="bullets">
+                </div>
+            </div>
+            <div class="btns">
+                <div class="start_1 swing"></div>
+                <div class="start_2 swing"></div>
+            </div>
+        </section>
+        <section class="page_item page_2" id="p2">
+            <div class="fbi_text"></div>
+            <div class="btns"></div>
+        </section>
+        <section class="page_item page_3" id="p3">
+            <div class="question_type"><img src="img/a_type_1.png"></div>
+            <div class="question_wrap">
+                <div class="inner"></div>
+            </div>
+            <div class="answer_wrap">
+                <!-- <ul>
+                    <li>A.我的前半生 </li>
+                    <li class="active">A.我的前半生 </li>
+                    <li>A.我的前半生 </li>
+                    <li>A.我的前半生 </li>
+                </ul> -->
+            </div>
+            <div class="btn_next"></div>
+            <div class="persons">
+                <div class="item p_1"></div>
+                <div class="item p_2"></div>
+                <div class="wrap">
+                    <div class="item fr p_3"></div>
+                    <div class="item fr p_4"></div>
+                    <div class="item fr p_5"></div>
+                    <div class="item be p_6"></div>
+                    <div class="item be p_7"></div>
+                    <div class="item be p_8"></div>
+                    <div class="item be p_9"></div>
+                </div>
+            </div>
+            <div class="c-modal">请选择答案</div>
+            <div class="right"></div>
+            <div class="wrong"></div>
+        </section>
+        <section class="page_item page_4" id="p4">
+            <div class="score">
+                <div class="duang"></div>
+                <span class="num">100</span>分
+            </div>
+            <div class="top_text"><img src="img/p3_newtop_1.png"></div>
+            <div class="mid_text"><img src="img/p3_newmid_1.png"></div>
+            <div class="mid_person">
+                <img class="person" src="img/p3_person_5.gif">
+                <img class="bottom" src="img/p3_person.png">
+            </div>
+            <div class="qrcode">
+                <img src="img/qrcode.png">
+            </div>
+            <div class="share swing"></div>
+            
+        </section>
+        <div class="mask">
+            <div class="img_share"></div>
+        </div>
+    </div>
+    <script src="js/perload.js" type="text/javascript" charset="utf-8"></script>
+    <script src="js/index.js" type="text/javascript" charset="utf-8"></script>
+</body>
+<script type="text/javascript">var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://"); document.write(unescape("%3Cspan style='display:none' id='cnzz_stat_icon_1261312741'%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s4.cnzz.com/z_stat.php%3Fid%3D1261312741' type='text/javascript'%3E%3C/script%3E"));</script>
+
+</html>

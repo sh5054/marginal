@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en" class="borderbox">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1">
+    <title>想编一部属于你的旷世神剧？</title>
+    <script>
+        if(location.protocol == 'https:'){
+          document.write('<meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">');
+        }
+    </script>
+    <script src="http://cdn.bootcss.com/zepto/1.0rc1/zepto.min.js" type="text/javascript" charset="utf-8"></script>
+    <script src="http://res.wx.qq.com/open/js/jweixin-1.2.0.js"></script>
+    <link rel="stylesheet" type="text/css" href="css/page-animation.css?v=13"/>
+    <link rel="stylesheet" type="text/css" href="css/style.css?v=13"/>
+	<script type="text/javascript">
+    ! function(a, b) {
+        function c() { var b = f.getBoundingClientRect().width;
+            b / i > 540 && (b = 540 * i); var c = b / 10;
+            f.style.fontSize = c + "px", k.rem = a.rem = c } var d, e = a.document,
+            f = e.documentElement,
+            g = e.querySelector('meta[name="viewport"]'),
+            h = e.querySelector('meta[name="flexible"]'),
+            i = 0,
+            j = 0,
+            k = b.flexible || (b.flexible = {}); if (g) { console.warn("将根据已有的meta标签来设置缩放比例"); var l = g.getAttribute("content").match(/initial\-scale=([\d\.]+)/);
+            l && (j = parseFloat(l[1]), i = parseInt(1 / j)) } else if (h) { var m = h.getAttribute("content"); if (m) { var n = m.match(/initial\-dpr=([\d\.]+)/),
+                    o = m.match(/maximum\-dpr=([\d\.]+)/);
+                n && (i = parseFloat(n[1]), j = parseFloat((1 / i).toFixed(2))), o && (i = parseFloat(o[1]), j = parseFloat((1 / i).toFixed(2))) } } if (!i && !j) { var p = (a.navigator.appVersion.match(/android/gi), a.navigator.appVersion.match(/iphone/gi)),
+                q = a.devicePixelRatio;
+            i = p ? q >= 3 && (!i || i >= 3) ? 3 : q >= 2 && (!i || i >= 2) ? 2 : 1 : 1, j = 1 / i } if (f.setAttribute("data-dpr", i), !g)
+            if (g = e.createElement("meta"), g.setAttribute("name", "viewport"), g.setAttribute("content", "initial-scale=" + j + ", maximum-scale=" + j + ", minimum-scale=" + j + ", user-scalable=no"), f.firstElementChild) f.firstElementChild.appendChild(g);
+            else { var r = e.createElement("div");
+                r.appendChild(g), e.write(r.innerHTML) }
+        a.addEventListener("resize", function() { clearTimeout(d), d = setTimeout(c, 300) }, !1), a.addEventListener("pageshow", function(a) { a.persisted && (clearTimeout(d), d = setTimeout(c, 300)) }, !1), "complete" === e.readyState ? e.body.style.fontSize = 12 * i + "px" : e.addEventListener("DOMContentLoaded", function() { e.body.style.fontSize = 12 * i + "px" }, !1), c(), k.dpr = a.dpr = i, k.refreshRem = c, k.rem2px = function(a) { var b = parseFloat(a) * this.rem; return "string" == typeof a && a.match(/rem$/) && (b += "px"), b }, k.px2rem = function(a) { var b = parseFloat(a) / this.rem; return "string" == typeof a && a.match(/px$/) && (b += "rem"), b } }(window, window.lib || (window.lib = {}));
+    </script>
+</head>
+<body>
+	<div id="perLoad" class="perLoad">
+		loading...<span id="loadNum">0</span>%
+	</div>
+	<section id="pageMain" class="page">
+		<span class="music">
+			<audio id="audio" src="https://statics.zhuishushenqi.com/activities/20170830/JustBluee2.mp3" autoplay="autoplay" loop="loop"></audio>
+		</span>
+		<div class="board"></div>
+		<div class="paibian"></div>
+		<div id="light" class="light"></div>
+		<div class="act act_1">
+			<div class="main">
+				<div class="inner"></div>
+				<div class="huaxu">
+					<div class="envelope envelope-1"></div>
+					<div class="envelope envelope-2"></div>
+					<div class="envelope envelope-3"></div>
+					<div class="envelope envelope-4"></div>
+				</div>
+			</div>
+		</div>
+		<div class="bottom">
+			<div class="flashLight"></div>
+			<div class="player"></div>
+			<div class="startWrap">
+				<div id="startBtn" class="start_btn"></div>
+				<div class="start_text"></div>
+			</div>
+		</div>
+		<div class="act act_2">
+			<div class="act2_load">	
+			</div>
+			<div class="jiaopian"></div>
+		</div>
+		
+		<div id="finshPage" class="finsh_page hide">
+			<div class="top_text">
+				你这剧票房一定突破50亿
+			</div>
+			<div class="finsh_light"></div>
+			<div class="finsh_daban">
+				<span>
+					巫妖大战之时，唐晶在三十三天外的上清界点烟辩冤
+				</span>				
+			</div>
+			<div class="btnsWrap">
+				<div class="top_btns">
+					<div class="share"></div>
+					<div class="again"></div>
+				</div>
+				<div class="bottom_btn">
+					<a href="http://jump.zhuishushenqi.com/huodong13"></a>
+				</div>
+			</div>
+			<div class="mask">
+				<div class="img_share"></div>
+			</div>
+		</div>	
+	</section>
+	<script src="perload.js?v=15" type="text/javascript" charset="utf-8"></script>
+	<script src="index.js?v=21" type="text/javascript" charset="utf-8"></script>
+</body>
+</html>

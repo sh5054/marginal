@@ -19,6 +19,14 @@
 		},
 		isBrowser: function(){
 			return !(this.getQueryParams('platform') === 'ios' || this.getQueryParams('platform') === 'android');
+		},
+		isWeiXin: function(){
+			var ua = window.navigator.userAgent.toLowerCase();
+	    if (ua.match(/MicroMessenger/i) == 'micromessenger') {
+	        return true;
+	    } else {
+	        return false;
+	    }
 		}
 	}
 	var initPacket = function(){
@@ -80,12 +88,12 @@
 					$("#board .more-btn .share-game").css("display","none");
 					$("#board .more-btn .download-app").css("display","inline-block");
 					$("#board .style-2").removeClass("again").addClass("more");
-					c.textPaint("<p>您共获得 <em>"+ (allpacket || c.allgetpacket) +"</em> 个红包书券</p><p>使用追书APP还有 <em>3</em> 次机会，</p><p>暑期大酬宾，更多奖励等你拿</p>");
+					c.textPaint("<p>您共获得 <em>"+ (allpacket || c.allgetpacket) +"</em> 个红包书券</p><p>使用追书APP还有 <em>1</em> 次机会，</p><p>暑期大酬宾，更多奖励等你拿</p>");
 					return;
 				}
 				if(this.initData.detail.share == "no"){
 					$("#board .style-2").removeClass("again").addClass("share");
-					c.textPaint("<p>分享增加 <em>3</em> 次机会哦~</p>");
+					c.textPaint("<p><i class='icon'></i>分享增加 <em>1</em> 次机会哦~<</p>");
 					return;
 				}else{
 					$("#board .style-2").removeClass("again").addClass("sharegame");
@@ -146,6 +154,7 @@
 			var times = Number(this.initData.detail.chance);//剩余次数
 			var isShare = this.initData.detail.share === "yes";
 			var isBrow = tools.isBrowser();
+			var isWeixin = tools.isWeiXin();
 			var catchReady = function(){
 				var catchPacket = $("#packet-list li").eq(nowPacket%8);
 				packetClass = catchPacket.attr("class");
@@ -188,11 +197,11 @@
 					$("#board .more-btn .share-game").css("display","none");
 					$("#board .more-btn .download-app").css("display","inline-block");
 					$("#board .style-2").removeClass("again").addClass("more");
-					c.textPaint("<p>您共获得 <em>"+ c.allgetpacket +"</em> 个红包书券</p><p>使用追书APP还有 <em>3</em> 次机会，</p><p>暑期大酬宾，更多奖励等你拿</p>");
+					c.textPaint("<p>您共获得 <em>"+ c.allgetpacket +"</em> 个红包书券</p><p>使用追书APP还有 <em>1</em> 次机会，</p><p>暑期大酬宾，更多奖励等你拿</p>");
 					return;
 				}else if(times == 0 && !isShare){
 					$("#board .style-2").removeClass("again").addClass("share");
-					c.textPaint("<p><i class='icon'></i>分享增加 <em>3</em> 次机会哦~</p>");
+					c.textPaint("<p><i class='icon'></i>分享增加 <em>1</em> 次机会哦~</p>");
 					return;
 				}else if(times == 0 && isShare){
 					$("#board .style-2").removeClass("again").addClass("sharegame");
@@ -209,6 +218,7 @@
 				pullNum = 0;
 			});
 			$("#board .share-evt").on("click",function(){
+				_czc.push(["_trackEvent", "summersale", "share", "v1", 1, "share"]);
 				HybridApi.share({
 		            title: '拼手速 抢红包',
 		            content: '拼手速 抢红包',
@@ -222,10 +232,10 @@
 					success:function(res){
 						if(res.ok){
 							isShare = true;
-							times = 3;
-							c.initData.detail.chance = "3";
+							times = 1;
+							c.initData.detail.chance = "1";
 							$("#board .style-2").removeClass("sharegame").removeClass("share").addClass("again");
-							$("#board .times").removeClass("times-0").addClass("times-3");
+							$("#board .times").removeClass("times-0").addClass("times-1");
 						}	
 					}
 				});
@@ -240,11 +250,11 @@
 						$("#board .more-btn .share-game").css("display","none");
 						$("#board .more-btn .download-app").css("display","inline-block");
 						$("#board .style-2").removeClass("again").addClass("more");
-						c.textPaint("<p>您共获得 <em>"+ c.allgetpacket +"</em> 个红包书券</p><p>使用追书APP还有 <em>3</em> 次机会，</p><p>暑期大酬宾，更多奖励等你拿</p>");
+						c.textPaint("<p>您共获得 <em>"+ c.allgetpacket +"</em> 个红包书券</p><p>使用追书APP还有 <em>1</em> 次机会，</p><p>暑期大酬宾，更多奖励等你拿</p>");
 						return;
 					}else if(!isShare){
 						$("#board .style-2").removeClass("again").addClass("share");
-						c.textPaint("<p><i class='icon'></i>分享增加 <em>3</em> 次机会哦~</p>");
+						c.textPaint("<p><i class='icon'></i>分享增加 <em>1</em> 次机会哦~</p>");
 						return;
 					}else if(isShare){
 						$("#board .style-2").removeClass("again").addClass("sharegame");
@@ -260,8 +270,10 @@
 			});
 			
 			$("#back-act").on("click",function(){
-				if(isBrow) window.location.href = protocol + 'm.zhuishushenqi.com/summersale?token=' + c.token;
-				else{
+				if(isBrow){
+					if(isWeixin) window.location.href = 'http://api.zhuishushenqi.com/wechats/event/summersale';
+					else window.location.href = protocol + 'm.zhuishushenqi.com/summersale?token=' + c.token;
+				}else{
 					HybridApi.request({
 			            action: 'jump',
 			            param: {
@@ -281,6 +293,7 @@
 			if(!token){
 				$("#m-sure").on("click",function(){
 					HybridApi.getUserInfo(function(data){
+						alert(JSON.stringify(data));
 						c.token = data.token;
 						c.loadData(data.token);
 						$(".m-mask").css("display","none");

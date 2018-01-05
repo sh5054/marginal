@@ -106,7 +106,7 @@
 	};
 	var page = {
 		state:{
-			lost: !window.sessionStorage.getItem("fctco") && ( ["ddsp","tcly","lztv"].indexOf(fw.GetQueryString("tag")) > -1)
+			lost: !window.sessionStorage.getItem("fctco") && ( ["ddsp","tcly","lztv","ivvi"].indexOf(fw.GetQueryString("tag")) > -1)
 		},
 		Init:function(){
 			this.paintData();
@@ -149,7 +149,8 @@
 					type:"get",
 					url: url + "/activity/code",
 					data:{
-						tag: fw.GetQueryString("tag")
+						tag: fw.GetQueryString("tag"),
+						code: fw.GetQueryString("code")
 					},
 					success:function(res){
 						fw.showLoading(false);

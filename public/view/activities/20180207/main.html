@@ -11,7 +11,7 @@
             font-size:0;
         }
         html,body{
-            background: #e9402b;
+            background: #b9141a;
             text-align: center;
         }
         img{
@@ -25,10 +25,10 @@
         }
         .btn{
             position: absolute;
-            width: 4rem;
-            height: 1.5rem;
-            top: 11rem;
-            left: 3rem;
+            width: 8rem;
+            height: 1.8rem;
+            top: 14.5rem;
+            left: 1rem;
         }
     </style>
      <script type="text/javascript">
@@ -44,12 +44,12 @@
         
         //打开普通充值
         function openBaseRecharge() {
-            _czc.push(['_trackEvent', '追书神器', '2018春节', '点击包月']);
+            _czc.push(['_trackEvent', '追书神器', '2018春节', '点击充值']);
             HybridApi.request({
                 action: 'jump',
                 param: {
                     "jumpType": "native",
-                    "pageType": "monthlyPay"
+                    "pageType": "baseRecharge"
                 }
             });
         }
@@ -58,7 +58,7 @@
 </head>
 <body>
     <div class="main">
-        <img src="bg.jpg" alt="">
+        <img src="main-bg.jpg" alt="">
         <div class="btn" onmousedown="openBaseRecharge()"></div>
     </div>
     <div style="display: none;">

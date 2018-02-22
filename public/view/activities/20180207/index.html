@@ -30,6 +30,27 @@
             top: 11rem;
             left: 3rem;
         }
+        .rule{
+            position: absolute;
+            bottom: .3rem;
+            left: .3rem;
+            width: 9.4rem;
+            height: 5.5rem;
+            background-color: #e9402b;
+            
+        }
+        .rule p{
+            line-height: 1.4em;
+            padding: 0 .5rem 0 1rem;
+            color: #feea49;
+            font-size: 12px;
+            text-align: left;
+        }
+        .rule p span{
+            position: absolute;
+            left: .5rem;
+            font-size: 12px;
+        }
     </style>
      <script type="text/javascript">
         !function (a, b) { function c() { var b = f.getBoundingClientRect().width; b / i > 540 && (b = 540 * i); var c = b / 10; f.style.fontSize = c + "px", k.rem = a.rem = c } var d, e = a.document, f = e.documentElement, g = e.querySelector('meta[name="viewport"]'), h = e.querySelector('meta[name="flexible"]'), i = 0, j = 0, k = b.flexible || (b.flexible = {}); if (g) { console.warn("将根据已有的meta标签来设置缩放比例"); var l = g.getAttribute("content").match(/initial\-scale=([\d\.]+)/); l && (j = parseFloat(l[1]), i = parseInt(1 / j)) } else if (h) { var m = h.getAttribute("content"); if (m) { var n = m.match(/initial\-dpr=([\d\.]+)/), o = m.match(/maximum\-dpr=([\d\.]+)/); n && (i = parseFloat(n[1]), j = parseFloat((1 / i).toFixed(2))), o && (i = parseFloat(o[1]), j = parseFloat((1 / i).toFixed(2))) } } if (!i && !j) { var p = (a.navigator.appVersion.match(/android/gi), a.navigator.appVersion.match(/iphone/gi)), q = a.devicePixelRatio; i = p ? q >= 3 && (!i || i >= 3) ? 3 : q >= 2 && (!i || i >= 2) ? 2 : 1 : 1, j = 1 / i } if (f.setAttribute("data-dpr", i), !g) if (g = e.createElement("meta"), g.setAttribute("name", "viewport"), g.setAttribute("content", "initial-scale=" + j + ", maximum-scale=" + j + ", minimum-scale=" + j + ", user-scalable=no"), f.firstElementChild) f.firstElementChild.appendChild(g); else { var r = e.createElement("div"); r.appendChild(g), e.write(r.innerHTML) } a.addEventListener("resize", function () { clearTimeout(d), d = setTimeout(c, 300) }, !1), a.addEventListener("pageshow", function (a) { a.persisted && (clearTimeout(d), d = setTimeout(c, 300)) }, !1), "complete" === e.readyState ? e.body.style.fontSize = 12 * i + "px" : e.addEventListener("DOMContentLoaded", function () { e.body.style.fontSize = 12 * i + "px" }, !1), c(), k.dpr = a.dpr = i, k.refreshRem = c, k.rem2px = function (a) { var b = parseFloat(a) * this.rem; return "string" == typeof a && a.match(/rem$/) && (b += "px"), b }, k.px2rem = function (a) { var b = parseFloat(a) / this.rem; return "string" == typeof a && a.match(/px$/) && (b += "rem"), b } }(window, window.lib || (window.lib = {}));
@@ -60,6 +81,13 @@
     <div class="main">
         <img src="bg.jpg" alt="">
         <div class="btn" onmousedown="openBaseRecharge()"></div>
+        <div class="rule">
+            <p><span>1、</span>2018年2月16日-2月17日期间，用户可参与“VIP买一送一”活动；</p>
+            <p><span>2、</span>活动期间，用户开通会员后赠送相同天数的会员，例:原30元=3个月会员+1000追书券，现30元=6个月会员+1000追书券,原60元=6个月会员+3000追书券，现60元=12个月会员+3000追书券,原108元=12个月会员+5000追书券，现108元=24个月会员+5000追书券</p>
+            <p><span>3、</span>本次活动仅开通3个月、6个月、12个月的会员优惠活动，开通一个月的会员不参与本次活动；</p>
+            <p><span>4、</span>活动期间之前开通的VIP会送一定数量的追书券，本次活动仍然赠送，赠送的数量不翻倍；</p>
+            <p><span>5、</span>本次活动最终解释权归追书神器所有。</p>
+        </div>
     </div>
     <div style="display: none;">
         <script src="https://s11.cnzz.com/z_stat.php?id=1260948588&web_id=1260948588" language="JavaScript"></script>

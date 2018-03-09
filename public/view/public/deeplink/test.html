@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>追书神器</title>
+		<meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=0">
+		<meta name="format-detection" content="telephone=no">
+		<meta name="format-detection" content="email=no">
+		<meta name="format-detection" content="adress=no">
+        <meta name="flexible" content="initial-dpr=1">
+        <style  type="text/css">
+            * {
+				margin: 0;
+				padding: 0;
+			}
+			
+			html,
+			body {
+				width: 100%;
+				height: 100%;
+			}
+			div {
+				box-sizing: border-box;
+			}
+        </style>
+	</head>
+	<body>
+
+        <a href="" id="downloadApp">
+            <img src="" alt="" id="postImg">
+        </a>
+
+        <script type="text/javascript">
+            (function(){
+                function getQueryParams(name, url){
+                    if (!url) url = location.href;
+                    name = name.replace(/[\[]/, "\\\[").replace(/[\]]/, "\\\]");
+                    var regexS = "[\\?&]" + name + "=([^&#]*)";
+                    var regex = new RegExp(regexS);
+                    var results = regex.exec(url);
+                    return results == null ? null : results[1];
+                }
+
+                function pageInit(){
+                    var imageSrc = 'http://zhui-test.qiniudn.com/market-activity/' + getQueryParams('image');
+                    var iosUrl = "https://itunes.apple.com/app/apple-store/id575826903?pt=118402069&ct=kxjlb&mt=8d";
+                    var androidUrl = "http://s.zhuishushenqi.com/zssq-tst6.apk";  
+                    var ua = navigator.userAgent.toLowerCase();
+                    if(/iphone|ipad|ipod/.test(ua)) {
+                        console.log('iOS');
+                        document.getElementById('downloadApp').href = iosUrl;
+                    } else if(/android/.test(ua)) {
+                        console.log('Android');
+                        document.getElementById('downloadApp').href = androidUrl;
+                    }
+                    document.getElementById('postImg').src = imageSrc;
+                    // document.getElementById('downloadApp').onclick = function(){
+                    //     var iosUrl = "https://itunes.apple.com/app/apple-store/id575826903?pt=118402069&ct=kxjlb&mt=8d";
+                    //     var androidUrl = "http://s.zhuishushenqi.com/zssq-tst6.apk";  
+                    //     var ua = navigator.userAgent.toLowerCase();
+                    //     if(/iphone|ipad|ipod/.test(ua)) {
+                    //         console.log('iOS');
+                    //         location.href = iosUrl;
+                    //     } else if(/android/.test(ua)) {
+                    //         console.log('Android');
+                    //         location.href = androidUrl;
+                    //     }  
+                    // };
+                };
+                pageInit();
+            })()
+            
+            
+        </script>
+
+	</body>
+
+</html>

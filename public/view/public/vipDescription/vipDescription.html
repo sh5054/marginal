@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en" class="borderbox">
+<head>
+    <meta charset="UTF-8">
+    <title>包月说明</title>
+    <!-- rem -->
+    <script>
+        !function(e){function t(a){if(i[a])return i[a].exports;var n=i[a]={exports:{},id:a,loaded:!1};return e[a].call(n.exports,n,n.exports,t),n.loaded=!0,n.exports}var i={};return t.m=e,t.c=i,t.p="",t(0)}([function(e,t){"use strict";Object.defineProperty(t,"__esModule",{value:!0});var i=window;t["default"]=i.flex=function(normal,e,t){var a=e||100,n=t||1,r=i.document,o=navigator.userAgent,d=o.match(/Android[\S\s]+AppleWebkit\/(\d{3})/i),l=o.match(/U3\/((\d+|\.){5,})/i),c=l&&parseInt(l[1].split(".").join(""),10)>=80,p=navigator.appVersion.match(/(iphone|ipad|ipod)/gi),s=i.devicePixelRatio||1;p||d&&d[1]>534||c||(s=1);var u=normal?1:1/s,m=r.querySelector('meta[name="viewport"]');m||(m=r.createElement("meta"),m.setAttribute("name","viewport"),r.head.appendChild(m)),m.setAttribute("content","width=device-width,user-scalable=no,initial-scale="+u+",maximum-scale="+u+",minimum-scale="+u),r.documentElement.style.fontSize=normal?"50px": a/2*s*n+"px"},e.exports=t["default"]}]);  flex(false,100, 1);
+    </script>
+    <!-- https -->
+    <script>
+        if(location.protocol == 'https:'){
+          document.write('<meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">');
+        }
+    </script>
+    <style type="text/css">
+        /* 防止用户自定义背景颜色对网页的影响，添加让用户可以自定义字体 */
+        html,body {
+        -webkit-overflow-scrolling: touch;
+        -webkit-text-size-adjust: 100%;
+        user-select: none;
+        -webkit-user-select: none;   /* 禁止选中文本（如无文本选中需求，此为必选项） */
+        -webkit-touch-callout:none;
+        -webkit-font-smoothing: antialiased;
+        }
+
+        *, *:before, *:after { max-height: 100000px }
+
+        /* 如果你的项目仅支持 IE9+ | Chrome | Firefox 等，推荐在 <html> 中添加 .borderbox 这个 class */
+        html.borderbox *, html.borderbox *:before, html.borderbox *:after {
+        -moz-box-sizing: border-box;
+        -webkit-box-sizing: border-box;
+        box-sizing: border-box;
+        }
+
+        /* 要注意表单元素并不继承父级 font 的问题 */
+        body, button, input, select, textarea {
+        font-family: PingFang SC, "Helvetica Neue", Helvetica, STHeiTi, sans-serif!important;
+        }
+
+        /* 内外边距通常让各个浏览器样式的表现位置不同 */
+        body, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, pre, code, form, fieldset, legend, input, textarea, p, blockquote, th, td, hr, button, article, aside, details, figcaption, figure, footer, header, menu, nav, section, span {
+        margin: 0;
+        padding: 0;
+        outline: 0;
+        -webkit-tap-highlight-color: transparent;
+        font-size: .32rem;
+        }
+        .page-vip-desc-wraper{
+            padding: 0 .5rem; 
+        }
+        .block{
+            display: block;
+            padding: .3rem 0;
+            border-bottom: 1px solid #f0f0f0;
+            text-align: justify;
+        }
+        .block .title{
+            position: relative;
+            height: 1rem;
+            color: #3f3f3f;
+            /* margin-bottom: .3rem; */
+        }
+        .block .title .text{
+            position: absolute;
+            padding-top: 1px;
+            line-height: .8rem;
+            font-size: .32rem;
+            font-weight: 600;
+            color: #333;
+            font-weight: 700;
+        }
+        .page-vip-desc-wraper .block .desc {
+            color: #666;
+            text-align: justify;
+        }
+        .page-vip-desc-wraper .block .desc:last-child p {
+            margin-bottom: .3rem;
+        }
+        .page-vip-desc-wraper .block .desc p {
+            font-size: .28rem;
+            line-height: .4rem;
+            margin-bottom: .05rem;
+        }
+    </style>
+</head>
+<body>
+<div class="page-vip-desc-wraper">
+    <div class="block">
+        <div class="title">
+            <span class="text"><strong>详细说明：</strong></span>
+        </div>
+        <div class="desc">
+            <p>1、开通VIP，可免费阅读所有VIP专享书籍，并支持下载到本地阅读。VIP过期后，不会自动续费， 已下载到本地的章节不能继续阅读，需要重新购买VIP或者使用追书币（劵）重新购买后才能继续阅读。</p>
+            <p>2、开通VIP，购买非VIP专享书籍时享受8折优惠；如已有其他折扣优惠，则折扣叠加，享受折上折优惠。</p>
+            <p>3、VIP有效期按天数计算，包1个月有效期为30天，包3个月有效期为90天，包6个月有效期为180天， 包12个月有效期为360天。</p>
+            <p>4、购买VIP的时长越长，享受的优惠和福利越多。</p>
+            <p>5、购买VIP，将额外赠送追书券，一次性购买VIP的时长越长，赠送的追书券越多。</p>
+            <p>6、暂不支持退款或提现。</p>
+            <p>7、购买VIP时有任何问题，请关注追书神器微信公众号zssqxs，在线客服会及时为您服务。</p>
+        </div>
+    </div>
+</div>  
+</body>
+</html>

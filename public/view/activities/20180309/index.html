@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1">
+    <title>电子阅读 乐享壕礼</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            font-size:0;
+        }
+        html,body{
+            /* background: #b9141a; */
+            text-align: center;
+        }
+        img{
+            max-width: 100%;
+            font-size: 0;
+        }
+        .main{
+            position: relative;
+            max-width: 10rem;
+            margin: 0 auto;
+        }
+        .btn{
+            position: absolute;
+            width: 8rem;
+            height: 1.8rem;
+            bottom: 0.5rem;
+            left: 1rem;
+        }
+    </style>
+     <script type="text/javascript">
+        !function (a, b) { function c() { var b = f.getBoundingClientRect().width; b / i > 540 && (b = 540 * i); var c = b / 10; f.style.fontSize = c + "px", k.rem = a.rem = c } var d, e = a.document, f = e.documentElement, g = e.querySelector('meta[name="viewport"]'), h = e.querySelector('meta[name="flexible"]'), i = 0, j = 0, k = b.flexible || (b.flexible = {}); if (g) { console.warn("将根据已有的meta标签来设置缩放比例"); var l = g.getAttribute("content").match(/initial\-scale=([\d\.]+)/); l && (j = parseFloat(l[1]), i = parseInt(1 / j)) } else if (h) { var m = h.getAttribute("content"); if (m) { var n = m.match(/initial\-dpr=([\d\.]+)/), o = m.match(/maximum\-dpr=([\d\.]+)/); n && (i = parseFloat(n[1]), j = parseFloat((1 / i).toFixed(2))), o && (i = parseFloat(o[1]), j = parseFloat((1 / i).toFixed(2))) } } if (!i && !j) { var p = (a.navigator.appVersion.match(/android/gi), a.navigator.appVersion.match(/iphone/gi)), q = a.devicePixelRatio; i = p ? q >= 3 && (!i || i >= 3) ? 3 : q >= 2 && (!i || i >= 2) ? 2 : 1 : 1, j = 1 / i } if (f.setAttribute("data-dpr", i), !g) if (g = e.createElement("meta"), g.setAttribute("name", "viewport"), g.setAttribute("content", "initial-scale=" + j + ", maximum-scale=" + j + ", minimum-scale=" + j + ", user-scalable=no"), f.firstElementChild) f.firstElementChild.appendChild(g); else { var r = e.createElement("div"); r.appendChild(g), e.write(r.innerHTML) } a.addEventListener("resize", function () { clearTimeout(d), d = setTimeout(c, 300) }, !1), a.addEventListener("pageshow", function (a) { a.persisted && (clearTimeout(d), d = setTimeout(c, 300)) }, !1), "complete" === e.readyState ? e.body.style.fontSize = 12 * i + "px" : e.addEventListener("DOMContentLoaded", function () { e.body.style.fontSize = 12 * i + "px" }, !1), c(), k.dpr = a.dpr = i, k.refreshRem = c, k.rem2px = function (a) { var b = parseFloat(a) * this.rem; return "string" == typeof a && a.match(/rem$/) && (b += "px"), b }, k.px2rem = function (a) { var b = parseFloat(a) / this.rem; return "string" == typeof a && a.match(/px$/) && (b += "rem"), b } }(window, window.lib || (window.lib = {}));
+	</script>
+    <script type="text/javascript" src="bridge.js"></script>
+    <script>
+      var _czc = _czc || [];
+      _czc.push(["_setAccount", "1260948588"]);
+    </script>
+    <script type="text/javascript">
+
+        var getQueryParams = function(name, url) {
+		    if (!url) url = location.href;
+		    name = name.replace(/[\[]/, "\\\[").replace(/[\]]/, "\\\]");
+		    var regexS = "[\\?&]" + name + "=([^&#]*)";
+		    var regex = new RegExp(regexS);
+		    var results = regex.exec(url);
+		    return results == null ? null : results[1];
+		};
+        HybridApi.init();
+        
+        //打开普通充值
+        function openBaseRecharge() {
+            _czc.push(['_trackEvent', '追书神器', '2018植树节', '打开书城']);
+            HybridApi.request({
+            action: 'jump',
+            param: {
+                "link": "https://h5.zhuishushenqi.com"+(getQueryParams('newApp')? '/v2/index.html?id=5a03ffe1f958913a73b2ecd7' : '/explore'),
+                "jumpType": "webview",
+                "title": "书城",
+                "pageType": "explore"
+            }
+        });
+        }
+
+    </script>
+</head>
+<body>
+    <div class="main">
+        <img src="bg.jpg" alt="">
+        <div class="btn" onmousedown="openBaseRecharge()"></div>
+    </div>
+    <div style="display: none;">
+        <script src="https://s11.cnzz.com/z_stat.php?id=1260948588&web_id=1260948588" language="JavaScript"></script>
+    </div>
+</body>
+</html>

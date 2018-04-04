@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1">
+    <title>充值有壕礼</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            font-size:0;
+        }
+        html,body{
+            text-align: center;
+            font-size: 0;
+        }
+        img{
+            max-width: 100%;
+            font-size: 0;
+        }
+    </style>
+
+    <script type="text/javascript" src="bridge.js"></script>
+    <script>
+      var _czc = _czc || [];
+      _czc.push(["_setAccount", "1260948588"]);
+    </script>
+    <script type="text/javascript">
+        HybridApi.init();
+        
+        //打开普通充值
+        function openBaseRecharge() {
+            _czc.push(['_trackEvent', '追书神器', '2018清明节', '点击充值']);
+            HybridApi.request({
+                action: 'jump',
+                param: {
+                    "jumpType": "native",
+                    "pageType": "baseRecharge"
+                }
+            });
+        }
+
+    </script>
+</head>
+<body>
+
+    <img src="img-1.jpg" alt="">
+    <div onmousedown="openBaseRecharge()">
+        <img src="img-2.jpg" alt="">
+    </div>
+    <img src="img-31.jpg" alt="">
+    <div style="display: none;">
+        <script src="https://s11.cnzz.com/z_stat.php?id=1260948588&web_id=1260948588" language="JavaScript"></script>
+    </div>
+</body>
+</html>

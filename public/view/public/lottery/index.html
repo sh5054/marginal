@@ -26,7 +26,7 @@
         .main{
             position: relative;
         }
-        .main .btn{
+        /* .main .btn{
             position: absolute;
             top: 15.4rem;
             left: 2rem;
@@ -34,11 +34,11 @@
             height: 1.7rem;
             background: url('btn.png') no-repeat;
             background-size: contain;
-        }
+        } */
     </style>
-    <script>
+    <!-- <script>
         !function(e,t){function n(){t.body?t.body.style.fontSize=12*o+"px":t.addEventListener("DOMContentLoaded",n)}function d(){var e=i.clientWidth/10;i.style.fontSize=e+"px"}var i=t.documentElement,o=e.devicePixelRatio||1;if(n(),d(),e.addEventListener("resize",d),e.addEventListener("pageshow",function(e){e.persisted&&d()}),o>=2){var a=t.createElement("body"),s=t.createElement("div");s.style.border=".5px solid transparent",a.appendChild(s),i.appendChild(a),1===s.offsetHeight&&i.classList.add("hairlines"),i.removeChild(a)}}(window,document);
-    </script>
+    </script> -->
     <script type="text/javascript" src="bridge.js"></script>
     <script>
       var _czc = _czc || [];
@@ -50,26 +50,26 @@
         //点击跳转
         function jump() {
             _czc.push(['_trackEvent', '追书神器', '乐彩H5', '点击跳转']);
-
             HybridApi.request({
                 action:'getUserInfo',
                 callback:function(data){
                     var token = data.token;
                     if(token){//已登录
-                        
+                        HybridApi.request({action: 'jump', 
+                            param: { "jumpType": "webview", "title": "乐彩", "type": "0", "link": "https://6502.ruixinhd.com/v/sso/yuanju_middle.html?token=" + token }
+                        });
                     }else{//未登录
-                        HybridApi.request({action:'login',callback:function(data){}});
+                        HybridApi.request({action:'login',callback:function(data){ }});
                     }
                 }
             });
         }
-
     </script>
 </head>
 <body>
-    <div class="main">
-        <img src="bg.jpg">
-        <div class="btn" onmousedown="jump()"></div>
+    <div class="main" onmousedown="jump()">
+        <img src="main.jpg">
+        <!-- <div class="btn"></div> -->
     </div>
     <div style="display: none;">
         <script src="https://s11.cnzz.com/z_stat.php?id=1260948588&web_id=1260948588" language="JavaScript"></script>

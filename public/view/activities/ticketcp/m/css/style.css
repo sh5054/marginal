@@ -9,7 +9,6 @@ html, body {
   -webkit-font-smoothing: antialiased;
   overflow-y: auto;
   min-width: 320px;
-  max-width: 640px;
   margin: 0 auto; }
 
 /* 如果你的项目仅支持 IE9+ | Chrome | Firefox 等，推荐在 <html> 中添加 .borderbox 这个 class */
@@ -210,7 +209,7 @@ html.hidden {
       color: #fff;
       text-align: center;
       font-weight: bold;
-      font-size: 1.2em; }
+      font-size: 0.32rem; }
   .container .packet {
     position: relative;
     width: 5.94667rem;
@@ -238,7 +237,8 @@ html.hidden {
       border-radius: 4px;
       background-color: rgba(0, 0, 0, 0.2);
       text-align: center;
-      color: #fff; }
+      color: #fff;
+      font-size: 0.32rem; }
     .container .cpLogo .drop {
       text-align: center;
       margin-top: 5px; }
@@ -270,11 +270,13 @@ html.hidden {
       position: relative;
       padding-left: 1.5em;
       line-height: 1.8;
-      font-weight: bold; }
+      font-weight: bold;
+      font-size: 0.29333rem; }
       .container .rule p em {
         position: absolute;
         left: 0;
-        font-weight: bold; }
+        font-weight: bold;
+        font-style: normal; }
 
 .download {
   display: block;
@@ -339,18 +341,19 @@ html.hidden {
         line-height: 0.93333rem;
         margin: 0.53333rem auto;
         background-color: #c5c5c5;
-        -webkit-user-select: text;
-        -moz-user-select: text;
-        -o-user-select: text;
-        user-select: text; }
+        text-align: center; }
         .mask .confirm .inner .code span {
           position: absolute;
-          -webkit-user-select: text;
-          -moz-user-select: text;
-          -o-user-select: text;
-          user-select: text;
+          left: 0;
+          z-index: 1;
+          width: 100%;
+          height: 100%;
+          -webkit-user-select: all;
+          -moz-user-select: all;
+          -o-user-select: all;
+          user-select: all;
           font-weight: bold;
-          font-size: 14px; }
+          font-size: 0.48rem; }
         .mask .confirm .inner .code::before {
           content: "";
           display: inline-block;
@@ -372,8 +375,9 @@ html.hidden {
       .mask .confirm .inner .text {
         line-height: 1.5em;
         text-align: center;
-        font-weight: bold;
-        font-size: 14px; }
+        font-weight: bold; }
+        .mask .confirm .inner .text p {
+          font-size: 0.34667rem; }
       .mask .confirm .inner .app-link {
         display: block;
         width: 3.50667rem;
@@ -383,4 +387,5 @@ html.hidden {
         background-size: cover; }
 
 .c-loading, .c-modal {
-  display: none; }
+  display: none;
+  font-size: 0.32rem; }

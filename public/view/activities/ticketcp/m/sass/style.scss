@@ -8,6 +8,7 @@ html.hidden{
     overflow: hidden;
 }
 
+
 .container{
     position: relative;
     width: 100%;
@@ -31,7 +32,7 @@ html.hidden{
             color: #fff;
             text-align: center;
             font-weight: bold;
-            font-size: 1.2em;
+            font-size: 24/$px2rem;
         }
     }
     .packet{
@@ -65,7 +66,7 @@ html.hidden{
             background-color: rgba(0,0,0,0.2);
             text-align: center;
             color: #fff;
-            
+            font-size: 24/$px2rem;
         }
         .drop{
             text-align: center;
@@ -104,10 +105,12 @@ html.hidden{
             padding-left: 1.5em;
             line-height: 1.8;
             font-weight: bold;
+            font-size: 22/$px2rem;
             em{
                 position: absolute;
                 left: 0;
                 font-weight: bold;
+                font-style: normal;
             }
         }
     }
@@ -181,24 +184,32 @@ html.hidden{
                     background-color: #c5c5c5;
                 }
                 @mixin user-sel{
-                    -webkit-user-select: text;
-                    -moz-user-select: text;
-                    -o-user-select: text;
-                    user-select: text;
+                    -webkit-user-select: all;
+                    -moz-user-select: all;
+                    -o-user-select: all;
+                    user-select: all;
                 }
                 position: relative;
                 width: 350/$px2rem;
                 height: 70/$px2rem;
-                line-height: 70/$px2rem;
+                line-height: 70/$px2rem;               
                 margin: 40/$px2rem auto;
                 background-color: #c5c5c5;
-//              text-align: center;
                 @include user-sel;
+                text-align: center;
                 span{
                     position: absolute;
+                    // left: -10%;
+                    left: 0;
+                    z-index: 1;
+                    width: 100%;
+                    height: 100%;
+                    // height: 100%;
                     @include user-sel;
                     font-weight: bold;
-                    font-size: 14px;
+                    font-size: 32/$px2rem;
+                    // text-align: center;
+
                 }
                 &::before{
                     @include node;
@@ -213,7 +224,10 @@ html.hidden{
                 line-height: 1.5em;
                 text-align: center;
                 font-weight: bold;
-                font-size: 14px;
+                p{
+                    font-size: 26/$px2rem;
+                }
+                
             }
             .app-link{
                 display: block;
@@ -229,4 +243,5 @@ html.hidden{
 
 .c-loading,.c-modal{
     display: none;
+    font-size: 24/$px2rem;
 }

@@ -12,7 +12,6 @@
 				document.write('<meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">');
 			}
 		</script>
-		<script src="http://cdn.bootcss.com/zepto/1.0rc1/zepto.min.js" type="text/javascript" charset="utf-8"></script>
 		<script type="text/javascript">
 			! function (a, b) {
 				function c() {
@@ -47,6 +46,7 @@
 				a.addEventListener("resize", function () { clearTimeout(d), d = setTimeout(c, 300) }, !1), a.addEventListener("pageshow", function (a) { a.persisted && (clearTimeout(d), d = setTimeout(c, 300)) }, !1), "complete" === e.readyState ? e.body.style.fontSize = 12 * i + "px" : e.addEventListener("DOMContentLoaded", function () { e.body.style.fontSize = 12 * i + "px" }, !1), c(), k.dpr = a.dpr = i, k.refreshRem = c, k.rem2px = function (a) { var b = parseFloat(a) * this.rem; return "string" == typeof a && a.match(/rem$/) && (b += "px"), b }, k.px2rem = function (a) { var b = parseFloat(a) / this.rem; return "string" == typeof a && a.match(/px$/) && (b += "rem"), b }
 			}(window, window.lib || (window.lib = {}));
 		</script>
+		<script src="http://cdn.bootcss.com/zepto/1.0rc1/zepto.min.js" type="text/javascript" charset="utf-8"></script>
 		<!-- <script src="http://g.tbcdn.cn/mtb/lib-flexible/0.3.4/??flexible_css.js,flexible.js"></script> -->
 		<link rel="stylesheet" type="text/css" href="css/style.css?v=1"/>
 		<script>
@@ -86,8 +86,8 @@
 			<div id="c-confirm" class="confirm">
 				<div id="confirm-close" class="close-btn"></div>
 				<div class="inner">
-					<h4 class="title">兑换码</h4>				
-					<div class="code">
+					<h4 class="title">兑换码</h4>	
+					<div class="code">	
 						<span></span>
 					</div>
 					<div class="text">

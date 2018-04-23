@@ -47,6 +47,7 @@
 				"活动时间截止为2018年5月15日，请在活动期间完成兑换；",
 				"如有疑问，请联系「追书神器」微信客服：zssqxs；"
 			],
+			outDate:(new Date('2018/05/15')).getTime(),
 			acLink:"http://jump.zhuishushenqi.com/huodong20"
 		},
 		tcly:{
@@ -107,9 +108,16 @@
 	};
 	var page = {
 		state:{
-			lost: !window.sessionStorage.getItem("fctco") && ( ["ddsp","tcly","lztv","ivvi"].indexOf(fw.GetQueryString("tag")) > -1)
+			lost: function(){
+				return window.localStorage.getItem(fw.GetQueryString("tag")) && ( ["ddsp","tcly","lztv","ivvi"].indexOf(fw.GetQueryString("tag")) > -1);
+			} 
 		},
 		Init:function(){
+			var tag = fw.GetQueryString("tag");
+			if((new Date()).getTime() > pageData[tag].outDate){
+				console.log(true)
+				window.localStorage.removeItem(tag);
+			}
 			this.paintData();
 			this.evtSet();
 		},
@@ -139,11 +147,14 @@
 			$("#cpType").html(cpInner);
 			$("#rule").html(ruleInner());
 			data.cp.title && $("#leadTitle").html(data.cp.title);
-			if(page.state.lost) fw.showModal("活动地址失效了哦",true); 
+			// if(page.state.lost) fw.showModal("活动地址失效了哦",true); 
 		},
 		evtSet:function(){
 			$("#receive").on("click",function(){
-				if(page.state.lost == true) return;
+				if(page.state.lost() == true) {
+					fw.showConfirm(true,window.localStorage.getItem(fw.GetQueryString("tag")));
+					return;
+				};
 				_czc.push(["_trackEvent", "书券", "领取", fw.GetQueryString("tag"), 1, "receive"]);
 				fw.showLoading(true);
 				$.ajax({
@@ -158,7 +169,8 @@
 						var data = JSON.parse(res);
 						if(data.ok){
 							fw.showConfirm(true,data.code);
-							window.sessionStorage.removeItem("fctco");
+							// window.sessionStorage.removeItem("fctco");
+							window.localStorage.setItem(fw.GetQueryString("tag"), data.code);
 						}else{
 							fw.showModal(data.msg);
 						}

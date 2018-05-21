@@ -109,7 +109,7 @@
 	var page = {
 		state:{
 			lost: function(){
-				return window.localStorage.getItem(fw.GetQueryString("tag")) && ( ["ddsp","tcly","lztv","ivvi"].indexOf(fw.GetQueryString("tag")) > -1);
+				return window.localStorage.getItem(fw.GetQueryString("tag")) && ( ["ddsp","tcly","lztv"].indexOf(fw.GetQueryString("tag")) > -1);
 			} 
 		},
 		Init:function(){

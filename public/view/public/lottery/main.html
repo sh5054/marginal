@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1">
+    <title>看赛事 玩竞彩</title>
+    <script>
+        if(location.protocol == 'https:'){
+            document.write('<meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">');
+        }
+    </script>
+    <script type="text/javascript">
+        !function(e,t){function n(){t.body?t.body.style.fontSize=12*o+"px":t.addEventListener("DOMContentLoaded",n)}function d(){var e=i.clientWidth/10;i.style.fontSize=e+"px"}var i=t.documentElement,o=e.devicePixelRatio||1;if(n(),d(),e.addEventListener("resize",d),e.addEventListener("pageshow",function(e){e.persisted&&d()}),o>=2){var a=t.createElement("body"),s=t.createElement("div");s.style.border=".5px solid transparent",a.appendChild(s),i.appendChild(a),1===s.offsetHeight&&i.classList.add("hairlines"),i.removeChild(a)}}(window,document);
+    </script>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            font-size:0;
+        }
+        html,body{
+            width: 100%;
+            height: 100%;
+            text-align: center;
+            font-size: 0;
+        }
+        body{
+            background-color: #6fa112;
+        }
+        img{
+            width: 100%;
+            font-size: 0;
+        }
+        .top{
+            position: relative;
+        }
+        .top .btn{
+            position: absolute;
+            top: 13rem;
+            left: -0.3rem;
+            width: 100%;
+            height: 1.6rem;
+            background: url('./jump-btn.png') no-repeat;
+            background-size: contain;
+        }
+        .top .rule-jump{
+            position: absolute;
+            top: 15.2rem;
+            left: 0;
+            width: 100%;
+            height: 1.06rem;
+            background: url('./rule-jump.png') no-repeat;
+            background-size: contain;
+        }
+        .top .rule-jump span{
+            display: inline-block;
+            width: 50%;
+            height: 100%;
+        }
+        /* .main .btn{
+            position: absolute;
+            top: 15.4rem;
+            left: 2rem;
+            width: 6rem;
+            height: 1.7rem;
+            background: url('btn.png') no-repeat;
+            background-size: contain;
+        } */
+    </style>
+    <!-- <script>
+        !function(e,t){function n(){t.body?t.body.style.fontSize=12*o+"px":t.addEventListener("DOMContentLoaded",n)}function d(){var e=i.clientWidth/10;i.style.fontSize=e+"px"}var i=t.documentElement,o=e.devicePixelRatio||1;if(n(),d(),e.addEventListener("resize",d),e.addEventListener("pageshow",function(e){e.persisted&&d()}),o>=2){var a=t.createElement("body"),s=t.createElement("div");s.style.border=".5px solid transparent",a.appendChild(s),i.appendChild(a),1===s.offsetHeight&&i.classList.add("hairlines"),i.removeChild(a)}}(window,document);
+    </script> -->
+    <script type="text/javascript" src="bridge.js"></script>
+    <script>
+      var _czc = _czc || [];
+      _czc.push(["_setAccount", "1260948588"]);
+    </script>
+    <script type="text/javascript">
+        HybridApi.init();
+        
+        //点击跳转
+        function jump() {
+            _czc.push(['_trackEvent', '追书神器', '乐彩-看赛事玩竞彩', '点击跳转']);
+            HybridApi.request({
+                action:'getUserInfo',
+                callback:function(data){
+                    var token = data.token;
+                    if(token){//已登录
+                        HybridApi.request({action: 'jump', 
+                            param: { "jumpType": "webview", "title": "看赛事 玩竞彩", "type": "0", "link": "https://6502.ruixinhd.com/v/sso/yuanju_middle.html?token=" + token }
+                        });
+                    }else{//未登录
+                        HybridApi.request({action:'login',callback:function(data){ }});
+                    }
+                }
+            });
+        }
+        function jumpRule(link,type) {
+            HybridApi.request({action: 'jump', 
+                param: { "jumpType": "webview", "title": "竞彩"+type+"玩法" , "link": link }
+            });
+        }
+    </script>
+</head>
+<body>
+    <div class="top">
+        <img src="main-top.jpg" alt="">
+        <div class="btn" onmousedown="jump()"></div>
+        <div class="rule-jump">
+            <span onmousedown="jumpRule('https://6503.ruixinhd.com/v/hl/zhuishu_jczq_help.html','足球')"></span>
+            <span onmousedown="jumpRule('https://6503.ruixinhd.com/v/hl/zhuishu_jclq_help.html','篮球')"></span>
+        </div>
+    </div>
+    <img src="main-bottom.jpg" alt="">
+    <!-- <div class="main" onmousedown="jump()">
+        <img src="main.jpg">
+    </div> -->
+    <div style="display: none;">
+        <script src="https://s11.cnzz.com/z_stat.php?id=1260948588&web_id=1260948588" language="JavaScript"></script>
+    </div>
+</body>
+</html>

@@ -2,21 +2,22 @@
 	var protocol = location.protocol.split(':')[0]+'://';
 	var url = protocol + "api.zhuishushenqi.com";
 	var pageData = {
-		ctrip:{
+		axl:{
 			cp:{
-				type:1,
-				img:"img/ctrip.png",
-				context:""
+				type:2,
+				img:"img/lztv.png",
+				title:"《阿修罗》小说上线，2000书券送不停",
+				context:"《阿修罗》小说专享"
 			},
 			rule:[
-				"本次活动兑换码红包仅限新用户兑换使用",
-				"登录追书神器APP—进入个人资料页面—点击兑换中心—输入兑换码—点击右边箭头，即可领取20元追书券，开始享受全站百万书籍畅读吧；",
-				"赠送的追书券有效期为30天；",
-				"活动时间为6月9日-6月16日，请在活动期间完成兑换；",
-				"如有疑问，请联系「追书神器」微信客服；",
-				"本次活动的最终解释权归追书神器所有。"
+				"本活动抢到的兑换码红包，每个追书账号仅能够兑换一次；",
+				"登录追书神器APP——进入个人资料页面——点击兑换中心——输入兑换码——点击右边箭头，即可领取20元追书券，开始享受全站百万书籍畅读吧；",
+				"赠送的兑换码必须在3个月内完成兑换，过期作废，兑换之后有效期为2个月；",
+				"活动截止日期2018年7月15日；",
+				"如有疑问，请联系追书神器的微信客服：zssqxs"
 			],
-			acLink:"http://jump.zhuishushenqi.com/huodong9"
+			outDate:(new Date('2018/07/15')).getTime(),
+			acLink:"http://jump.zhuishushenqi.com/huodong20"
 		},
 		ddsp:{
 			cp:{
@@ -109,7 +110,7 @@
 	var page = {
 		state:{
 			lost: function(){
-				return window.localStorage.getItem(fw.GetQueryString("tag")) && ( ["ddsp","tcly","lztv"].indexOf(fw.GetQueryString("tag")) > -1);
+				return window.localStorage.getItem(fw.GetQueryString("tag")) && ( ["ddsp","tcly","lztv","axl"].indexOf(fw.GetQueryString("tag")) > -1);
 			} 
 		},
 		Init:function(){

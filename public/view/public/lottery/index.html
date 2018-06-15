@@ -56,7 +56,7 @@
                     var token = data.token;
                     if(token){//已登录
                         HybridApi.request({action: 'jump', 
-                            param: { "jumpType": "webview_active", "title": "乐彩", "type": "0", "link": "https://6502.ruixinhd.com/v/sso/yuanju_middle.html?token=" + token }
+                            param: { "jumpType": "webview_active", "title": "乐彩", "type": "0", "link": "https://h5.jdd.com/communal/jump/zssq?token=" + token }
                         });
                     }else{//未登录
                         HybridApi.request({action:'login',callback:function(data){ }});

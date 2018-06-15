@@ -59,6 +59,7 @@
 					return window.location.search;
                 }
 				function isOutTime(date){
+					if(!date) return;
 					var nowTime = (new Date()).getTime();
 					if(nowTime > (new Date(date.replace(/-/g,'/'))).getTime()){
 						return true;
@@ -66,6 +67,19 @@
 						return false;
 					}
 				}
+				var  createIframe=(function(){
+					var iframe;
+					return function(){
+						if(iframe){
+							return iframe;
+						}else{
+							iframe = document.createElement('iframe');
+							iframe.style.display = 'none';
+							document.body.appendChild(iframe);
+							return iframe;
+						}
+					}
+				})()
                 function pageInit(){
 					if(isOutTime(getQueryParams('endTime',decodeURIComponent(window.location.href)))){
 						document.getElementsByTagName('body')[0].innerHTML = '<p>此活动已过期~</p>';
@@ -92,55 +106,52 @@
                         var ifrSrc = 'zssqdeeplink://deeplink' + deepLinkParams();
 
 						//检查app是否打开
-						function checkOpen(cb){
-							var _clickTime = +(new Date());
-							function check(elsTime) {
-								if ( elsTime > 2000 || document.hidden || document.webkitHidden) {
-									cb(1);
-									// document.getElementById('deepLink').href = ifrSrc;
-								} else {
-									cb(0);
-									window.location.href = 'http://app.qq.com/#id=detail&appid=100892131';
-									document.getElementById('deepLink').href = 'http://app.qq.com/#id=detail&appid=100892131';
-								}
-							}
-							//启动间隔20ms运行的定时器，并检测累计消耗时间是否超过3000ms，超过则结束
-							var _count = 0, intHandle;
-							intHandle = setInterval(function(){
-								_count++;        
-								var elsTime = +(new Date()) - _clickTime;
-								if (_count>=100 || elsTime > 2000 ) {
-									clearInterval(intHandle);
-									check(elsTime);
-								}
-							}, 20);
-						}
+						// function checkOpen(cb){
+						// 	var _clickTime = +(new Date());
+						// 	function check(elsTime) {
+						// 		if ( elsTime > 2000 || document.hidden || document.webkitHidden) {
+						// 			cb(1);
+						// 			// document.getElementById('deepLink').href = ifrSrc;
+						// 		} else {
+						// 			cb(0);
+						// 			window.location.href = 'http://app.qq.com/#id=detail&appid=100892131';
+						// 			document.getElementById('deepLink').href = 'http://app.qq.com/#id=detail&appid=100892131';
+						// 		}
+						// 	}
+						// 	//启动间隔20ms运行的定时器，并检测累计消耗时间是否超过3000ms，超过则结束
+						// 	var _count = 0, intHandle;
+						// 	intHandle = setInterval(function(){
+						// 		_count++;        
+						// 		var elsTime = +(new Date()) - _clickTime;
+						// 		if (_count>=100 || elsTime > 2000 ) {
+						// 			clearInterval(intHandle);
+						// 			check(elsTime);
+						// 		}
+						// 	}, 20);
+						// }
 
+
+						var openApp=function(){
+							var openIframe=createIframe();
+							var isChrome = window.navigator.userAgent.indexOf("Chrome") !== -1;
+								//判断是否是android，具体的判断函数自行百度
+								if (isChrome) {
+									window.location.href = ifrSrc;
+								} else {
+									//抛出你的scheme
+									openIframe.src = ifrSrc;
+								}
+								setTimeout(function () {
+									window.location.href =jumpLink;  
+								}, 500);
+						}
 						document.getElementById('deepLink').href = ifrSrc;
 						document.getElementById('deepLink').onclick = function(){
-							checkOpen(function(opened){
-								console.log(opened);
+							openApp(function(opened){
+								// alert(opened);
 							})
 						}
-						
-
-                        // var ifr = document.createElement('iframe');
-                        // ifr.src = ifrSrc;
-                        // ifr.style.display = 'none';
-
-						// checkOpen(function(opend){
-						// 	console.log(opend);
-						// })
-
-                        // document.body.appendChild(ifr);
-
-                        // setTimeout(function() {
-                        //     document.body.removeChild(ifr);
-                        // },1000);
-
-                        // document.getElementById('deepLink').href = jumpLink;
                     }
-
 					// document.getElementById('deepLink').click();
                 }
                 pageInit();

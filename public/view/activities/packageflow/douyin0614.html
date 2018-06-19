@@ -159,6 +159,10 @@
             var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ta, s);
         })(window);
     </script>
+    <script>
+        var _czc = _czc || [];
+        _czc.push(["_setAccount", "1261312741"]);
+    </script>
     <style>
         body {
             overflow: hidden;
@@ -356,7 +360,7 @@
                 //事件绑定处
 
                 $('#wraper').click(function () {
-
+                    _czc.push(["_trackEvent", "下载包分流", "跳转", 'zssq-douyin'+packageName, 1, "active"]);
                     if (os.ios == true && wechat == 'normal') {
 
                         window.location.href = iosUrl;
@@ -400,11 +404,7 @@
     </script>
 
     </div>
-    <div style="display:none">
-            <script src="https://s4.cnzz.com/z_stat.php?id=1260497224&web_id=1260497224"></script>
-        </div>
-
-    <script type="text/javascript">var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");document.write(unescape("%3Cspan style='display:none' id='cnzz_stat_icon_1261663825'%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s11.cnzz.com/z_stat.php%3Fid%3D1261663825' type='text/javascript'%3E%3C/script%3E"));</script>
+    <script type="text/javascript">var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://"); document.write(unescape("%3Cspan style='display:none' id='cnzz_stat_icon_1261312741'%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s4.cnzz.com/z_stat.php%3Fid%3D1261312741' type='text/javascript'%3E%3C/script%3E"));</script>
 </body>
 
 </html>

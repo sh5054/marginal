@@ -15,11 +15,21 @@
         if(location.protocol == 'https:'){
           document.write('<meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">');
         }
-    </script>
+	</script>
+	<style>
+		html,body{
+			width: 100%;
+			height: 100%;
+			background: url('./img/bodyBg.jpg') repeat-y;
+			background-size: contain;
+		}
+	</style>
 </head>
 <html>
 	<body>
-		<section class="inviteCard">
+		<img style="width: 100%;" src="./img/fixing.jpg?v=1" alt="">
+		
+		<!-- <section class="inviteCard">
 			<div class="inviteLink">
 				<a id="shareBtn">分享给我的朋友</a>
 			</div>
@@ -31,36 +41,13 @@
 					<i class="gift"></i>
 					<span>邀请好友满7位，送<em>1000书券</em>大礼包</span>
 				</div>
-				<!--<ul class="userList">
-					<li>
-						<i>
-							<img src="icon.jpg"/>
-						</i>
-						<span class="userName">卡卡卡卡</span>
-						<span class="info"><em>200书券  </em>已入账</span>
-					</li>
-					<li>
-						<i>
-							<img src="icon.jpg"/>
-						</i>
-						<span class="userName">卡卡卡卡</span>
-						<span class="info"><em>200书券  </em>已入账</span>
-					</li>
-					<li>
-						<i>
-							<img src="icon.jpg"/>
-						</i>
-						<span class="userName">卡卡卡卡</span>
-						<span class="info noReceive"><em>200书券  </em>已入账</span>
-					</li>
-				</ul>-->
 			</div>
 			<div class="rule">
 				<a href="rule.html">了解详细规则</a>
 			</div>
 		</section>
 		<script src="js/bridge.js" type="text/javascript" charset="utf-8"></script>
-		<script src="js/invites-v2.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/invites-v2.js" type="text/javascript" charset="utf-8"></script> -->
 	</body>
 	<script type="text/javascript">var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");document.write(unescape("%3Cspan style='display:none' id='cnzz_stat_icon_1261312741'%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s4.cnzz.com/z_stat.php%3Fid%3D1261312741' type='text/javascript'%3E%3C/script%3E"));</script>
 </html>

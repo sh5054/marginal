@@ -81,3 +81,45 @@
     window.deepLink = pageInit;
     // pageInit();
 })()
+
+
+// if ([funcName isEqualToString:@"forumdetail"]) {
+//     //社区帖子详情
+//     NSString *forumId = [dict valueForKey:@"forumid"];
+//     if (forumId.length) {
+//         [rootView jumpToForumWithId:forumId];
+//     }
+// } else if ([funcName isEqualToString:@"booklist"]) {
+//     //主题书单
+//     NSString *listId = [dict valueForKey:@"booklistid"];
+//     if (listId.length) {
+//         [rootView jumpToBookListWithId:listId];
+//     }
+// } else if ([funcName isEqualToString:@"bookdetail"]) {
+//     //书籍详情
+//     NSString *bookId = [dict valueForKey:@"bookid"];
+//     if (bookId.length) {
+//         [rootView jumpToBookDetailWithId:bookId];
+//     }
+// } else if ([funcName isEqualToString:@"recharge"]) {
+//     //充值页面
+//     [rootView jumpToRecharge];
+// } else if ([funcName isEqualToString:@"monthlypay"]) {
+//     //包月页面
+//     [rootView jumpToOpenVIP];
+// } else if ([funcName isEqualToString:@"bookcity"]) {
+//     //书城主页
+//     [rootView jumpToBookCity];
+// } else if ([funcName isEqualToString:@"bindphone"]) {
+//     //绑定手机
+//     [rootView jumpToBindPhone];
+// } else if ([funcName isEqualToString:@"welfare"]) {
+//     //福利中心
+//     [rootView jumpToWelfare];
+// } else if ([funcName isEqualToString:@"innerurl"]) {
+//     //跳转网页
+//     NSString *url = [dict valueForKey:@"url"];
+//     if (url.length) {
+//         [rootView jumpToWeb:url];
+//     }
+// }

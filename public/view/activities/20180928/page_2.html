@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no">
+    <title>追书神器</title>
+    <script>
+        var _czc = _czc || [];
+        _czc.push(["_setAccount", "1260948588"]);
+    </script>
+    <!-- <script type="text/javascript">
+        !function(e,t){function n(){t.body?t.body.style.fontSize=12*o+"px":t.addEventListener("DOMContentLoaded",n)}function d(){var e=i.clientWidth/10;i.style.fontSize=e+"px"}var i=t.documentElement,o=e.devicePixelRatio||1;if(n(),d(),e.addEventListener("resize",d),e.addEventListener("pageshow",function(e){e.persisted&&d()}),o>=2){var a=t.createElement("body"),s=t.createElement("div");s.style.border=".5px solid transparent",a.appendChild(s),i.appendChild(a),1===s.offsetHeight&&i.classList.add("hairlines"),i.removeChild(a)}}(window,document);
+    </script> -->
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            font-size:0;
+        }
+        html,body {
+            -webkit-overflow-scrolling: touch;
+            -webkit-text-size-adjust: 100%;
+            user-select: none;
+            -webkit-user-select: none;   /* 禁止选中文本（如无文本选中需求，此为必选项） */
+            -webkit-touch-callout:none;
+            -webkit-font-smoothing: antialiased;
+            font-size: 0;
+        }
+        img{
+            max-width: 100%;
+            border:none;
+            -webkit-touch-callout: none;
+            width: 100%;
+            font-size: 0;
+        }
+    </style>
+</head>
+<body>
+    <img src="./img/img-2-1.jpg" alt="">
+    <div onclick="download()">
+        <img src="./img/img-2-2.jpg" alt="">
+    </div>
+    <img src="./img/img-2-3.jpg" alt="">
+    <div onclick="download()">
+        <img src="./img/img-2-4.jpg" alt="">
+    </div>
+    <script>
+        _czc.push(['_trackEvent', '追书下载落地页0928', 'page_2', '访问']);
+        function download(){
+            _czc.push(['_trackEvent', '追书下载落地页0928', 'page_2', '点击下载']);
+            var iosUrl = "https://itunes.apple.com/cn/app/%E8%BF%BD%E4%B9%A6%E7%A5%9E%E5%99%A8-%E5%85%A8%E7%BD%91%E6%9B%B4%E6%96%B0%E6%9C%80%E5%BF%AB%E7%9A%84%E5%B0%8F%E8%AF%B4%E9%98%85%E8%AF%BB%E5%99%A8/id575826903?mt=8";
+            var androidUrl = "https://s.zhuishushenqi.com/zssq-cpa13.apk";
+            var ua = navigator.userAgent.toLowerCase();
+            if(/iphone|ipad|ipod/.test(ua)) {
+                location.href = iosUrl;
+            } else if(/android/.test(ua)) {
+                location.href = androidUrl;
+            }
+        }
+    </script>
+</body>
+</html>

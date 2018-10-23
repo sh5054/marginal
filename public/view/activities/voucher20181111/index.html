@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en" class="borderbox">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="format-detection" content="telephone=no"/>
+    <title>双11天降红包</title>
+    <meta name="viewport" content="width=device-width, initial-scale=0.5, maximum-scale=0.5, minimum-scale=0.5, user-scalable=no">
+    <script type="text/javascript">
+        !function(e,t){function n(){t.body?t.body.style.fontSize=12*o+"px":t.addEventListener("DOMContentLoaded",n)}function d(){var e=i.clientWidth/10;i.style.fontSize=e+"px"}var i=t.documentElement,o=e.devicePixelRatio||1;if(n(),d(),e.addEventListener("resize",d),e.addEventListener("pageshow",function(e){e.persisted&&d()}),o>=2){var a=t.createElement("body"),s=t.createElement("div");s.style.border=".5px solid transparent",a.appendChild(s),i.appendChild(a),1===s.offsetHeight&&i.classList.add("hairlines"),i.removeChild(a)}}(window,document);
+    </script>
+    <script>
+        if(location.protocol == 'https:'){
+          document.write('<meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">');
+        }
+    </script>
+    <script>
+        var _czc = _czc || [];
+        _czc.push(["_setAccount", "1261312741"]);
+    </script>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            font-size:0;
+        }
+        html,body {
+            -webkit-overflow-scrolling: touch;
+            -webkit-text-size-adjust: 100%;
+            user-select: none;
+            -webkit-user-select: none;   /* 禁止选中文本（如无文本选中需求，此为必选项） */
+            -webkit-touch-callout:none;
+            -webkit-font-smoothing: antialiased;
+            font-size: 0;
+        }
+        body, button, input, select, textarea {
+            font-family: Microsoft Yahei, "Helvetica Neue", Helvetica, STHeiTi, sans-serif !important; 
+        }
+        .top{
+            padding-top: 50vw;
+            background: url('./top-bg.png') no-repeat;
+            background-size: 100% auto;
+        }
+        .top h1{
+            margin-bottom: 0.15rem;
+            color: #11100E;
+            font-size: 0.68rem;
+            text-align: center;
+        }
+        .top h2{
+            color: #11100E;
+            font-size: 0.45rem;
+            text-align: center;
+            font-weight: normal;
+            letter-spacing: 0.05em;
+        }
+        .main-on .voucher{
+            margin-top: 0.8rem;
+            color: #11100E;
+            text-align: center;
+            font-size: 0.5rem;
+            font-weight: bold;
+        }
+        .main-on .voucher span{
+            font-size: 1.45rem;
+        }
+        .main-on .link {
+            text-align: center;
+        }
+        .main-on .link a{
+            margin-top: 0.6rem;
+            color: #356BA2;
+            font-size: 0.35rem;
+        }
+        .main-on .middle{
+            margin-top: 1.3rem;
+            height: 0.8rem;
+            line-height: 0.8rem;
+            background-color: #E9EAEC;
+            text-align: center;
+            color: #333333;
+            font-size: 0.35rem;
+        }
+        .main-on .bottom{
+            padding-top: 0.2rem;
+            margin-bottom: 1rem;
+        }
+        .main-on .bottom li{
+            position: relative;
+        }
+        .main-on .bottom li span{
+            position: absolute;
+            top: 0.32rem;
+            left: 0.56rem;
+            width: 1.36rem;
+            height: 1.36rem;
+            line-height: 1.36rem;
+            background-color: #EF4746;
+            color: #fff;
+            text-align: center;
+            font-size: 0.75rem;
+            border-radius: 50%;
+        }
+        .main-on .bottom li .right{
+            height: 2rem;
+            line-height: 2rem;
+            margin-left: 2.16rem;
+            color: #333333;
+            font-size: 0.42rem;
+            padding-left: 0.5em;
+            border-bottom: 1px solid #B4B4B4;
+            font-weight: bold;
+        }
+        .main-on .bottom li:last-child .right{
+            border: none;
+        }
+        .main-off{
+            margin-top: 3.8rem;
+            text-align: center;
+            color: #999;
+            font-size: 0.42rem;
+            letter-spacing: 0.1em;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="top">
+        <h1>追书双11活动抢鲜看</h1>
+        <h2>每天11.11万份暖场红包随机送！</h2>
+    </div>
+    <div class="main-on" style="display:none;" id="dataSuccess">
+        <div class="voucher"><span id="voucher">0</span>书券</div>
+        <p class="link">
+            <a onclick="HybridApi.pop()">已存入账户，去使用</a>
+        </p>
+        <div class="middle">红包活动截止11月8日24点，期间抽取登录用户随机赠送</div>
+        <ul class="bottom">
+            <li>
+                <span>追</span>
+                <div class="right">11月9日~11月11日盛大开启</div>
+            </li>
+            <li>
+                <span>书</span>
+                <div class="right">iPhone Xs 天天送</div>
+            </li>
+            <li>
+                <span>双</span>
+                <div class="right">手气最佳！111元现金红包很好拿</div>
+            </li>
+            <li>
+                <span>十</span>
+                <div class="right">100%中，海量书券抱回家</div>
+            </li>
+            <li>
+                <span>一</span>
+                <div class="right">都是小编向老板跪求的，且珍惜</div>
+            </li>
+        </ul>
+    </div>
+    <div class="main-off" style="display:none;" id="dataFail">
+        -活动已结束-
+    </div>
+    <div style="display: none;">
+        <script src="https://s11.cnzz.com/z_stat.php?id=1260948588&web_id=1261312741" language="JavaScript"></script>
+    </div>
+</body>
+<script type="text/javascript" src="./bridge_new.js"></script>
+
+<script>
+_czc.push(["_trackEvent",'双11天降红包','访问']);
+HybridApi.init();
+var wAjax = (function(){
+    function createxmlHttpRequest() {  
+        if (window.ActiveXObject) {  
+            return new ActiveXObject("Microsoft.XMLHTTP");  
+        } else if (window.XMLHttpRequest) {  
+            return new XMLHttpRequest();  
+        }  
+    } 
+    function convertData(data){ 
+        if( typeof data === 'object' ){ 
+            var convertResult = "" ;  
+            for(var c in data){  
+            convertResult+= c + "=" + data[c] + "&";  
+            }  
+            convertResult=convertResult.substring(0,convertResult.length-1) 
+            return convertResult; 
+        }else{ 
+            return data; 
+        } 
+    } 
+    return function(){ 
+        var ajaxData = { 
+            type:arguments[0].type || "GET", 
+            url:arguments[0].url || "", 
+            async:arguments[0].async || "true", 
+            data:arguments[0].data || null, 
+            dataType:arguments[0].dataType || "text", 
+            contentType:arguments[0].contentType || "application/x-www-form-urlencoded", 
+            beforeSend:arguments[0].beforeSend || function(){}, 
+            success:arguments[0].success || function(){}, 
+            error:arguments[0].error || function(){} 
+        } 
+        ajaxData.beforeSend() 
+        var xhr = createxmlHttpRequest();  
+        xhr.responseType=ajaxData.dataType; 
+        xhr.open(ajaxData.type,ajaxData.url,ajaxData.async);  
+        xhr.setRequestHeader("Content-Type",ajaxData.contentType);  
+        xhr.send(convertData(ajaxData.data));  
+        xhr.onreadystatechange = function() {  
+            if (xhr.readyState == 4) {  
+            if(xhr.status == 200){ 
+                ajaxData.success(xhr.response) 
+            }else{ 
+                ajaxData.error() 
+            }  
+            } 
+        }  
+    }
+})();
+
+(function(){
+    var getQueryParams = function(name, url) {
+        if (!url) url = location.href;
+        name = name.replace(/[\[]/, "\\\[").replace(/[\]]/, "\\\]");
+        var regexS = "[\\?&]" + name + "=([^&#]*)";
+        var regex = new RegExp(regexS);
+        var results = regex.exec(url);
+        return results == null ? null : results[1];
+    }
+    var token = getQueryParams('token');
+    if(!token){
+        HybridApi.getUserInfo(function(data){
+            token = data.token;
+        })
+    }
+    wAjax({ 
+        type:"POST", 
+        url:location.protocol.split(':')[0]+'://' + 'api.zhuishushenqi.com/activity/double11/gift', 
+        // dataType:"json", 
+        data:{"token":token}, 
+        beforeSend:function(){ 
+            //some js code 
+        }, 
+        success:function(msg){ 
+            console.log(msg) 
+            var data = JSON.parse(msg);
+            if(data.ok){
+                document.getElementById('voucher').innerHTML = data.voucher;
+                document.getElementById('dataSuccess').style.display = 'block';
+            }else{
+                var dom = document.getElementById('dataFail');
+                switch(data.msg){
+                    case "ALREADY_DONE" :
+                        dom.innerHTML = '-今日已领取-';
+                        break;
+                    case "RATE_LIMIT":
+                        dom.innerHTML = '-今日已领取-';
+                        break;
+                    case "ACTIVITY_OVER":
+                        dom.innerHTML = '-活动已结束-';
+                        break;
+                    case "NO_ACCOUNT":
+                        dom.innerHTML = '帐号不存在';
+                        break;
+                }
+                if(!token){
+                    dom.innerHTML = '-用户未登录-'
+                }
+                dom.style.display = 'block';
+            }
+        }, 
+        error:function(){ 
+            console.log("error") 
+        } 
+    }) 
+})();
+</script>
+</html> 

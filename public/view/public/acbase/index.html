@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en" class="borderbox">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="format-detection" content="telephone=no"/>
+    <title>追书神器</title>
+    <script>
+        if(location.protocol == 'https:'){
+          document.write('<meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">');
+        }
+    </script>
+    <!-- <script>
+        var _czc = _czc || [];
+        _czc.push(["_setAccount", "1261312741"]);
+    </script> -->
+</head>
+
+<body>
+
+    <div style="display: none;">
+        <!-- <script src="https://s11.cnzz.com/z_stat.php?id=1260948588&web_id=1261312741" language="JavaScript"></script> -->
+    </div>
+</body>
+<script type="text/javascript" src="./bridge_new.js"></script>
+<script>
+// _czc.push(["_trackEvent",'双11天降红包','访问']);
+HybridApi.init();
+(function(){
+    var getQueryParams = function(name, url) {
+        if (!url) url = location.href;
+        name = name.replace(/[\[]/, "\\\[").replace(/[\]]/, "\\\]");
+        var regexS = "[\\?&]" + name + "=([^&#]*)";
+        var regex = new RegExp(regexS);
+        var results = regex.exec(url);
+        return results == null ? null : results[1];
+    }
+    var zstk = getQueryParams('zstk');
+    var urlindex = getQueryParams('urlindex') || 0;
+    var platform = getQueryParams('plafrom') || 'android';
+
+    var links = [
+        'https://h5.zhuishushenqi.com/exclusive/list?token=',
+        'https://h5.zhuishushenqi.com/v2/exclusiveList.html?token=',
+        'https://h5.zhuishushenqi.com/original?gender=male',
+        'https://h5.zhuishushenqi.com/original?gender=female',
+        'https://h5.zhuishushenqi.com/v2/explore2.html?id=a4c7b8b791044c9abc413c277dd0b2f3&posCode=H1',
+        'https://h5.zhuishushenqi.com/v2/explore2.html?id=d322f092a8104c9784feff4680ef18c1&posCode=H15'
+    ];
+
+    if(zstk){
+        var token = getQueryParams('token'); 
+        if(token){
+            window.location.href = links[urlindex]+token+"&platform="+platform;
+        }else{
+            HybridApi.getUserInfo(function(data){
+                token = data.token;
+                window.location.href = links[urlindex]+token+"&platform="+platform;
+            })
+        }
+    }else{
+        window.location.href = links[urlindex]+"&platform="+platform;
+    }
+})()
+
+</script>
+</html> 

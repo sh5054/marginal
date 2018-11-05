@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        body{
+            margin: 0;
+        }
+        .main .inner{
+            height: 40px;
+            overflow: hidden;
+            transition: height 0.5s ease;
+        }
+        .main .inner.open{
+            height: 160px;
+        }
+        .main .inner.open ul{
+            transform: translate3d(0,0,0);
+        }
+        .main ul {
+            padding: 0;
+            margin: 0;
+            transform: translate3d(0,-40px,0);
+            transition: transform 0.5s ease;
+        }
+        .main ul li{
+            padding: 0;
+            list-style: none;
+            text-decoration: none;
+            height: 40px;
+            line-height: 40px;
+            background-color: #ccc;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="main">
+        <div class="inner" id='inner'>
+                <ul >
+                    <li>1</li>
+                    <li>2</li>
+                    <li>3</li>
+                    <li>4</li>
+                </ul>
+        </div>
+    </div>
+    <button onclick="opent()">open</button>
+    <script>
+        function opent(){
+            console.log(document.getElementById('inner').className == 'inner')
+            var isOpen = document.getElementById('inner').className == 'inner' ? false : true;
+            if(isOpen){
+                document.getElementById('inner').className = 'inner';
+            }else{
+                document.getElementById('inner').className = 'inner open';
+            }
+            
+        }
+    </script>
+</body>
+</html>

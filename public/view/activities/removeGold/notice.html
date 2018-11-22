@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>金币奖励更变通告</title>
+    <script type="text/javascript">
+        !function(e,t){function n(){t.body?t.body.style.fontSize=12*o+"px":t.addEventListener("DOMContentLoaded",n)}function d(){var e=i.clientWidth/10;i.style.fontSize=e+"px"}var i=t.documentElement,o=e.devicePixelRatio||1;if(n(),d(),e.addEventListener("resize",d),e.addEventListener("pageshow",function(e){e.persisted&&d()}),o>=2){var a=t.createElement("body"),s=t.createElement("div");s.style.border=".5px solid transparent",a.appendChild(s),i.appendChild(a),1===s.offsetHeight&&i.classList.add("hairlines"),i.removeChild(a)}}(window,document);
+    </script>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            font-size:0;
+        }
+        html,body {
+            -webkit-overflow-scrolling: touch;
+            -webkit-text-size-adjust: 100%;
+            user-select: none;
+            -webkit-user-select: none;   /* 禁止选中文本（如无文本选中需求，此为必选项） */
+            -webkit-touch-callout:none;
+            -webkit-font-smoothing: antialiased;
+            font-size: 0;
+        }
+        body, button, input, select, textarea {
+            font-family: Microsoft Yahei, "Helvetica Neue", Helvetica, STHeiTi, sans-serif !important; 
+        }
+        img{
+            width: 100%;
+            margin-bottom: 1.5rem;
+        }
+        .fixed-bt{
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            padding: 0.26rem 0;
+            /* height: 1.1rem; */
+            border-top: 1px solid #dbdbdb;
+            background-color: #fff;
+        }
+        .fixed-bt span{
+            display: block;
+            text-align: center;
+            width: 6.5rem;
+            height: 1rem;
+            line-height: 1rem;
+            margin: 0 auto;
+            border-radius: 60px;
+            background-color: #ee4745;
+            color: #fff;
+            font-size: 0.46rem;
+        }
+    </style>
+</head>
+<body>
+    <img src="./bg-1.png" alt="">
+    <div class="fixed-bt">
+        <span onclick="HybridApi.request({
+            action: 'jump',
+            param: { 'jumpType': 'webview', 'title': '在线客服', 'pageType': '', 'link': kfUrl}
+        })">在线客服</span>
+    </div>
+    <script src="https://qiyukf.com/script/6ca3fffadf7303c72026815b5e78b911.js"></script>
+    <script>
+        document.getElementById('YSF-BTN-HOLDER').style.display = 'none';
+    </script>
+    <script src="./bridge_new.js"></script>
+    <script>
+        HybridApi.init();
+        var self = window;
+        self.kfUrl = ysf.url().replace(/\&t=.*/g,"");
+        HybridApi.getDeviceInfo(function(data){
+            ysf.config({
+                uid: data.userId,
+                data:JSON.stringify([
+                    {"index":0, "key":"userId", "label":"用户ID", "value":data.userId},
+                    {"index":1, "key":"version", "label":"app版本", "value":data.version},
+                    {"index":2, "key":"versionCode","label":"verCode","value":data.versionCode},
+                    {"index":3, "key":"channel", "label":"channel", "value":data.channel},
+                    {"index":4, "key":"deviceModel", "label":"手机型号", "value":data.deviceModel},
+                    {"index":5, "key":"systemVersion","label":"系统版本","value":data.systemVersion}
+                ]),
+                success: function(){     // 成功回调
+                    self.kfUrl = ysf.url().replace(/\&t=.*/g,"");
+                },
+                error: function(){       // 错误回调
+                    // handle error
+                    self.kfUrl = ysf.url().replace(/\&t=.*/g,"");
+                }
+            });
+        })
+        if(__YSFOPTION__ && __YSFOPTION__.hidden==0){
+            self.showKf = true;
+        }
+    </script>
+</body>
+</html>

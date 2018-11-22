@@ -1,0 +1,552 @@
+<!DOCTYPE html>
+<html lang="en" class="borderbox">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="format-detection" content="telephone=no"/>
+    <title>阅读小挑战</title>
+    <meta name="viewport" content="width=device-width, initial-scale=0.5, maximum-scale=0.5, minimum-scale=0.5, user-scalable=no">
+    <script type="text/javascript">
+        !function(e,t){function n(){t.body?t.body.style.fontSize=12*o+"px":t.addEventListener("DOMContentLoaded",n)}function d(){var e=i.clientWidth/10;i.style.fontSize=e+"px"}var i=t.documentElement,o=e.devicePixelRatio||1;if(n(),d(),e.addEventListener("resize",d),e.addEventListener("pageshow",function(e){e.persisted&&d()}),o>=2){var a=t.createElement("body"),s=t.createElement("div");s.style.border=".5px solid transparent",a.appendChild(s),i.appendChild(a),1===s.offsetHeight&&i.classList.add("hairlines"),i.removeChild(a)}}(window,document);
+    </script>
+    <script>
+        if(location.protocol == 'https:'){
+          document.write('<meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">');
+        }
+    </script>
+    <script>
+        var _czc = _czc || [];
+        _czc.push(["_setAccount", "1261312741"]);
+    </script>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            font-size:0;
+        }
+        html,body {
+            -webkit-overflow-scrolling: touch;
+            -webkit-text-size-adjust: 100%;
+            user-select: none;
+            -webkit-user-select: none;   /* 禁止选中文本（如无文本选中需求，此为必选项） */
+            -webkit-touch-callout:none;
+            -webkit-font-smoothing: antialiased;
+            font-size: 0;
+        }
+        body, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, pre, code, form, fieldset, legend, input, textarea, p, blockquote, th, td, hr, button, article, aside, details, figcaption, figure, footer, header, menu, nav, section, span {
+            margin: 0;
+            padding: 0;
+            outline: 0;
+            -webkit-tap-highlight-color: transparent;
+            font-size: 0.24rem; 
+        }
+        body, button, input, select, textarea {
+            font-family: Microsoft Yahei, "Helvetica Neue", Helvetica, STHeiTi, sans-serif !important; 
+        }
+        html.borderbox *, html.borderbox *:before, html.borderbox *:after {
+            box-sizing: border-box; 
+        }
+        body{
+            position: relative;
+            padding-top: 109vw;
+            background: url('./bg-1.jpg') no-repeat;
+            background-size: 100% auto;
+            background-color: #ff4364;
+        }
+        .icon-rule{
+            position: absolute;
+            width: 0.6rem;
+            height: 2rem;
+            top: 3rem;
+            right: 0;
+        }
+        .task{
+            width: 9.15rem;
+            height: 2.3rem;
+            margin: 0 auto;
+            background: url('./taskCard.png') no-repeat;
+            background-size: 100%;
+        }
+        .task .left{
+            display: inline-block;
+            width: 50%;
+            padding-top: 0.6rem;
+            padding-left: 2.26rem;
+        }
+        .task .left h4{
+            line-height: 0.42rem;
+            font-size: 0.38rem;
+            color: #a04417;
+            font-weight: normal;
+        }
+        .task .left p{
+            line-height: 0.6rem;
+            color: #F34224;
+            font-size: 0.41rem;
+            font-weight: bold;
+        }
+        .task .right{
+            float: right;
+            /* display: inline-block; */
+            width: 50%;
+            padding-top: 0.8rem;
+        }
+        .task .right p{
+            font-size: 0.4rem;
+            color: #FF3310;
+            text-align: center;
+        }
+        .books-wrap{
+            position: relative;
+            margin: 1.73rem 0 1rem;
+            
+        }
+        .books-wrap .footer{
+            position: absolute;
+            z-index: 1;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 0.4rem;
+            background-color: #ff4364;
+        }
+        .books-wrap .book-list{
+            padding: 0 0.22rem 0.5rem;
+            white-space: nowrap;
+            overflow-x: auto;
+            font-size: 0;
+        }
+        .books-wrap .item{
+            display: inline-block;
+            margin: 0 0.22rem;
+            width:3.29rem;
+            height:7.1rem;
+            background:rgba(255,255,255,1);
+            box-shadow:0px 3px 20px 0px rgba(255,107,173,0.97);
+            border-radius:0.26rem;
+            padding-top: 0.4rem;
+            white-space: normal;
+            vertical-align: middle;
+        }
+        .books-wrap .item .cover{
+            width: 2.76rem;
+            height: 3.46rem;
+            padding: 0.12rem;
+            margin: 0 auto;
+            background: url('./book-cover.png') no-repeat;
+            background-size: contain;
+        }
+        .books-wrap .item .cover img{
+            width: 2.38rem;
+            height: 3.22rem;
+        }
+        .books-wrap .item .name{
+            display: block;
+            margin: 0.06rem 0.4rem;
+            line-height: 0.46rem;
+            font-size: 0.36rem;
+            color: #333;
+            text-align: center;
+            font-weight: 400;
+            white-space: nowrap;
+            text-overflow: ellipsis;
+            overflow: hidden;
+        }
+        .books-wrap .item .author{
+            text-align: center;
+        }
+        .books-wrap .item .author i{
+            display: inline-block;
+            width: 0.26rem;
+            height: 0.26rem;
+            margin-right: 0.1rem;
+            background: url('./icon-author.png') no-repeat;
+            background-size: contain;
+            vertical-align: middle;
+        }
+        .books-wrap .item .author span{
+            display: inline-block;
+            max-width: 70%;
+            font-size: 0.3rem;
+            color: #999;
+            vertical-align: middle;
+            white-space: nowrap;
+            text-overflow: ellipsis;
+            overflow: hidden;
+        }
+        .books-wrap .item .desc{
+            margin: 0.13rem 0;
+            padding: 0 0.4rem;
+            display: -webkit-box;
+            -webkit-line-clamp: 3;
+            -webkit-box-orient: vertical;
+            word-break: break-all;
+            text-overflow: ellipsis;
+            overflow: hidden;
+            min-height: 1rem;
+            line-height: 0.34rem;
+            font-size: 0.29rem;
+            color: #666;
+            text-align: justify;
+        }
+        .books-wrap .item .read-btn{
+            display: block;
+            width: 1.62rem;
+            height: 0.53rem;
+            line-height: 0.53rem;
+            margin: 0.2rem auto;
+            background-color: #FE502A;
+            text-align: center;
+            font-size: 0.32rem;
+            color: #fff;
+            border-radius: 20px;
+        }
+        .mask{
+            position: fixed;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.3);
+            /* padding-top: 4rem; */
+        }
+        .mask .rules{
+            position: relative;
+            width: 7.5rem;
+            margin: 3rem auto 0;
+            padding: 0.8rem 0.4rem;
+            background-color: #fff8e4;
+            color: #661d26;
+            border-radius: 0.4rem;
+        }
+        .mask .rules h5{
+            font-size: 0.42rem;
+            text-align: center;
+            margin-bottom: 0.4rem;
+        }
+        .mask .rules p{
+            position: relative;
+            padding-left: 1.4em;
+            font-size: 0.36rem;
+            line-height: 0.48rem;
+            margin-bottom: 0.2rem;
+        }
+        .mask .rules p span{
+            position: absolute;
+            left: 0;
+            font-size: 0.36rem;
+        }
+        .mask .rules .close-btn{
+            position: absolute;
+            width: 0.84rem;
+            height: 0.84rem;
+            background: url('./icon-close.png') no-repeat;
+            background-size: contain;
+            bottom: -1.34rem;
+            left: 50%;
+            margin-left: -0.42rem;
+        }
+        .mask .dialog{
+            position: relative;
+            width: 7.96rem;
+            height: 10.61rem;
+            margin: 1.2rem auto 0;
+            background: url('./dialog.png') no-repeat;
+            background-size: contain;
+        }
+        .mask .dialog .dialog-btn{
+            position: absolute;
+            width: 6rem;
+            height: 1rem;
+            top: 8.8rem;
+            left: 1.1rem;
+        }
+        .mask .dialog .close-btn{
+            position: absolute;
+            width: 0.84rem;
+            height: 0.84rem;
+            background: url('./icon-close.png') no-repeat;
+            background-size: contain;
+            bottom: -1.34rem;
+            left: 50%;
+            margin-left: -0.42rem;
+        }
+        .modal{
+            position: fixed;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            text-align: center;
+        }
+        .modal span{
+            display: inline-block;
+            margin-top: 80vh;
+            background: rgba(0,0,0,0.8);
+            border-radius: 0.2rem;
+            padding: 0.2rem 1rem;
+            font-size: 0.36rem;
+            color: #fff;
+        }
+    </style>
+</head>
+
+<body>
+    <span class="icon-rule" onclick="showMask('rules-dialog')"></span>
+    <div class="task" id="task">
+        <div class="left">
+            <h4>今日奖励</h4>
+            <p></p>
+        </div>
+        <div class="right">
+            <p>去看书，领奖励＞</p>
+        </div>
+    </div>
+    <div class="books-wrap">
+        <div class="footer"></div>
+        <ul class="book-list" id="book-list">
+            <li class="item">
+                <div class="cover"></div>
+            </li>
+            <li class="item">
+                <div class="cover"></div>
+            </li>
+            <li class="item">
+                <div class="cover"></div>
+            </li>   
+        </ul>
+        
+    </div>
+    <div class="mask" style="display: none;" id="rules-dialog">
+        <div class="rules">
+            <h5>活动规则</h5>
+            <p><span>1、</span>活动期间，每位用户每天有1次挑战机会，完成后可进入活动页领取奖励；</p>
+            <p><span>2、</span>阅读任务及奖励会在每天00:00刷新；</p>
+            <p><span>3、</span>奖励书券有效期为7天，请及时使用；</p>
+            <p><span>4、</span>本活动由系统随机派发，每期至少一天；</p>
+            <p><span>5、</span>活动解释权为追书神器所有。</p>
+            <div class="close-btn" onclick="closeMask('rules-dialog')"></div>
+        </div>
+    </div>
+    <div class="mask" style="display: none;" id="dialog">
+            <div class="dialog">
+                <div class="dialog-btn" onclick="closeMask('dialog')"></div>
+                <div class="close-btn" onclick="closeMask('dialog')"></div>
+            </div>
+        </div>
+    <div class="modal" id="modal" style="display: none;">
+        <span>请稍后重试</span>
+    </div>
+    <div style="display: none;">
+        <script src="https://s11.cnzz.com/z_stat.php?id=1260948588&web_id=1261312741" language="JavaScript"></script>
+    </div>
+</body>
+<script type="text/javascript" src="./bridge_new.js"></script>
+<script type="text/javascript" src="./exposure.js"></script>
+<script>
+_czc.push(["_trackEvent",'阅读送书券H5','访问']);
+HybridApi.init();
+var wAjax = (function(){
+    function createxmlHttpRequest() {  
+        if (window.ActiveXObject) {  
+            return new ActiveXObject("Microsoft.XMLHTTP");  
+        } else if (window.XMLHttpRequest) {  
+            return new XMLHttpRequest();  
+        }  
+    } 
+    function convertData(data){ 
+        if( typeof data === 'object' ){ 
+            var convertResult = "" ;  
+            for(var c in data){  
+            convertResult+= c + "=" + data[c] + "&";  
+            }  
+            convertResult=convertResult.substring(0,convertResult.length-1) 
+            return convertResult; 
+        }else{ 
+            return data; 
+        } 
+    } 
+    return function(){ 
+        var ajaxData = { 
+            type:arguments[0].type || "GET", 
+            url:arguments[0].url || "", 
+            async:arguments[0].async || "true", 
+            data:arguments[0].data || null, 
+            dataType:arguments[0].dataType || "text", 
+            contentType:arguments[0].contentType || "application/x-www-form-urlencoded", 
+            beforeSend:arguments[0].beforeSend || function(){}, 
+            success:arguments[0].success || function(){}, 
+            error:arguments[0].error || function(){} 
+        } 
+        ajaxData.beforeSend() 
+        var xhr = createxmlHttpRequest();  
+        xhr.responseType=ajaxData.dataType; 
+        xhr.open(ajaxData.type,ajaxData.url,ajaxData.async);  
+        xhr.setRequestHeader("Content-Type",ajaxData.contentType);  
+        xhr.send(convertData(ajaxData.data));  
+        xhr.onreadystatechange = function() {  
+            if (xhr.readyState == 4) {  
+            if(xhr.status == 200){ 
+                ajaxData.success(xhr.response) 
+            }else{ 
+                ajaxData.error() 
+            }  
+            } 
+        }  
+    }
+})();
+
+(function(){
+    tools.initExposure({ container: window });
+    var getQueryParams = function(name, url) {
+        if (!url) url = location.href;
+        name = name.replace(/[\[]/, "\\\[").replace(/[\]]/, "\\\]");
+        var regexS = "[\\?&]" + name + "=([^&#]*)";
+        var regex = new RegExp(regexS);
+        var results = regex.exec(url);
+        return results == null ? null : results[1];
+    }
+    var token = getQueryParams('token');
+    if(!token){
+        HybridApi.getUserInfo(function(data){
+            token = data.token;
+        })
+    }
+    wAjax({ 
+        type:"POST", 
+        url:location.protocol.split(':')[0]+'://' + 'goldcoin.zhuishushenqi.com/activity/reward-voucher', 
+        // dataType:"json", 
+        data:{"token":token}, 
+        beforeSend:function(){ 
+            //some js code 
+        }, 
+        success:function(msg){ 
+            console.log(msg) 
+            var data = JSON.parse(msg);
+            var dom = document.getElementById('task');
+            if(data.ok){
+                dom.innerHTML = "<div class='left'><h4>今日奖励</h4><p>已 领 取</p></div><div class='right' Hybrid='account'><p>查看我的账户＞</p></div>";
+                document.getElementById('dialog').style.display = "";
+            }else{
+                switch(data.msg){
+                    case "NO_VOUCHER_CHANCE" : //没有书券机会
+                        dom.innerHTML = "<div class='left'><h4>今日奖励</h4><p>未 领 取</p></div><div class='right' Hybrid='pop'><p>去看书，领奖励＞</p></div>";
+                        break;
+                    case "REWARD_VOUCHER":
+                        dom.innerHTML = "<div class='left'><h4>今日奖励</h4><p>已 领 取</p></div><div class='right' Hybrid='account'><p>查看我的账户＞</p></div>";
+                        break;
+                    case "RATE_LIMIT":
+                        document.getElementById('modal').style.display = "";
+                        setTimeout(function(){
+                            document.getElementById('modal').style.display = "none"; 
+                        },2000)
+                        break;
+                    default:
+                        document.getElementById('modal').style.display = "";
+                        setTimeout(function(){
+                            document.getElementById('modal').style.display = "none"; 
+                        },2000)
+                        break;
+
+                }
+            }
+        }, 
+        error:function(){ 
+            console.log("error") 
+        } 
+    }) 
+    wAjax({ 
+        type:"GET", 
+        url:location.protocol.split(':')[0]+'://' + 'api.zhuishushenqi.com/user/personal-recommendation?token='+token, 
+        // dataType:"json", 
+        beforeSend:function(){ 
+            //some js code 
+        }, 
+        success:function(msg){ 
+            var data = JSON.parse(msg).booklist.slice(0,6);
+            var html = [];
+            for(var i=0;i<data.length;i++){
+                html.push('<li class="item" title="'+data[i].title+'" bookId="'+ data[i]._id +'" key="'+(i+1)+'" data-exposure-pv="1" data-exposure-params="1006##-1|'+data[i]._id +'##'+data[i].title +'##弹窗-阅读送书券##0##-1##-1##'+(i+1)+'" ');
+                html.push('><div class="cover"><img src="https://statics.zhuishushenqi.com');
+                html.push(data[i].cover+'?imageMogr2/thumbnail/180x242" alt=""></div><span class="name">');
+                html.push(data[i].title+'</span><p class="author"><i></i><span>'+ data[i].author +'</span></p><p class="desc">');
+                html.push(data[i].shortIntro+'</p><span class="read-btn">去阅读</span></li>');
+            };
+            document.getElementById('book-list').innerHTML = html.join("");
+        }, 
+        error:function(){ 
+            console.log("error") 
+        } 
+    }) 
+
+    var parent = document.getElementById('book-list')
+    parent.addEventListener('click',function(e){
+        var el = e.target
+        //console.log(e.target)
+        while(el.tagName !== 'LI'){
+            if(el === parent){
+                el = null
+                break
+            }
+            el = el.parentNode
+        }
+        if(el){
+            console.log(el.getAttribute('key'))
+            _czc.push(["_trackEvent",'阅读送书券H5','点击','书籍_'+el.getAttribute('key')]);
+            HybridApi.request({
+            action: 'jump',
+            param: {
+                "jumpType": "native",
+                "pageType": "bookDetail",
+                "id": el.getAttribute('bookId'),
+                "code": (getQueryParams('posCode')|| -1)+'|'+el.getAttribute('bookId')+'##'+el.getAttribute('title')+'##弹窗-阅读送书券##-1##-1##-1##'+el.getAttribute('key')
+            }
+        });
+        }else{
+            console.log('未命中')
+        }
+    })
+
+    var taksNode = document.getElementById('task');
+    taksNode.addEventListener('click',function(e){
+        var el = e.target
+        while(el.className !== 'right'){
+            if(el === taksNode){
+                el = null
+                break
+            }
+            el = el.parentNode
+        }
+        if(el){
+            console.log(el)
+            if (el.getAttribute('Hybrid')=='account'){
+                _czc.push(["_trackEvent",'阅读送书券H5','点击','查看我的账户']);
+                HybridApi.request({
+                    action: 'jump',
+                    param: {
+                        "jumpType": "native",
+                        "pageType": "account"
+                    }
+                });
+            }else{
+                _czc.push(["_trackEvent",'阅读送书券H5','点击','去看书领奖励']);
+                HybridApi.pop();
+            }
+            
+        }else{
+            console.log('未命中')
+        }
+    })
+})();
+function closeMask(id){
+    document.getElementById(id).style.display = 'none';
+}
+function showMask(id){
+    _czc.push(["_trackEvent",'阅读送书券H5','点击','查看规则']);
+    document.getElementById(id).style.display = '';
+}
+
+
+
+</script>
+</html> 

@@ -492,6 +492,9 @@ var wAjax = (function(){
         }
         if(el){
             console.log(el.getAttribute('key'))
+            if(!el.getAttribute('bookId')){
+                return;
+            }
             _czc.push(["_trackEvent",'阅读送书券H5','点击','书籍_'+el.getAttribute('key')]);
             HybridApi.request({
             action: 'jump',

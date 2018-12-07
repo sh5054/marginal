@@ -55,45 +55,54 @@
     </style>
 </head>
 <body>
-    <img src="./bg-1.png" alt="">
+    <img src="./bg-3.png" alt="">
     <div class="fixed-bt">
         <span onclick="HybridApi.request({
             action: 'jump',
-            param: { 'jumpType': 'webview', 'title': '在线客服', 'pageType': '', 'link': kfUrl}
-        })">在线客服</span>
+            param: { 'jumpType': 'webview', 'title': '帮助与反馈', 'pageType': '', 'link': kfUrl}
+        })">在线帮助</span>
     </div>
-    <script src="https://qiyukf.com/script/6ca3fffadf7303c72026815b5e78b911.js"></script>
+    <!-- <script src="https://qiyukf.com/script/6ca3fffadf7303c72026815b5e78b911.js"></script>
     <script>
         document.getElementById('YSF-BTN-HOLDER').style.display = 'none';
-    </script>
+    </script> -->
     <script src="./bridge_new.js"></script>
     <script>
-        HybridApi.init();
-        var self = window;
-        self.kfUrl = ysf.url().replace(/\&t=.*/g,"");
-        HybridApi.getDeviceInfo(function(data){
-            ysf.config({
-                uid: data.userId,
-                data:JSON.stringify([
-                    {"index":0, "key":"userId", "label":"用户ID", "value":data.userId},
-                    {"index":1, "key":"version", "label":"app版本", "value":data.version},
-                    {"index":2, "key":"versionCode","label":"verCode","value":data.versionCode},
-                    {"index":3, "key":"channel", "label":"channel", "value":data.channel},
-                    {"index":4, "key":"deviceModel", "label":"手机型号", "value":data.deviceModel},
-                    {"index":5, "key":"systemVersion","label":"系统版本","value":data.systemVersion}
-                ]),
-                success: function(){     // 成功回调
-                    self.kfUrl = ysf.url().replace(/\&t=.*/g,"");
-                },
-                error: function(){       // 错误回调
-                    // handle error
-                    self.kfUrl = ysf.url().replace(/\&t=.*/g,"");
-                }
-            });
-        })
-        if(__YSFOPTION__ && __YSFOPTION__.hidden==0){
-            self.showKf = true;
+        function getQueryParams( name, url ) {
+            if (!url) url = location.href;
+            name = name.replace(/[\[]/,"\\\[").replace(/[\]]/,"\\\]");
+            var regexS = "[\\?&]"+name+"=([^&#]*)";
+            var regex = new RegExp( regexS );
+            var results = regex.exec( url );
+            return results == null ? null : results[1];
         }
+        HybridApi.init();
+        var kfUrl = getQueryParams('platform')=='ios' ? 'https://h5.zhuishushenqi.com/public/faq/index.html?platform=ios&plversion=4.02' : 'https://h5.zhuishushenqi.com/public/faq/index.html?platform=android&plversion=4.21';
+        // var self = window;
+        // self.kfUrl = ysf.url().replace(/\&t=.*/g,"");
+        // HybridApi.getDeviceInfo(function(data){
+        //     ysf.config({
+        //         uid: data.userId,
+        //         data:JSON.stringify([
+        //             {"index":0, "key":"userId", "label":"用户ID", "value":data.userId},
+        //             {"index":1, "key":"version", "label":"app版本", "value":data.version},
+        //             {"index":2, "key":"versionCode","label":"verCode","value":data.versionCode},
+        //             {"index":3, "key":"channel", "label":"channel", "value":data.channel},
+        //             {"index":4, "key":"deviceModel", "label":"手机型号", "value":data.deviceModel},
+        //             {"index":5, "key":"systemVersion","label":"系统版本","value":data.systemVersion}
+        //         ]),
+        //         success: function(){     // 成功回调
+        //             self.kfUrl = ysf.url().replace(/\&t=.*/g,"");
+        //         },
+        //         error: function(){       // 错误回调
+        //             // handle error
+        //             self.kfUrl = ysf.url().replace(/\&t=.*/g,"");
+        //         }
+        //     });
+        // })
+        // if(__YSFOPTION__ && __YSFOPTION__.hidden==0){
+        //     self.showKf = true;
+        // }
     </script>
 </body>
 </html>

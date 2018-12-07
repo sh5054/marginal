@@ -226,52 +226,58 @@ var wAjax = (function(){
         var results = regex.exec(url);
         return results == null ? null : results[1];
     }
+    var getVoucher = function(){
+        wAjax({ 
+            type:"POST", 
+            url:location.protocol.split(':')[0]+'://' + 'api.zhuishushenqi.com/activity/double11/gift', 
+            // dataType:"json", 
+            data:{"token":token}, 
+            beforeSend:function(){ 
+                //some js code 
+            }, 
+            success:function(msg){ 
+                console.log(msg) 
+                var data = JSON.parse(msg);
+                if(data.ok){
+                    document.getElementById('voucher').innerHTML = data.voucher;
+                    document.getElementById('dataSuccess').style.display = 'block';
+                }else{
+                    var dom = document.getElementById('dataFail');
+                    switch(data.msg){
+                        case "ALREADY_DONE" :
+                            dom.innerHTML = '-你今天已经抢过红包啦-';
+                            break;
+                        case "RATE_LIMIT":
+                            dom.innerHTML = '-你今天已经抢过红包啦-';
+                            break;
+                        case "ACTIVITY_OVER":
+                            dom.innerHTML = '-活动已结束-';
+                            break;
+                        case "NO_ACCOUNT":
+                            dom.innerHTML = '帐号不存在';
+                            break;
+                    }
+                    if(!token){
+                        dom.innerHTML = '-用户未登录-'
+                    }
+                    dom.style.display = 'block';
+                }
+            }, 
+            error:function(){ 
+                console.log("error") 
+            } 
+        }) 
+    }
     var token = getQueryParams('token');
     if(!token){
         HybridApi.getUserInfo(function(data){
             token = data.token;
+            getVoucher();
         })
+    }else{
+        getVoucher();
     }
-    wAjax({ 
-        type:"POST", 
-        url:location.protocol.split(':')[0]+'://' + 'api.zhuishushenqi.com/activity/double11/gift', 
-        // dataType:"json", 
-        data:{"token":token}, 
-        beforeSend:function(){ 
-            //some js code 
-        }, 
-        success:function(msg){ 
-            console.log(msg) 
-            var data = JSON.parse(msg);
-            if(data.ok){
-                document.getElementById('voucher').innerHTML = data.voucher;
-                document.getElementById('dataSuccess').style.display = 'block';
-            }else{
-                var dom = document.getElementById('dataFail');
-                switch(data.msg){
-                    case "ALREADY_DONE" :
-                        dom.innerHTML = '-你今天已经抢过红包啦-';
-                        break;
-                    case "RATE_LIMIT":
-                        dom.innerHTML = '-你今天已经抢过红包啦-';
-                        break;
-                    case "ACTIVITY_OVER":
-                        dom.innerHTML = '-活动已结束-';
-                        break;
-                    case "NO_ACCOUNT":
-                        dom.innerHTML = '帐号不存在';
-                        break;
-                }
-                if(!token){
-                    dom.innerHTML = '-用户未登录-'
-                }
-                dom.style.display = 'block';
-            }
-        }, 
-        error:function(){ 
-            console.log("error") 
-        } 
-    }) 
+
 })();
 </script>
 </html> 

@@ -1,0 +1,3 @@
+var arr = ['元尊 笔趣阁', '元尊 棉花糖', '元尊 八零电子书']; var htmlStr = []; for (var i = 0; i < arr.length; i++) { htmlStr.push('<div class="sug" keyword="' + arr[i] + '"><button>' + arr[i] + '</button><div class="sug-edit"></div><div class="sug-searchicon"></div></div>'); } document.querySelector('#se-box .suggest-div').style.display = ''; document.querySelector('#se-box .suggest-content').innerHTML = htmlStr.join('');
+var doms = document.querySelectorAll('#se-box .sug');
+for (var j = 0; j < doms.length; j++) { doms[j].onclick = function (event, j) { event.preventDefault(); var kw = event.target.getAttribute('keyword'); if (!kw) { kw = event.target.parentElement.getAttribute('keyword'); } window.location.href = 'https://m.baidu.com/from=844b/s?word=' + kw; } }

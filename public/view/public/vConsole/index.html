@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="./vconsole.min.js"></script>
+</head>
+<body>
+    <script>
+        // 初始化vConsole
+        window.vConsole = new window.VConsole({
+        defaultPlugins: ['system', 'network', 'element', 'storage'], // 可以在此设定要默认加载的面板
+        maxLogNumber: 1000,
+        // disableLogScrolling: true,
+        onReady: function() {
+            console.log('vConsole is ready.');
+        },
+        onClearLog: function() {
+            console.log('on clearLog');
+        }
+        });
+    </script>
+</body>
+</html>
